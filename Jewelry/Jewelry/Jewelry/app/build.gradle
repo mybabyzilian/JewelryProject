@@ -13,7 +13,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("/Users/admin/Desktop/key.jks")        //证书存放目录
+            storeFile file("/Users/admin/Desktop/key.jkl")        //证书存放目录
             storePassword "521116wj"                               //密码
             keyAlias "wj"                                                //别名
             keyPassword "521116wj"                                //密码(就是设置证书那两个密码，建议都填一样的)
