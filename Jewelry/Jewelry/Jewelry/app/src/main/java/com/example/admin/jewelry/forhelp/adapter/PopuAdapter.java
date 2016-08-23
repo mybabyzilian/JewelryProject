@@ -35,7 +35,7 @@ public class PopuAdapter extends BaseAdapter {
         if (type == 1) {
             return bean.getObject().getClist().size() > 0&&bean.getObject().getClist()!=null ? bean.getObject().getClist().size() : 0;
         } else if (type == 2) {
-            return bean.getObject().getAlist().size() > 0&&bean.getObject().getClist()!=null ? bean.getObject().getAlist().size() : 0;
+            return bean.getObject().getAlist().size() > 0&&bean.getObject().getAlist()!=null ? bean.getObject().getAlist().size() : 0;
         } else if (type == 3) {
             return bean.getObject().getTlist().size() > 0&&bean.getObject().getTlist()!=null ? bean.getObject().getTlist().size() : 0;
         } else {
