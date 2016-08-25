@@ -21,6 +21,7 @@ import java.util.Map;
 public class JewelryFragment extends BaseFragment {
     private ListView listView;
     private JewelryFragmentAdapter adapter;
+    private String id = "1";
 
     @Override
     protected int setLayout() {
@@ -36,7 +37,7 @@ public class JewelryFragment extends BaseFragment {
     @Override
     protected void initData() {
         Map<String, String> maps = new HashMap<>();
-        maps.put("entity_id", "2");
+        maps.put("entity_id", id);
         OkHttpClientManager.postAsyn(Urls.EPHRITEURL, new OkHttpClientManager.ResultCallback<InformationBean>() {
             @Override
             public void onError(Request request, Exception e) {

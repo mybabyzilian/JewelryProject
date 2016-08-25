@@ -7,10 +7,11 @@ import java.util.List;
  */
 public class TitleBean {
 
+
     /**
      * status : 1
-     * msg : 鑾峰彇鏁版嵁鎴愬姛锛�
-     * object : {"parentlist":[{"entity_id":"1","parent_id":"","category_name":"鐜夌煶","sort":"1","state":"1","ccs":[]},{"entity_id":"2","parent_id":"","category_name":"瀹濈煶","sort":"2","state":"1","ccs":[]},{"entity_id":"3","parent_id":"","category_name":"鏂囩帺","sort":"3","state":"1","ccs":[]},{"entity_id":"4","parent_id":"","category_name":"鍏朵粬","sort":"4","state":"1","ccs":[]}]}
+     * msg : 获取数据成功！
+     * object : {"parentlist":[{"entity_id":"1","parent_id":"","category_name":"玉石","sort":"1","state":"1","ccs":[]},{"entity_id":"2","parent_id":"","category_name":"宝石","sort":"2","state":"1","ccs":[]},{"entity_id":"3","parent_id":"","category_name":"文玩","sort":"3","state":"1","ccs":[]},{"entity_id":"4","parent_id":"","category_name":"其他","sort":"4","state":"1","ccs":[]}]}
      */
 
     private String status;
@@ -45,7 +46,7 @@ public class TitleBean {
         /**
          * entity_id : 1
          * parent_id :
-         * category_name : 鐜夌煶
+         * category_name : 玉石
          * sort : 1
          * state : 1
          * ccs : []

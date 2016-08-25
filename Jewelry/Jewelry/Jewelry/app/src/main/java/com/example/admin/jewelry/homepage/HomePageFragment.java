@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseFragment;
-import com.example.admin.jewelry.certificate.CertificateActivity;
+import com.example.admin.jewelry.homepage.certificate.CertificateActivity;
 import com.example.admin.jewelry.homepage.pricetrend.PriceTrendActivity;
 import com.youth.banner.Banner;
 

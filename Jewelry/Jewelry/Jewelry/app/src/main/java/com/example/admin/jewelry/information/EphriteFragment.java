@@ -21,6 +21,7 @@ import java.util.Map;
 public class EphriteFragment extends BaseFragment {
     private EphriteFragmentAdapter adapter;
     private ListView listView;
+    private String id = "0";
 
     @Override
     protected int setLayout() {
@@ -35,8 +36,9 @@ public class EphriteFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+
         Map<String, String> maps = new HashMap<>();
-        maps.put("entity_id", "3");
+        maps.put("entity_id", id);
 
         OkHttpClientManager.postAsyn(Urls.EPHRITEURL, new OkHttpClientManager.ResultCallback<InformationBean>() {
             @Override

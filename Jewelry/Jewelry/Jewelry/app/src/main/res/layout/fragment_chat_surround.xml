@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/surround_jewelry_layout"
         android:layout_width="match_parent"
         android:layout_height="25dp"
@@ -15,20 +15,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="宝石"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
+           android:gravity="center"
+
             />
         <ImageView
             android:id="@+id/surround_popu_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/dropdown"
-            android:layout_toRightOf="@+id/surround_tv"
-            android:layout_centerVertical="true"
+           android:layout_gravity="center"
             android:layout_marginLeft="2dp"
             />
 
-    </RelativeLayout>
+    </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="0.7dp"

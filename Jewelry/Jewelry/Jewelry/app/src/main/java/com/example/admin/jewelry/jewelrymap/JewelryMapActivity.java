@@ -50,7 +50,7 @@ public class JewelryMapActivity extends AppCompatActivity implements AMapLocatio
         //高精度模式
         mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
         //定位间隔
-        mLocationOption.setInterval(2000);
+        mLocationOption.setInterval(3000);
         //设置定位参数
         mlocationClient.setLocationOption(mLocationOption);
         if (mLocationOption.isOnceLocation()) {

@@ -32,7 +32,7 @@
         <service android:name="com.amap.api.location.APSService" />
         <activity android:name=".jewelrymap.JewelryMapActivity"/>
         <activity android:name=".homepage.pricetrend.PriceTrendActivity"/>
-        <activity android:name=".certificate.CertificateActivity"/>
+        <activity android:name=".homepage.certificate.CertificateActivity"/>
         <activity android:name=".homepage.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

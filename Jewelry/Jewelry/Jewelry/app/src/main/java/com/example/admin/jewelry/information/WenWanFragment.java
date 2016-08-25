@@ -21,6 +21,7 @@ import java.util.Map;
 public class WenWanFragment extends BaseFragment {
     private ListView listView;
     private EphriteFragmentAdapter adapter;
+    private String id = "2";
 
     @Override
     protected int setLayout() {
@@ -36,7 +37,7 @@ public class WenWanFragment extends BaseFragment {
     @Override
     protected void initData() {
         Map<String, String> maps = new HashMap<>();
-        maps.put("entity_id", "3");
+        maps.put("entity_id", id);
         OkHttpClientManager.postAsyn(Urls.EPHRITEURL, new OkHttpClientManager.ResultCallback<InformationBean>() {
             @Override
             public void onError(Request request, Exception e) {
