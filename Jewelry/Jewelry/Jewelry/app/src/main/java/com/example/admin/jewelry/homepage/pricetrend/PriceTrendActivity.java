@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 
 import com.example.admin.jewelry.R;
@@ -12,10 +13,11 @@ import com.example.admin.jewelry.base.BaseActivity;
 
 /**
  * Created by admin on 2016/8/16.
+ * 金价走势
  */
 public class PriceTrendActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
     private RadioButton priceRb, brandRb;
-
+    private ImageView backImage;
 
     @Override
     public int setLayout() {
@@ -24,6 +26,8 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
 
     @Override
     protected void initView() {
+        backImage = bindView(R.id.trend_return);
+        backImage.setOnClickListener(this);
         priceRb = (RadioButton) findViewById(R.id.rb_trend);
         brandRb = (RadioButton) findViewById(R.id.rb_brand);
         priceRb.setOnClickListener(this);
@@ -55,6 +59,9 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (view.getId()) {
+            case R.id.trend_return:
+                finish();
+                break;
             case R.id.rb_trend:
                 fragmentTransaction.replace(R.id.price_trend_frame, new DapanTrendFragment());
                 break;

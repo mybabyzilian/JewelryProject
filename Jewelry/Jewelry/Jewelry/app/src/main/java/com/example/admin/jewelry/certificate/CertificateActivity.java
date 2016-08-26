@@ -27,6 +27,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Created by admin on 2016/8/15.
+ * 证书查询
+ */
 public class CertificateActivity extends Activity {
 	private ListView sortListView;
 	private SideBar sideBar;

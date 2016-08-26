@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.admin.jewelry">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,8 +10,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".homepage.pricetrend.PriceTrendActivity"/>
-        <activity android:name=".certificate.CertificateActivity"/>
+        <activity android:name=".homepage.pricetrend.PriceTrendActivity" />
+        <activity android:name=".certificate.CertificateActivity" />
         <activity android:name=".homepage.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,6 +19,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--积分商城-->
+        <activity android:name=".homepage.integral.IntegralStoreActivity" />
+        <activity android:name=".homepage.integral.DetailsCommodityActivity" />
+        <activity android:name=".homepage.integral.JewelryActivity" />
+        <activity android:name=".homepage.integral.CorrelationActivity" />
+        <activity android:name=".homepage.integral.MajorPeriodicalActivity" />
+        <activity android:name=".homepage.hot_activity.HotActivity" />
+        <!--专属功能-->
+        <activity android:name=".homepage.exclusive.ExpandConnectionActivity" />
+        <activity android:name=".homepage.exclusive.FeedBackActivity" />
+        <activity android:name=".homepage.exclusive.IssueWindowsActivity" />
+        <activity android:name=".homepage.exclusive.SearchRimActivity" />
+        <activity android:name=".homepage.exclusive.SeekServiceActivity" />
+
+        <activity android:name=".information.HotWriterActivity" />
+        <activity android:name=".forhelp.OnlineDetailsActivity" />
+
+
+        <!--求助发布-->
+        <activity android:name=".forhelp.release.ReleaseHelpActivity"/>
+        <activity android:name=".forhelp.release.OnlineReleaseActivity"/>
+        <activity android:name=".forhelp.release.OfflineReleaseActivity"/>
+        <activity android:name=".forhelp.release.CircuseeReleaseActivity"/>
+        <activity android:name=".forhelp.release.AnswerActivity"/>
+        <activity android:name=".forhelp.release.ClassifyNameActivity"/>
     </application>
 
 </manifest>

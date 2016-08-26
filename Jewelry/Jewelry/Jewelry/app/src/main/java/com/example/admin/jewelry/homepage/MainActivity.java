@@ -10,7 +10,7 @@ import android.widget.RadioButton;
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
 import com.example.admin.jewelry.encyclopedia_fragment.EncyclopediaFragment;
-import com.example.admin.jewelry.forhelp.ForHelpFragment;
+import com.example.admin.jewelry.forhelp.fragment.ForHelpFragment;
 import com.example.admin.jewelry.information.InformationFragment;
 import com.example.admin.jewelry.mine.MineFragment;
 

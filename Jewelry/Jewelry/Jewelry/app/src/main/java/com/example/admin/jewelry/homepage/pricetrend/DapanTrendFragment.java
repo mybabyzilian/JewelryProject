@@ -7,6 +7,7 @@ import com.example.admin.jewelry.base.BaseFragment;
 
 /**
  * Created by admin on 2016/8/22.
+ * 大盘走势
  */
 public class DapanTrendFragment extends BaseFragment {
     @Override

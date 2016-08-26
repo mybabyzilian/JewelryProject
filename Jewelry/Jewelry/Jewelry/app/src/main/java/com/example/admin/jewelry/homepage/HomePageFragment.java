@@ -2,18 +2,27 @@ package com.example.admin.jewelry.homepage;
 
 import android.content.Intent;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.certificate.CertificateActivity;
+import com.example.admin.jewelry.homepage.exclusive.ExpandConnectionActivity;
+import com.example.admin.jewelry.homepage.exclusive.IssueWindowsActivity;
+import com.example.admin.jewelry.homepage.exclusive.SearchRimActivity;
+import com.example.admin.jewelry.homepage.exclusive.SeekServiceActivity;
+import com.example.admin.jewelry.homepage.hot_activity.HotActivity;
+import com.example.admin.jewelry.homepage.integral.IntegralStoreActivity;
 import com.example.admin.jewelry.homepage.pricetrend.PriceTrendActivity;
 import com.youth.banner.Banner;
 
 /**
  * Created by admin on 2016/8/15.
+ * 首页页面
  */
 public class HomePageFragment extends BaseFragment implements View.OnClickListener {
     private Banner banner;
+    private LinearLayout hotLinear, integralLinear, seek_service, search_rim, expand_connection, issue_windows;
 
 
     @Override
@@ -24,15 +33,22 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
     @Override
     protected void initView(View view) {
         banner = (Banner) view.findViewById(R.id.homepage_banner);
-        // banner.setImages();
         banner.setDelayTime(3000);
         banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
         view.findViewById(R.id.certificate_query).setOnClickListener(this);
         view.findViewById(R.id.price_trend).setOnClickListener(this);
         view.findViewById(R.id.major_train).setOnClickListener(this);
         view.findViewById(R.id.qualification_certification).setOnClickListener(this);
+        hotLinear = (LinearLayout) view.findViewById(R.id.hot_activity);
+        hotLinear.setOnClickListener(this);
 
+        integralLinear = (LinearLayout) view.findViewById(R.id.integral_store);
+        integralLinear.setOnClickListener(this);
 
+        view.findViewById(R.id.seek_service).setOnClickListener(this);
+        view.findViewById(R.id.search_rim).setOnClickListener(this);
+        view.findViewById(R.id.expand_connection).setOnClickListener(this);
+        view.findViewById(R.id.issue_windows).setOnClickListener(this);
     }
 
     @Override
@@ -56,6 +72,30 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
                 break;
             case R.id.qualification_certification:
 
+                break;
+            case R.id.integral_store:
+                Intent intent3 = new Intent(getContext(), IntegralStoreActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.hot_activity:
+                Intent intent4 = new Intent(getContext(), HotActivity.class);
+                startActivity(intent4);
+                break;
+            case R.id.seek_service:
+                Intent intent5 = new Intent(getContext(), SeekServiceActivity.class);
+                startActivity(intent5);
+                break;
+            case R.id.search_rim:
+                Intent intent6 = new Intent(getContext(), SearchRimActivity.class);
+                startActivity(intent6);
+                break;
+            case R.id.expand_connection:
+                Intent intent7 = new Intent(getContext(), ExpandConnectionActivity.class);
+                startActivity(intent7);
+                break;
+            case R.id.issue_windows:
+                Intent intent8 = new Intent(getContext(), IssueWindowsActivity.class);
+                startActivity(intent8);
                 break;
         }
     }

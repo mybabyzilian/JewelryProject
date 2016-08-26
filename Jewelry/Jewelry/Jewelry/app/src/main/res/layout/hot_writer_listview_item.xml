@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="1"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/tv_number"
+        android:src="@mipmap/headportrait" />
+
+    <TextView
+        android:id="@+id/tv_worker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_toRightOf="@+id/image_view"
+        android:text="大师傅"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_gemmologist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_toRightOf="@+id/tv_worker"
+        android:background="@android:color/holo_red_dark"
+        android:text="鉴定师"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/tv_gemmologist"
+        android:text="2级"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_article_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="45dp"
+        android:layout_toRightOf="@+id/image_view"
+        android:text="发布文章:234" />
+
+    <TextView
+        android:id="@+id/tv_read_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="45dp"
+        android:layout_toRightOf="@+id/tv_article_quantity"
+        android:text="阅读人数:233" />
+
+</RelativeLayout>
+

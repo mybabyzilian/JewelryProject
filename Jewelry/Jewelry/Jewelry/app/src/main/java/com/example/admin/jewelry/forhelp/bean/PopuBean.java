@@ -7,11 +7,10 @@ import java.util.List;
  */
 public class PopuBean {
 
-
     /**
      * status : 1
-     * msg : 鑾峰彇鏁版嵁鎴愬姛锛�
-     * object : {"tlist":[{"Val":"","Title":"绫诲瀷"},{"Val":"SCORE","Title":"绉垎鎮祻"},{"Val":"MONEY","Title":"绾㈠寘鎮祻"}],"alist":[{"Val":"","Title":"鎵撹祻"},{"Val":"Y","Title":"宸叉墦璧�"},{"Val":"N","Title":"鏈墦璧�"}],"clist":[{"entity_id":"","parent_id":"","category_name":"鍒嗙被","sort":"","state":"","ccs":[]},{"entity_id":"1","parent_id":"","category_name":"鐜夌煶","sort":"1","state":"1","ccs":[]},{"entity_id":"2","parent_id":"","category_name":"瀹濈煶","sort":"2","state":"1","ccs":[]},{"entity_id":"3","parent_id":"","category_name":"鏂囩帺","sort":"3","state":"1","ccs":[]},{"entity_id":"4","parent_id":"","category_name":"鍏朵粬","sort":"4","state":"1","ccs":[]}],"addlist":[{"entity_id":"1","parent_id":"","category_name":"鐜夌煶","sort":"1","state":"1","ccs":[]},{"entity_id":"2","parent_id":"","category_name":"瀹濈煶","sort":"2","state":"1","ccs":[]},{"entity_id":"3","parent_id":"","category_name":"鏂囩帺","sort":"3","state":"1","ccs":[]},{"entity_id":"4","parent_id":"","category_name":"鍏朵粬","sort":"4","state":"1","ccs":[]}]}
+     * msg : 获取数据成功！
+     * object : {"tlist":[{"Val":"","Title":"类型"},{"Val":"SCORE","Title":"积分悬赏"},{"Val":"MONEY","Title":"红包悬赏"}],"alist":[{"Val":"","Title":"打赏"},{"Val":"Y","Title":"已打赏"},{"Val":"N","Title":"未打赏"}],"clist":[{"entity_id":"","parent_id":"","category_name":"分类","sort":"","state":"","ccs":[]},{"entity_id":"1","parent_id":"","category_name":"玉石","sort":"1","state":"1","ccs":[]},{"entity_id":"2","parent_id":"","category_name":"宝石","sort":"2","state":"1","ccs":[]},{"entity_id":"3","parent_id":"","category_name":"文玩","sort":"3","state":"1","ccs":[]},{"entity_id":"4","parent_id":"","category_name":"其他","sort":"4","state":"1","ccs":[]}],"addlist":[{"entity_id":"1","parent_id":"","category_name":"玉石","sort":"1","state":"1","ccs":[]},{"entity_id":"2","parent_id":"","category_name":"宝石","sort":"2","state":"1","ccs":[]},{"entity_id":"3","parent_id":"","category_name":"文玩","sort":"3","state":"1","ccs":[]},{"entity_id":"4","parent_id":"","category_name":"其他","sort":"4","state":"1","ccs":[]}]}
      */
 
     private String status;
@@ -45,20 +44,20 @@ public class PopuBean {
     public static class ObjectBean {
         /**
          * Val :
-         * Title : 绫诲瀷
+         * Title : 类型
          */
 
         private List<TlistBean> tlist;
         /**
          * Val :
-         * Title : 鎵撹祻
+         * Title : 打赏
          */
 
         private List<AlistBean> alist;
         /**
          * entity_id :
          * parent_id :
-         * category_name : 鍒嗙被
+         * category_name : 分类
          * sort :
          * state :
          * ccs : []
@@ -68,7 +67,7 @@ public class PopuBean {
         /**
          * entity_id : 1
          * parent_id :
-         * category_name : 鐜夌煶
+         * category_name : 玉石
          * sort : 1
          * state : 1
          * ccs : []
