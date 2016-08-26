@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#8f0303"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/trend_certificate_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/fanhui" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="资质认证"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#ffffff"/>
+
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/homepage_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_weight="1.5"
+        android:layout_height="0dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_gravity="center_vertical"
+            android:id="@+id/rb_certificate_"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@mipmap/bycertification"
+            android:gravity="center"
+            android:text="通过认证"
+            android:textColor="#646464" />
+
+        <RadioButton
+            android:layout_gravity="center_vertical"
+            android:id="@+id/rb_uncertificate_"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/certified"
+            android:gravity="center"
+            android:text="已认证"
+            android:textColor="#646464" />
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="#cdcdcd" />
+
+    <FrameLayout
+        android:id="@+id/qualification_frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7">
+
+    </FrameLayout>
+
+</LinearLayout>

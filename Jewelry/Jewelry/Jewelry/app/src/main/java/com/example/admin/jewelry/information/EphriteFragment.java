@@ -1,10 +1,10 @@
 package com.example.admin.jewelry.information;
 
 import android.view.View;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
+import com.example.admin.jewelry.Utils.OnRefreshListener;
+import com.example.admin.jewelry.Utils.RefreshListView;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.information.adapter.EphriteFragmentAdapter;
 import com.example.admin.jewelry.information.bean.InformationBean;
@@ -18,9 +18,11 @@ import java.util.Map;
 /**
  * Created by admin on 2016/8/15.
  */
-public class EphriteFragment extends BaseFragment {
+public class EphriteFragment extends BaseFragment implements OnRefreshListener {
     private EphriteFragmentAdapter adapter;
-    private ListView listView;
+    private RefreshListView listView;
+    private String id = "1";
+
 
     @Override
     protected int setLayout() {
@@ -29,19 +31,20 @@ public class EphriteFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        listView = (ListView) view.findViewById(R.id.Ephrite_list_view);
+        listView = (RefreshListView) view.findViewById(R.id.Ephrite_list_view);
         adapter = new EphriteFragmentAdapter(context);
     }
 
     @Override
     protected void initData() {
+
         Map<String, String> maps = new HashMap<>();
-        maps.put("entity_id", "3");
+        maps.put("category_id", id);
 
         OkHttpClientManager.postAsyn(Urls.EPHRITEURL, new OkHttpClientManager.ResultCallback<InformationBean>() {
             @Override
             public void onError(Request request, Exception e) {
-                Toast.makeText(context, "请求失败了", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -52,5 +55,17 @@ public class EphriteFragment extends BaseFragment {
 
         }, maps);
 
+        listView.setOnRefreshListener(this);
+
+    }
+
+    @Override
+    public void onDownPullRefresh() {
+        listView.hideHeaderView();
+    }
+
+    @Override
+    public void onLoadingMore() {
+        listView.hideFooterView();
     }
 }
