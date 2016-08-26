@@ -19,12 +19,11 @@ import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
  */
 public class PriceTrendActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
     private RadioButton priceRb, brandRb;
-<<<<<<< HEAD
+
     private ImageView backImage;
-=======
+
     private ImageView returnIv,mapIv;
 
->>>>>>> wangjian_homepage
 
     @Override
     public int setLayout() {
@@ -41,6 +40,7 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
         returnIv = (ImageView) findViewById(R.id.trend_return);
         priceRb.setOnClickListener(this);
         brandRb.setOnClickListener(this);
+        mapIv.setOnClickListener(this);
     }
 
     @Override
@@ -70,9 +70,7 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (view.getId()) {
-            case R.id.trend_return:
-                finish();
-                break;
+
             case R.id.rb_trend:
                 fragmentTransaction.replace(R.id.price_trend_frame, new DapanTrendFragment());
                 break;

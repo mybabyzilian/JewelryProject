@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseFragment;
+import com.example.admin.jewelry.forhelp.adapter.GridViewAdapter;
 import com.example.admin.jewelry.forhelp.adapter.PopuAdapter;
 import com.example.admin.jewelry.forhelp.bean.OnlineBean;
 import com.example.admin.jewelry.forhelp.bean.PopuBean;
