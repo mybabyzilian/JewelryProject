@@ -14,8 +14,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:minWidth="30dip"
             android:src="@drawable/drop_down_list_arrow" />
+            <!--android:minWidth="30dip"-->
 
         <ProgressBar
             android:id="@+id/pb_listview_header"

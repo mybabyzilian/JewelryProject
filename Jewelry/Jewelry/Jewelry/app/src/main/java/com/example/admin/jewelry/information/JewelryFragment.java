@@ -1,9 +1,10 @@
 package com.example.admin.jewelry.information;
 
 import android.view.View;
-import android.widget.ListView;
 
 import com.example.admin.jewelry.R;
+import com.example.admin.jewelry.Utils.OnRefreshListener;
+import com.example.admin.jewelry.Utils.RefreshListView;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.information.adapter.JewelryFragmentAdapter;
 import com.example.admin.jewelry.information.bean.InformationBean;
@@ -17,8 +18,8 @@ import java.util.Map;
 /**
  * Created by admin on 2016/8/15.
  */
-public class JewelryFragment extends BaseFragment {
-    private ListView listView;
+public class JewelryFragment extends BaseFragment implements OnRefreshListener {
+    private RefreshListView listView;
     private JewelryFragmentAdapter adapter;
     private String id = "2";
 
@@ -29,8 +30,9 @@ public class JewelryFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        listView = (ListView) view.findViewById(R.id.jewelry_list);
+        listView = (RefreshListView) view.findViewById(R.id.jewelry_list);
         adapter = new JewelryFragmentAdapter(context);
+        listView.setOnRefreshListener(this);
     }
 
     @Override
@@ -50,5 +52,15 @@ public class JewelryFragment extends BaseFragment {
             }
 
         }, maps);
+    }
+
+    @Override
+    public void onDownPullRefresh() {
+        listView.hideHeaderView();
+    }
+
+    @Override
+    public void onLoadingMore() {
+        listView.hideFooterView();
     }
 }

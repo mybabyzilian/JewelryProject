@@ -1,10 +1,11 @@
 package com.example.admin.jewelry.information;
 
 import android.view.View;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
+import com.example.admin.jewelry.Utils.OnRefreshListener;
+import com.example.admin.jewelry.Utils.RefreshListView;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.information.adapter.EphriteFragmentAdapter;
 import com.example.admin.jewelry.information.bean.InformationBean;
@@ -18,8 +19,8 @@ import java.util.Map;
 /**
  * Created by admin on 2016/8/15.
  */
-public class WenWanFragment extends BaseFragment {
-    private ListView listView;
+public class WenWanFragment extends BaseFragment implements OnRefreshListener {
+    private RefreshListView listView;
     private EphriteFragmentAdapter adapter;
     private String id = "3";
 
@@ -30,8 +31,9 @@ public class WenWanFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        listView = (ListView) view.findViewById(R.id.wenwan_list);
+        listView = (RefreshListView) view.findViewById(R.id.wenwan_list);
         adapter = new EphriteFragmentAdapter(context);
+        listView.setOnRefreshListener(this);
     }
 
     @Override
@@ -51,5 +53,15 @@ public class WenWanFragment extends BaseFragment {
             }
 
         }, maps);
+    }
+
+    @Override
+    public void onDownPullRefresh() {
+        listView.hideHeaderView();
+    }
+
+    @Override
+    public void onLoadingMore() {
+        listView.hideFooterView();
     }
 }
