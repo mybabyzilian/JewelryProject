@@ -9,7 +9,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
+import com.example.admin.jewelry.Utils.OnRefreshListener;
 import com.example.admin.jewelry.Utils.PopuWindowBase;
+import com.example.admin.jewelry.Utils.RefreshListView;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.forhelp.adapter.SurroundAdapter;
 import com.example.admin.jewelry.forhelp.adapter.SurroundPopuAdapter;
@@ -25,8 +27,9 @@ import java.util.Map;
 /**
  * Created by admin on 2016/8/16.
  */
-public class SurroundChatFragment extends BaseFragment {
-    private ListView listView, popuList;
+public class SurroundChatFragment extends BaseFragment implements OnRefreshListener {
+    private RefreshListView listView;
+    private ListView popuList;
     private SurroundAdapter adapter;
     private View popuView;
     private LinearLayout relativeLayout;
@@ -42,13 +45,14 @@ public class SurroundChatFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        listView = (ListView) view.findViewById(R.id.surround_list);
+        listView = (RefreshListView) view.findViewById(R.id.surround_list);
         adapter = new SurroundAdapter(context);
         relativeLayout = (LinearLayout) view.findViewById(R.id.surround_jewelry_layout);
         popuView = LayoutInflater.from(context).inflate(R.layout.surround_popu, null);
         popuList = (ListView) popuView.findViewById(R.id.surround_popu_list);
         popuIv = (ImageView) view.findViewById(R.id.surround_popu_iv);
         popuAdapter = new SurroundPopuAdapter(context);
+        listView.setOnRefreshListener(this);
 
     }
 
@@ -104,4 +108,13 @@ public class SurroundChatFragment extends BaseFragment {
     }
 
 
+    @Override
+    public void onDownPullRefresh() {
+        listView.hideHeaderView();
+    }
+
+    @Override
+    public void onLoadingMore() {
+
+    }
 }
