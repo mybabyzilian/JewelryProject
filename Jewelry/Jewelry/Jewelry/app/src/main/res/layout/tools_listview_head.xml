@@ -50,9 +50,5 @@
             android:text="@string/last_time"
             android:textColor="#979494"
             android:textSize="12sp" />
-
-
     </LinearLayout>
-
-
 </LinearLayout>

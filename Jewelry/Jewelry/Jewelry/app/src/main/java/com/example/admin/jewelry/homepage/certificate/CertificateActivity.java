@@ -7,17 +7,18 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.Utils.CharacterParser;
 import com.example.admin.jewelry.Utils.ClearEditText;
+import com.example.admin.jewelry.Utils.OnRefreshListener;
 import com.example.admin.jewelry.Utils.PinyinComparator;
+import com.example.admin.jewelry.Utils.RefreshListView;
 import com.example.admin.jewelry.Utils.SideBar;
-import com.example.admin.jewelry.encyclopedia_fragment.EncyListBean;
 import com.example.admin.jewelry.encyclopedia_fragment.EncyAdapter;
+import com.example.admin.jewelry.encyclopedia_fragment.EncyListBean;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.example.admin.jewelry.netrequest.Urls;
 import com.squareup.okhttp.Request;
@@ -27,8 +28,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class CertificateActivity extends Activity {
-	private ListView sortListView;
+public class CertificateActivity extends Activity implements OnRefreshListener {
+	private RefreshListView sortListView;
 	private SideBar sideBar;
 	private TextView dialog;
 	private EncyAdapter adapter;
@@ -43,7 +44,7 @@ public class CertificateActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_certificate);
-		sortListView = (ListView) findViewById(R.id.country_lvcountry);
+		sortListView = (RefreshListView) findViewById(R.id.country_lvcountry);
 		sortListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
@@ -77,6 +78,8 @@ public class CertificateActivity extends Activity {
 
 			}
 		},map);
+
+		sortListView.setOnRefreshListener(this);
 
 		sideBar = (SideBar) findViewById(R.id.sidrbar);
 		dialog = (TextView) findViewById(R.id.dialog);
@@ -173,5 +176,14 @@ public class CertificateActivity extends Activity {
 		Collections.sort(filterDateList, pinyinComparator);
 		adapter.updateListView(filterDateList);
 	}
-	
+
+	@Override
+	public void onDownPullRefresh() {
+		sortListView.hideHeaderView();
+	}
+
+	@Override
+	public void onLoadingMore() {
+
+	}
 }
