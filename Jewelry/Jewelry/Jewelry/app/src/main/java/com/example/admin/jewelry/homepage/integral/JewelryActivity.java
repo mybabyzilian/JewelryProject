@@ -1,6 +1,7 @@
 package com.example.admin.jewelry.homepage.integral;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
 import com.example.admin.jewelry.homepage.integral.adapter.JewelryAdapter;
+import com.example.admin.jewelry.homepage.integral.bean.CategoryBean;
 import com.example.admin.jewelry.homepage.integral.bean.HotExchangeBean;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.squareup.okhttp.Request;
@@ -47,24 +49,24 @@ public class JewelryActivity extends BaseActivity implements View.OnClickListene
     protected void initData() {
         jewelryAdapter = new JewelryAdapter(this);
 
-//        Intent intent=getIntent();//getIntent将该项目中包含的原始intent检索出来，将检索出来的intent赋值给一个Intent类型的变量intent
-//        Bundle bundle=intent.getExtras();//.getExtras()得到intent所附带的额外数据
-//        String str=bundle.getString("category_id");//getString()返回指定key的值
+        Intent intent=getIntent();//getIntent将该项目中包含的原始intent检索出来，将检索出来的intent赋值给一个Intent类型的变量intent
+        Bundle bundle=intent.getExtras();//.getExtras()得到intent所附带的额外数据
+        String str=bundle.getString("category_id");//getString()返回指定key的值
 
         Map<String, String> maps = new HashMap<>();
-        maps.put("category_id","1");
+        maps.put("category_id", str);
         maps.put("currentPage", "1");
         maps.put("pageNumber", "20");
         String url = "http://192.168.31.10:8081/boastJewelry/scoreMall/goods/query.do";
 
-        OkHttpClientManager.postAsyn(url, new OkHttpClientManager.ResultCallback<HotExchangeBean>() {
+        OkHttpClientManager.postAsyn(url, new OkHttpClientManager.ResultCallback<CategoryBean>() {
             @Override
             public void onError(Request request, Exception e) {
                 Log.d("---------", "onErrorResponse: " + e);
             }
 
             @Override
-            public void onResponse(HotExchangeBean response) {
+            public void onResponse(CategoryBean response) {
                 jewelryAdapter.setHotExchangeBean(response);
                 Log.d("---------", "response: " + response);
 

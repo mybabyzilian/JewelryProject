@@ -48,7 +48,7 @@ public class MajorPeriodicalActivity extends BaseActivity implements View.OnClic
         jewelryAdapter = new JewelryAdapter(this);
 
         Map<String, String> maps = new HashMap<>();
-        maps.put("category_id","3");
+        maps.put("category_id", "3");
         maps.put("currentPage", "1");
         maps.put("pageNumber", "20");
         String url = "http://192.168.31.10:8081/boastJewelry/scoreMall/goods/query.do";

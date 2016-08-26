@@ -16,6 +16,7 @@ import com.example.admin.jewelry.homepage.integral.IntegralStoreActivity;
 import com.example.admin.jewelry.homepage.pricetrend.PriceTrendActivity;
 import com.youth.banner.Banner;
 
+
 /**
  * Created by admin on 2016/8/15.
  * 首页页面

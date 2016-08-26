@@ -25,7 +25,11 @@
         <activity android:name=".homepage.integral.JewelryActivity" />
         <activity android:name=".homepage.integral.CorrelationActivity" />
         <activity android:name=".homepage.integral.MajorPeriodicalActivity" />
+
+        <!--热门活动-->
         <activity android:name=".homepage.hot_activity.HotActivity" />
+        <activity android:name=".homepage.hot_activity.HotDetailsActivity"/>
+
         <!--专属功能-->
         <activity android:name=".homepage.exclusive.ExpandConnectionActivity" />
         <activity android:name=".homepage.exclusive.FeedBackActivity" />
@@ -33,6 +37,7 @@
         <activity android:name=".homepage.exclusive.SearchRimActivity" />
         <activity android:name=".homepage.exclusive.SeekServiceActivity" />
 
+        <!--资讯页面-->
         <activity android:name=".information.HotWriterActivity" />
         <activity android:name=".forhelp.OnlineDetailsActivity" />
 

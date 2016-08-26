@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.admin.jewelry.R;
+import com.example.admin.jewelry.homepage.integral.bean.CategoryBean;
 import com.example.admin.jewelry.homepage.integral.bean.HotExchangeBean;
 import com.squareup.picasso.Picasso;
 
@@ -18,14 +19,14 @@ import com.squareup.picasso.Picasso;
  */
 public class JewelryAdapter extends BaseAdapter {
     private Context context;
-    private HotExchangeBean hotExchangeBean;
+    private CategoryBean categoryBean;
 
     public JewelryAdapter(Context context) {
         this.context = context;
     }
 
-    public void setHotExchangeBean(HotExchangeBean hotExchangeBean) {
-        this.hotExchangeBean = hotExchangeBean;
+    public void setHotExchangeBean(CategoryBean categoryBean) {
+        this.categoryBean = categoryBean;
         notifyDataSetChanged();
     }
 
@@ -54,33 +55,34 @@ public class JewelryAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        String imageUrl = hotExchangeBean.getObject().getHotlist().get(position).getGoods_facePic();
-        Picasso.with(context).load(imageUrl).into(holder.jewelryImage);
 
-        String jewelryName = hotExchangeBean.getObject().getHotlist().get(position).getGoods_name();
+        String imageUrl = categoryBean.getObject().getGoodslist().get(position).getGoods_facePic();
+        Picasso.with(context).load(imageUrl).into(holder.jewelryImages);
+
+        String jewelryName = categoryBean.getObject().getGoodslist().get(position).getGoods_name();
         holder.jewelryTv.setText(jewelryName);
 
-        String stock = hotExchangeBean.getObject().getHotlist().get(position).getGoods_stock();
+        String stock = categoryBean.getObject().getGoodslist().get(position).getGoods_stock();
         holder.quantityTv.setText(stock);
 
-        String saleNum = hotExchangeBean.getObject().getHotlist().get(position).getGoods_saleNum();
+        String saleNum = categoryBean.getObject().getGoodslist().get(position).getGoods_saleNum();
         holder.tradeTv.setText(saleNum);
 
-        String salePrice = hotExchangeBean.getObject().getHotlist().get(position).getGoods_salePrice();
+        String salePrice = categoryBean.getObject().getGoodslist().get(position).getGoods_salePrice();
         holder.integralTv.setText(salePrice);
 
-        String oldPrice = hotExchangeBean.getObject().getHotlist().get(position).getGoods_oldPrice();
+        String oldPrice = categoryBean.getObject().getGoodslist().get(position).getGoods_oldPrice();
         holder.originalTv.setText(oldPrice);
 
         return convertView;
     }
 
     class ViewHolder {
-        ImageView jewelryImage;
+        ImageView jewelryImages;
         TextView jewelryTv, quantityTv, tradeTv, integralTv, originalTv;
 
         public ViewHolder(View view) {
-            jewelryImage = (ImageView) view.findViewById(R.id.facePic_imageview);
+            jewelryImages = (ImageView) view.findViewById(R.id.facePic_imageview);
             jewelryTv = (TextView) view.findViewById(R.id.name_tv);
             quantityTv = (TextView) view.findViewById(R.id.stock_tv);
             tradeTv = (TextView) view.findViewById(R.id.saleNum_tv);

@@ -81,7 +81,9 @@ public class HotActivity extends BaseActivity implements View.OnClickListener, A
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//        Intent intentItem = new Intent(this, DetailsCommodityActivity.class);
-//        startActivity(intentItem);
+        Intent intent = new Intent(this, HotDetailsActivity.class);
+        String entity_id = hotBean.getObject().get(position).getActivity_id();
+        intent.putExtra("entity_id", entity_id);
+        startActivity(intent);
     }
 }
