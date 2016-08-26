@@ -55,10 +55,10 @@ public class HotAdapter extends BaseAdapter {
 
         if (hotBean.getObject().get(position).getActivity_picture_url()=="1") {
             String imageUrl = hotBean.getObject().get(position).getActivity_picture_url();
-            Picasso.with(context).load(1).into(holder.underwayImg);
+            Picasso.with(context).load(imageUrl).into(holder.underwayImg);
         } else {
             String imageUrl = hotBean.getObject().get(position).getActivity_picture_url();
-            Picasso.with(context).load(2).into(holder.underwayImg);
+            Picasso.with(context).load(imageUrl).into(holder.underwayImg);
         }
         holder.titleTv.setText(hotBean.getObject().get(position).getActivity_title());
         holder.howTv.setText(hotBean.getObject().get(position).getActicity_amount() + "人参加");
