@@ -11,6 +11,15 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    signingConfigs {
+        release {
+            storeFile file("/Users/admin/Desktop/key.jkl")        //证书存放目录
+            storePassword "521116wj"                               //密码
+            keyAlias "wj"                                                //别名
+            keyPassword "521116wj"                                //密码(就是设置证书那两个密码，建议都填一样的)
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -32,6 +41,7 @@ dependencies {
     compile 'com.android.support:support-v4:22.0.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'it.sephiroth.android.library.picasso:picasso:2.5.2.4b'
+
 
 
 

@@ -2,6 +2,7 @@ package com.example.admin.jewelry.forhelp;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -40,7 +41,8 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
     private ListView popuListView;
     private GridView gridView;
     private GridViewAdapter adapter;
-    private String id = null;
+    private String id = "";
+    private int value = 0;
 
 
     @Override
@@ -92,23 +94,44 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
 
         }, map);
 
-
+        updateData();
         popuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 popupWindow.dismiss();
+                if (value == 0){
+                    id = "";
+                }else if (value == 1){
                 id = bean.getObject().getClist().get(i).getEntity_id();
+                }else if (value == 2){
+                    id = bean.getObject().getAlist().get(i).getVal();
+                    Log.d("OnlineHelpFragment", id);
+                }else if (value == 3){
+                    id = bean.getObject().getTlist().get(i).getVal();
+                    Log.d("OnlineHelpFragment***", id);
+
+                }
+
+                updateData();
             }
         });
 
 
+
+
+
+    }
+    private void updateData() {
         Map<String, String> maps = new HashMap<>();
-        maps.put("entity_id", "1");
+        maps.put("help_category", id);
         OkHttpClientManager.postAsyn(Urls.ONLINE_GRID_URL, new OkHttpClientManager.ResultCallback<OnlineBean>() {
             @Override
             public void onError(Request request, Exception e) {
                 Toast.makeText(context, "请求失败了", Toast.LENGTH_SHORT).show();
+                updateData();
             }
+
+
 
             @Override
             public void onResponse(OnlineBean response) {
@@ -118,8 +141,9 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
 
         }, maps);
 
-
     }
+
+
 
     public void showPopuWindows(){
         WindowManager wm = (WindowManager)context
@@ -160,6 +184,7 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
                 popuAdapter.setData(bean,1);
                 popuListView.setAdapter(popuAdapter);
                 }
+                value = 1;
 
                 break;
             case R.id.reward_linear_layout:
@@ -169,6 +194,7 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
                 popuAdapter.setData(bean,2);
                 popuListView.setAdapter(popuAdapter);
                 }
+                value = 2;
                 break;
             case R.id.type_linear_layout:
                 typeIv.setImageResource(R.mipmap.dropdown);
@@ -177,6 +203,7 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
                 popuAdapter.setData(bean,3);
                 popuListView.setAdapter(popuAdapter);
                 }
+                value = 3;
                 break;
         }
     }

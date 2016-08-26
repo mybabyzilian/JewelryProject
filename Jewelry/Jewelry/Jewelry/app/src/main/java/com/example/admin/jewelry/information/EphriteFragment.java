@@ -36,7 +36,7 @@ public class EphriteFragment extends BaseFragment {
     @Override
     protected void initData() {
         Map<String, String> maps = new HashMap<>();
-        maps.put("entity_id", "1");
+        maps.put("entity_id", "3");
 
         OkHttpClientManager.postAsyn(Urls.EPHRITEURL, new OkHttpClientManager.ResultCallback<InformationBean>() {
             @Override
