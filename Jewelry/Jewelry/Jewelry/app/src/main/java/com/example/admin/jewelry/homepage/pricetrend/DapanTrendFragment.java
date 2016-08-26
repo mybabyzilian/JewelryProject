@@ -96,10 +96,12 @@ public class DapanTrendFragment extends BaseFragment implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.gold_linear_layout:
+                if (bean != null){
                 adapter.setDate(bean);
                 popuList.setAdapter(adapter);
-                goldIv.setImageResource(R.mipmap.drop_top);
                 PopuWindowBase.showPopuWindows(dapanLayout,popuView,context,goldIv);
+                }
+                goldIv.setImageResource(R.mipmap.drop_top);
                 break;
             case R.id.today_linear_layout:
                 goldPopuAdapter.setData(data);

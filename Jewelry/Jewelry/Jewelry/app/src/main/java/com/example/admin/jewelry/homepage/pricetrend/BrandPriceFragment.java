@@ -1,17 +1,19 @@
 package com.example.admin.jewelry.homepage.pricetrend;
 
-import android.util.Log;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
+import com.example.admin.jewelry.Utils.CommonAdaper;
 import com.example.admin.jewelry.Utils.PopuWindowBase;
+import com.example.admin.jewelry.Utils.ViewHolder;
 import com.example.admin.jewelry.base.BaseFragment;
+import com.example.admin.jewelry.homepage.pricetrend.branddetail.BrandDetailActivity;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.example.admin.jewelry.netrequest.Urls;
 import com.squareup.okhttp.Request;
@@ -35,6 +37,7 @@ public class BrandPriceFragment extends BaseFragment implements View.OnClickList
     private GoldPopuAdapter gAdapter;
     private PricePopuBean bean;
     private ImageView brandIv, lastIv;
+    private List<BrandPriceBean.BrandDetailBean> list;
 
     @Override
     protected int setLayout() {
@@ -82,31 +85,60 @@ public class BrandPriceFragment extends BaseFragment implements View.OnClickList
                 popuList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    //    id = response.getObject().get(i).getCodes();
-
+                       id = response.getObject().get(i).getCodes();
                         PopuWindowBase.dismisPopu();
+                        updateData();
                     }
                 });
             }
         });
+        updateData();
+
+    }
+
+    private void updateData() {
+        list = new ArrayList<>();
         Map<String, String> map = new HashMap<>();
         map.put("product_category", id);
 
         OkHttpClientManager.postAsyn(Urls.BRAND_PRICE_URL, new OkHttpClientManager.ResultCallback<BrandPriceBean>() {
             @Override
             public void onError(Request request, Exception e) {
-                Toast.makeText(context, "请求不成功", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onResponse(BrandPriceBean response) {
-                for (int i = 0; i <response.getObject().size() ; i++) {
-                    Log.d("BrandPriceFragment***", response.getObject().get(i).getCategory_name());
+
+                if (response.getObject().size() > 0){
+                    for (int i = 0; i < response.getObject().size(); i++) {
+                        list.add(response.getObject().get(i));
+                    }
+                }else {
+                    return;
                 }
+                listView.setAdapter(new CommonAdaper<BrandPriceBean.BrandDetailBean>(context,list,R.layout.gold_trend_item) {
+                    @Override
+                    public void convert(ViewHolder holder, BrandPriceBean.BrandDetailBean item) {
+                        holder.setImageByUrl(R.id.company_iv,item.getCompany_logo());
+                        holder.setText(R.id.company_name,item.getCompany_name());
+                        holder.setText(R.id.trend_update_time,item.getProduct_update_time());
+                        holder.setText(R.id.trend_price,item.getProduct_price());
+                    }
+                });
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(context, BrandDetailActivity.class);
+                        intent.putExtra("id",list.get(i).getProduct_company_id());
+                        intent.putExtra("name",list.get(i).getCompany_name());
+                        context.startActivity(intent);
+                    }
+                });
+
             }
         }, map);
-
-
 
 
     }
@@ -116,10 +148,12 @@ public class BrandPriceFragment extends BaseFragment implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.brandgold_linear_layout:
+                if (bean != null){
                 adapter.setDate(bean);
                 popuList.setAdapter(adapter);
-                brandIv.setImageResource(R.mipmap.drop_top);
                 PopuWindowBase.showPopuWindows(brandLayout, popuView, context, brandIv);
+                }
+                brandIv.setImageResource(R.mipmap.drop_top);
                 break;
             case R.id.brand_last_linear_layout:
                 gAdapter.setData(data);

@@ -2,42 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/surround_jewelry_layout"
+        android:id="@+id/certificate_layout"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:orientation="horizontal">
+        android:layout_height="25dp">
 
         <RelativeLayout
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/surround_tv"
+                android:id="@+id/certificate_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="宝石"
-
-                />
+                android:text="全部" />
 
             <ImageView
-                android:id="@+id/surround_popu_iv"
+                android:id="@+id/certificate_popu_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="2dp"
-                android:src="@mipmap/dropdown"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="宝石"
-                android:layout_toRightOf="@+id/surround_tv"/>
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@+id/certificate_tv"
+                android:src="@mipmap/dropdown" />
 
         </RelativeLayout>
-
     </LinearLayout>
 
     <View
@@ -46,9 +41,7 @@
         android:background="#cdcdcd" />
 
     <ListView
-        android:id="@+id/surround_list"
+        android:id="@+id/fragment_certificate_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" />
-
+        android:layout_height="wrap_content" />
 </LinearLayout>

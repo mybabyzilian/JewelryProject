@@ -11,6 +11,7 @@ import android.widget.RadioButton;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
+import com.example.admin.jewelry.homepage.qualificationcertification.CertifacateFragment;
 import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
 
 /**
@@ -44,7 +45,7 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
         returnIv.setOnClickListener(this);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.price_trend_frame, new DapanTrendFragment());
+        fragmentTransaction.replace(R.id.price_trend_frame, new CertifacateFragment());
         fragmentTransaction.commit();
 
     }

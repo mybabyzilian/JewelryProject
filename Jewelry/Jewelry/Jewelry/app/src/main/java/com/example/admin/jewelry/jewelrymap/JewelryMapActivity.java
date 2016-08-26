@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -26,11 +28,20 @@ public class JewelryMapActivity extends AppCompatActivity implements AMapLocatio
     private AMapLocationClient mlocationClient;
     private AMap aMap;
     private LocationSource.OnLocationChangedListener mListener;
+    private ImageView returnIv;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        returnIv = (ImageView) findViewById(R.id.trend_return);
+        returnIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         mapView = (MapView) findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
 
@@ -58,6 +69,7 @@ public class JewelryMapActivity extends AppCompatActivity implements AMapLocatio
         }
         //启动定位
         mlocationClient.startLocation();
+
 
     }
 
@@ -102,7 +114,6 @@ public class JewelryMapActivity extends AppCompatActivity implements AMapLocatio
                 aMapLocation.getCountry();//国家信息
                 aMapLocation.getProvince();//省信息
                 Log.d("MainActivity", aMapLocation.getCity());//城市信息
-
                 aMapLocation.getDistrict();//城区信息
                 aMapLocation.getStreet();//街道信息
                 aMapLocation.getStreetNum();//街道门牌号信息
@@ -111,6 +122,7 @@ public class JewelryMapActivity extends AppCompatActivity implements AMapLocatio
                 aMapLocation.getAoiName();//获取当前定位点的AOI信息
 
                 mListener.onLocationChanged(aMapLocation);
+
 
 
             } else {

@@ -15,5 +15,6 @@ public class Urls {
     public static final String SURROUND_URL = "http://"+ BASE +"/boastJewelry/helpTalkQ/two.do";
     public static final String DAPAN_POPU = "http://"+ BASE +"/boastJewelry/combobox/queryProductCategory.do";
     public static final String BRAND_PRICE_URL = "http://"+ BASE +"/boastJewelry/brandprice/query.do";
+    public static final String BRAND_DETAIL_URL = "http://"+ BASE +"/boastJewelry/brandprice/queryCompanyDetail.do";
 
 }

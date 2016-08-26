@@ -2,7 +2,6 @@ package com.example.admin.jewelry.information;
 
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseFragment;
@@ -21,7 +20,8 @@ import java.util.Map;
 public class EphriteFragment extends BaseFragment {
     private EphriteFragmentAdapter adapter;
     private ListView listView;
-    private String id = "0";
+    private String id = "1";
+
 
     @Override
     protected int setLayout() {
@@ -38,12 +38,12 @@ public class EphriteFragment extends BaseFragment {
     protected void initData() {
 
         Map<String, String> maps = new HashMap<>();
-        maps.put("entity_id", id);
+        maps.put("category_id", id);
 
         OkHttpClientManager.postAsyn(Urls.EPHRITEURL, new OkHttpClientManager.ResultCallback<InformationBean>() {
             @Override
             public void onError(Request request, Exception e) {
-                Toast.makeText(context, "请求失败了", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
