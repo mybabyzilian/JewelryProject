@@ -8,9 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.homepage.integral.bean.HotExchangeBean;
-import com.squareup.picasso.Picasso;
+
 
 /**
  * Created by JINDAPENG on 2016/8/18.
@@ -60,7 +61,7 @@ public class IntegralStoreAdapter extends BaseAdapter {
         holder.integralTv.setText(integralPrice);
 
         String imageUrl = hotExchangeBean.getObject().getHotlist().get(position).getGoods_facePic();
-        Picasso.with(context).load(imageUrl).into(holder.jewelryImage);
+        Glide.with(context).load(imageUrl).into(holder.jewelryImage);
 
         return convertView;
     }

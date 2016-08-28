@@ -8,8 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.admin.jewelry.R;
-import com.squareup.picasso.Picasso;
 
 /**
  * Created by JINDAPENG on 2016/8/22.
@@ -55,10 +55,10 @@ public class HotAdapter extends BaseAdapter {
 
         if (hotBean.getObject().get(position).getActivity_picture_url()=="1") {
             String imageUrl = hotBean.getObject().get(position).getActivity_picture_url();
-            Picasso.with(context).load(imageUrl).into(holder.underwayImg);
+            Glide.with(context).load(imageUrl).into(holder.underwayImg);
         } else {
             String imageUrl = hotBean.getObject().get(position).getActivity_picture_url();
-            Picasso.with(context).load(imageUrl).into(holder.underwayImg);
+            Glide.with(context).load(imageUrl).into(holder.underwayImg);
         }
         holder.titleTv.setText(hotBean.getObject().get(position).getActivity_title());
         holder.howTv.setText(hotBean.getObject().get(position).getActicity_amount() + "人参加");

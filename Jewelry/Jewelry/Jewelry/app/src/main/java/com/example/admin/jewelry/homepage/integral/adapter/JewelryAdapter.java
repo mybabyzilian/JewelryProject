@@ -8,11 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.homepage.integral.bean.CategoryBean;
-import com.example.admin.jewelry.homepage.integral.bean.HotExchangeBean;
-import com.squareup.picasso.Picasso;
-
 
 /**
  * Created by JINDAPENG on 2016/8/18.
@@ -25,14 +23,14 @@ public class JewelryAdapter extends BaseAdapter {
         this.context = context;
     }
 
-    public void setHotExchangeBean(CategoryBean categoryBean) {
+    public void setCategoryBean(CategoryBean categoryBean) {
         this.categoryBean = categoryBean;
         notifyDataSetChanged();
     }
 
     @Override
     public int getCount() {
-        return 4;
+        return categoryBean == null ? 0 : categoryBean.getObject().getGoodslist().size();
     }
 
     @Override
@@ -57,7 +55,7 @@ public class JewelryAdapter extends BaseAdapter {
         }
 
         String imageUrl = categoryBean.getObject().getGoodslist().get(position).getGoods_facePic();
-        Picasso.with(context).load(imageUrl).into(holder.jewelryImages);
+        Glide.with(context).load(imageUrl).into(holder.jewelryImages);
 
         String jewelryName = categoryBean.getObject().getGoodslist().get(position).getGoods_name();
         holder.jewelryTv.setText(jewelryName);

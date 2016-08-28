@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.certificate.CertificateActivity;
+import com.example.admin.jewelry.homepage.MajorTrain.MajorTrainActivity;
 import com.example.admin.jewelry.homepage.exclusive.ExpandConnectionActivity;
 import com.example.admin.jewelry.homepage.exclusive.IssueWindowsActivity;
 import com.example.admin.jewelry.homepage.exclusive.SearchRimActivity;
@@ -14,6 +15,7 @@ import com.example.admin.jewelry.homepage.exclusive.SeekServiceActivity;
 import com.example.admin.jewelry.homepage.hot_activity.HotActivity;
 import com.example.admin.jewelry.homepage.integral.IntegralStoreActivity;
 import com.example.admin.jewelry.homepage.pricetrend.PriceTrendActivity;
+import com.example.admin.jewelry.homepage.qualificationcertification.QualificationActivity;
 import com.youth.banner.Banner;
 
 
@@ -40,12 +42,9 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
         view.findViewById(R.id.price_trend).setOnClickListener(this);
         view.findViewById(R.id.major_train).setOnClickListener(this);
         view.findViewById(R.id.qualification_certification).setOnClickListener(this);
-        hotLinear = (LinearLayout) view.findViewById(R.id.hot_activity);
-        hotLinear.setOnClickListener(this);
 
-        integralLinear = (LinearLayout) view.findViewById(R.id.integral_store);
-        integralLinear.setOnClickListener(this);
-
+        view.findViewById(R.id.integral_store).setOnClickListener(this);
+        view.findViewById(R.id.hot_activity).setOnClickListener(this);
         view.findViewById(R.id.seek_service).setOnClickListener(this);
         view.findViewById(R.id.search_rim).setOnClickListener(this);
         view.findViewById(R.id.expand_connection).setOnClickListener(this);
@@ -69,34 +68,36 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
                 context.startActivity(intent1);
                 break;
             case R.id.major_train:
-
+                Intent intent2 = new Intent(context, MajorTrainActivity.class);
+                context.startActivity(intent2);
                 break;
             case R.id.qualification_certification:
-
+                Intent intent3 = new Intent(context, QualificationActivity.class);
+                context.startActivity(intent3);
                 break;
             case R.id.integral_store:
-                Intent intent3 = new Intent(getContext(), IntegralStoreActivity.class);
-                startActivity(intent3);
-                break;
-            case R.id.hot_activity:
-                Intent intent4 = new Intent(getContext(), HotActivity.class);
+                Intent intent4 = new Intent(getContext(), IntegralStoreActivity.class);
                 startActivity(intent4);
                 break;
-            case R.id.seek_service:
-                Intent intent5 = new Intent(getContext(), SeekServiceActivity.class);
+            case R.id.hot_activity:
+                Intent intent5 = new Intent(getContext(), HotActivity.class);
                 startActivity(intent5);
                 break;
-            case R.id.search_rim:
-                Intent intent6 = new Intent(getContext(), SearchRimActivity.class);
+            case R.id.seek_service:
+                Intent intent6 = new Intent(getContext(), SeekServiceActivity.class);
                 startActivity(intent6);
                 break;
-            case R.id.expand_connection:
-                Intent intent7 = new Intent(getContext(), ExpandConnectionActivity.class);
+            case R.id.search_rim:
+                Intent intent7 = new Intent(getContext(), SearchRimActivity.class);
                 startActivity(intent7);
                 break;
-            case R.id.issue_windows:
-                Intent intent8 = new Intent(getContext(), IssueWindowsActivity.class);
+            case R.id.expand_connection:
+                Intent intent8 = new Intent(getContext(), ExpandConnectionActivity.class);
                 startActivity(intent8);
+                break;
+            case R.id.issue_windows:
+                Intent intent9 = new Intent(getContext(), IssueWindowsActivity.class);
+                startActivity(intent9);
                 break;
         }
     }

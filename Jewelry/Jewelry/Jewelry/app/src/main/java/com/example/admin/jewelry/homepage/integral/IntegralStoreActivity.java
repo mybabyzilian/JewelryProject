@@ -104,8 +104,6 @@ public class IntegralStoreActivity extends BaseActivity implements View.OnClickL
             case R.id.jewelry_accessories_rl:
                 classBean = new ClassBean();
                 Intent intentJewelry = new Intent(this, JewelryActivity.class);
-                String entity_id =classBean.getObject().getCategorylist().get(1).getSeq();
-                intentJewelry.putExtra("entity_id", entity_id);
                 startActivity(intentJewelry);
                 break;
             case R.id.correlation_accesseries_rl:

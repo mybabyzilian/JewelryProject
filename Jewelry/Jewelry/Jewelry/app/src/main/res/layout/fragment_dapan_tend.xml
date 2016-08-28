@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        android:id="@+id/parent_linear_layout"
+        android:id="@+id/dapand_linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="25dp">
+        android:layout_height="25dp"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/sort_linear_layout"
+            android:id="@+id/gold_linear_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -17,15 +18,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/sort_Tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="分类"
+                android:text="黄金"
                 android:layout_gravity="center_vertical"
                 android:textColor="#000000" />
 
             <ImageView
-                android:id="@+id/sort_iv"
+                android:id="@+id/gold_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -42,7 +42,7 @@
             android:background="#cdcdcd" />
 
         <LinearLayout
-            android:id="@+id/type_linear_layout"
+            android:id="@+id/today_linear_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -50,14 +50,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/type_tv"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="类型"
+                android:text="今日"
                 android:textColor="#000000" />
 
             <ImageView
-                android:id="@+id/type_iv"
+                android:id="@+id/today_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -73,22 +73,19 @@
             android:background="#cdcdcd" />
 
         <LinearLayout
-            android:id="@+id/reward_linear_layout"
+            android:id="@+id/rmb_linear_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="horizontal">
-
             <TextView
-                android:id="@+id/reward_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="打赏"
+                android:text="人民币/克"
                 android:textColor="#000000" />
-
             <ImageView
-                android:id="@+id/reward_iv"
+                android:id="@+id/rmb_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
