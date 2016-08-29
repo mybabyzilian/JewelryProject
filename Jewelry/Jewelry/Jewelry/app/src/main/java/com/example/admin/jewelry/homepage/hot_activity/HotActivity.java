@@ -1,6 +1,5 @@
 package com.example.admin.jewelry.homepage.hot_activity;
 
-import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -10,7 +9,6 @@ import android.widget.ListView;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
-import com.example.admin.jewelry.homepage.integral.DetailsCommodityActivity;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.squareup.okhttp.Request;
 
@@ -61,7 +59,7 @@ public class HotActivity extends BaseActivity implements View.OnClickListener, A
             public void onResponse(HotBean response) {
                 hotBean = response;
                 hotAdapter.setHotBean(hotBean);
-                Log.d("url_++", "onResponse: " + hotBean);
+
             }
         },maps);
 
