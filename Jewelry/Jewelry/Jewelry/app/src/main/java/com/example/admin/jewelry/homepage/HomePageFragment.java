@@ -8,6 +8,7 @@ import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.homepage.MajorTrain.MajorTrainActivity;
 import com.example.admin.jewelry.homepage.certificate.CertificateActivity;
+import com.example.admin.jewelry.homepage.jewerydisplay.JewelryDisplayActivity;
 import com.example.admin.jewelry.homepage.pricetrend.PriceTrendActivity;
 import com.example.admin.jewelry.homepage.qualificationcertification.QualificationActivity;
 import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
@@ -37,6 +38,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
         view.findViewById(R.id.major_train).setOnClickListener(this);
         view.findViewById(R.id.qualification_certification).setOnClickListener(this);
         view.findViewById(R.id.homepage_jewelry_map).setOnClickListener(this);
+        view.findViewById(R.id.jewelry_display_layout).setOnClickListener(this);
 
 
     }
@@ -68,6 +70,10 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
             case R.id.homepage_jewelry_map:
                 Intent intent4 = new Intent(context, JewelryMapActivity.class);
                 context.startActivity(intent4);
+                break;
+            case R.id.jewelry_display_layout:
+                Intent intent5 = new Intent(context, JewelryDisplayActivity.class);
+                context.startActivity(intent5);
                 break;
         }
     }
