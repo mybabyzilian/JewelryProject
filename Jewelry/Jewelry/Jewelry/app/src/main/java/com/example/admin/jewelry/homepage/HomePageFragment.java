@@ -15,6 +15,7 @@ import com.example.admin.jewelry.homepage.hot_activity.HotActivity;
 import com.example.admin.jewelry.homepage.integral.IntegralStoreActivity;
 import com.example.admin.jewelry.homepage.MajorTrain.MajorTrainActivity;
 import com.example.admin.jewelry.homepage.certificate.CertificateActivity;
+import com.example.admin.jewelry.homepage.jewerydisplay.JewelryDisplayActivity;
 import com.example.admin.jewelry.homepage.pricetrend.PriceTrendActivity;
 import com.example.admin.jewelry.homepage.qualificationcertification.QualificationActivity;
 import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
@@ -27,9 +28,8 @@ import com.youth.banner.Banner;
 public class HomePageFragment extends BaseFragment implements View.OnClickListener {
     private Banner banner;
 
-    private LinearLayout hotLinear, integralLinear, seek_service, search_rim, expand_connection, issue_windows;
+    private LinearLayout hotLinear, integralLinear;
 
-    private LinearLayout mapLayout;
 
 
 
@@ -55,6 +55,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
         hotLinear.setOnClickListener(this);
 
         view.findViewById(R.id.homepage_jewelry_map).setOnClickListener(this);
+        view.findViewById(R.id.jewelry_display_layout).setOnClickListener(this);
 
 
         integralLinear = (LinearLayout) view.findViewById(R.id.integral_store);
@@ -94,6 +95,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
                 Intent intent4 = new Intent(context, JewelryMapActivity.class);
                 context.startActivity(intent4);
                 break;
+
             case R.id.integral_store:
                 Intent intent9 = new Intent(getContext(), IntegralStoreActivity.class);
                 startActivity(intent9);
@@ -117,6 +119,11 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
             case R.id.issue_windows:
                 Intent intent8 = new Intent(getContext(), IssueWindowsActivity.class);
                 startActivity(intent8);
+
+            case R.id.jewelry_display_layout:
+                Intent intent11 = new Intent(context, JewelryDisplayActivity.class);
+                context.startActivity(intent11);
+
                 break;
         }
     }
