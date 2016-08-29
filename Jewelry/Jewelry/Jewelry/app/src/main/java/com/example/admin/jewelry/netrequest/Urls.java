@@ -16,5 +16,9 @@ public class Urls {
     public static final String DAPAN_POPU = "http://"+ BASE +"/boastJewelry/combobox/queryProductCategory.do";
     public static final String BRAND_PRICE_URL = "http://"+ BASE +"/boastJewelry/brandprice/query.do";
     public static final String BRAND_DETAIL_URL = "http://"+ BASE +"/boastJewelry/brandprice/queryCompanyDetail.do";
+    public static final String JEWELRY_DISPLAY_POPU_URL = "http://"+ BASE +"/boastJewelry/objectGoods/old/one.do";
+    public static final String JEWELRY_DISPLAY_URL = "http://"+ BASE +"/boastJewelry/objectGoods/old/two.do";
+    public static final String JEWELRY_DISPLAY_POPU_NEW_URL = "http://"+ BASE +"/boastJewelry/objectGoods/new/one.do";
+    public static final String JEWELRY_DISPLAY_NEW_URL = "http://"+ BASE +"/boastJewelry/objectGoods/new/two.do";
 
 }
