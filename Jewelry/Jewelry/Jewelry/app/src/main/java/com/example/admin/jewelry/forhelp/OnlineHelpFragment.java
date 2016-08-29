@@ -1,22 +1,24 @@
 package com.example.admin.jewelry.forhelp;
 
+<<<<<<< HEAD
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
+=======
+>>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
+import com.example.admin.jewelry.Utils.PopuWindowBase;
 import com.example.admin.jewelry.base.BaseFragment;
 <<<<<<< HEAD
 =======
@@ -37,11 +39,18 @@ import java.util.Map;
  * Created by admin on 2016/8/16.
  * 线上求助列表
  */
+<<<<<<< HEAD
 public class OnlineHelpFragment extends BaseFragment implements View.OnClickListener, AdapterView.OnItemClickListener {
     private LinearLayout sortlayout,typeLayout,rewardLayout,parentLayout;
     private PopupWindow popupWindow;
     private ImageView sortIv,rewardIv,typeIv;
     private TextView sortTv,typeTv,rewardTv;
+=======
+public class OnlineHelpFragment extends BaseFragment implements View.OnClickListener {
+    private LinearLayout sortlayout, typeLayout, rewardLayout, parentLayout;
+    private ImageView sortIv, rewardIv, typeIv;
+    private TextView sortTv, typeTv, rewardTv;
+>>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
     private View popuView;
     private PopuBean bean;
     private PopuAdapter popuAdapter;
@@ -49,7 +58,13 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
     private GridView gridView;
     private GridViewAdapter adapter;
 <<<<<<< HEAD
+<<<<<<< HEAD
     private String id = "";
+=======
+    private String id ="";
+    private String type = "";
+    private String reward = "";
+>>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
     private int value = 0;
 
 =======
@@ -74,7 +89,7 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
         sortIv = (ImageView) view.findViewById(R.id.sort_iv);
         rewardIv = (ImageView) view.findViewById(R.id.reward_iv);
         typeIv = (ImageView) view.findViewById(R.id.type_iv);
-        popuView = LayoutInflater.from(context).inflate(R.layout.view_popu,null);
+        popuView = LayoutInflater.from(context).inflate(R.layout.view_popu, null);
         popuListView = (ListView) popuView.findViewById(R.id.popu_list);
         gridView = (GridView) view.findViewById(R.id.online_grid_view);
         gridView.setOnItemClickListener(this);
@@ -111,17 +126,22 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
         popuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                popupWindow.dismiss();
-                if (value == 0){
+                PopuWindowBase.dismisPopu();
+                if (value == 0) {
                     id = "";
-                }else if (value == 1){
-                id = bean.getObject().getClist().get(i).getEntity_id();
-                }else if (value == 2){
-                    id = bean.getObject().getAlist().get(i).getVal();
-                    Log.d("OnlineHelpFragment", id);
-                }else if (value == 3){
-                    id = bean.getObject().getTlist().get(i).getVal();
-                    Log.d("OnlineHelpFragment***", id);
+                    type = "";
+                    reward = "";
+
+                } else if (value == 1) {
+                    id = bean.getObject().getClist().get(i).getEntity_id();
+                    sortTv.setText(bean.getObject().getClist().get(i).getCategory_name());
+                } else if (value == 2) {
+                    type = bean.getObject().getAlist().get(i).getVal();
+                    rewardTv.setText(bean.getObject().getAlist().get(i).getTitle());
+
+                } else if (value == 3) {
+                    reward = bean.getObject().getTlist().get(i).getVal();
+                    typeTv.setText(bean.getObject().getTlist().get(i).getTitle());
 
                 }
 
@@ -130,20 +150,18 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
         });
 
 
-
-
-
     }
+
     private void updateData() {
         Map<String, String> maps = new HashMap<>();
         maps.put("help_category", id);
+        maps.put("help_type",reward);
         OkHttpClientManager.postAsyn(Urls.ONLINE_GRID_URL, new OkHttpClientManager.ResultCallback<OnlineBean>() {
             @Override
             public void onError(Request request, Exception e) {
                 Toast.makeText(context, "请求失败了", Toast.LENGTH_SHORT).show();
                 updateData();
             }
-
 
 
             @Override
@@ -159,63 +177,35 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
 
 
 
-    public void showPopuWindows(){
-        WindowManager wm = (WindowManager)context
-                .getSystemService(Context.WINDOW_SERVICE);
-
-        int width = (int) (wm.getDefaultDisplay().getWidth());
-
-
-        popupWindow = new PopupWindow(popuView, width, WindowManager.LayoutParams.WRAP_CONTENT, false) {
-            @Override
-            public void dismiss() {
-                super.dismiss();
-                sortIv.setImageResource(R.mipmap.drop_top);
-                rewardIv.setImageResource(R.mipmap.drop_top);
-                typeIv.setImageResource(R.mipmap.drop_top);
-
-
-            }
-        };
-        //外部获得焦点
-        popupWindow.setOutsideTouchable(true);
-        //内部获得焦点
-        popupWindow.setFocusable(true);
-        popupWindow.setBackgroundDrawable(new BitmapDrawable());
-        popupWindow.setInputMethodMode(popupWindow.INPUT_METHOD_NEEDED);
-        popupWindow.showAsDropDown(parentLayout);
-
-    }
-
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.sort_linear_layout:
-                sortIv.setImageResource(R.mipmap.dropdown);
-                showPopuWindows();
-                if (bean != null){
-                popuAdapter.setData(bean,1);
-                popuListView.setAdapter(popuAdapter);
+                sortIv.setImageResource(R.mipmap.drop_top);
+                PopuWindowBase.showPopuWindows(parentLayout,popuView,context,sortIv);
+                if (bean != null) {
+                    popuAdapter.setData(bean, 1);
+                    popuListView.setAdapter(popuAdapter);
                 }
                 value = 1;
 
                 break;
             case R.id.reward_linear_layout:
-                rewardIv.setImageResource(R.mipmap.dropdown);
-                showPopuWindows();
-                if (bean != null){
-                popuAdapter.setData(bean,2);
-                popuListView.setAdapter(popuAdapter);
+                rewardIv.setImageResource(R.mipmap.drop_top);
+                PopuWindowBase.showPopuWindows(parentLayout,popuView,context,rewardIv);
+                if (bean != null) {
+                    popuAdapter.setData(bean, 2);
+                    popuListView.setAdapter(popuAdapter);
                 }
                 value = 2;
                 break;
             case R.id.type_linear_layout:
-                typeIv.setImageResource(R.mipmap.dropdown);
-                showPopuWindows();
-                if (bean != null){
-                popuAdapter.setData(bean,3);
-                popuListView.setAdapter(popuAdapter);
+                typeIv.setImageResource(R.mipmap.drop_top);
+                PopuWindowBase.showPopuWindows(parentLayout,popuView,context,typeIv);
+                if (bean != null) {
+                    popuAdapter.setData(bean, 3);
+                    popuListView.setAdapter(popuAdapter);
                 }
                 value = 3;
                 break;

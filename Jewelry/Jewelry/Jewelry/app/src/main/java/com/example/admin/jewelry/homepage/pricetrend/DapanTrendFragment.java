@@ -30,7 +30,6 @@ public class DapanTrendFragment extends BaseFragment implements View.OnClickList
     private GoldPopuAdapter goldPopuAdapter;
     private ImageView goldIv,todayIv,rmbIv;
 
-
     @Override
     protected int setLayout() {
         return R.layout.fragment_dapan_tend;

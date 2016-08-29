@@ -556,7 +556,7 @@ public class OkHttpClientManager {
         Type mType;
 
         public ResultCallback() {
-            mType = getSuperclassTypeParameter(getClass());
+             mType = getSuperclassTypeParameter(getClass());
         }
 
         static Type getSuperclassTypeParameter(Class<?> subclass) {

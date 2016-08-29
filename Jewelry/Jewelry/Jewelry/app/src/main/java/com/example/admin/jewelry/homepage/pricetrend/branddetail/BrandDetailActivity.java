@@ -11,6 +11,7 @@ import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.Utils.CommonAdaper;
 import com.example.admin.jewelry.Utils.ViewHolder;
 import com.example.admin.jewelry.base.BaseActivity;
+import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.example.admin.jewelry.netrequest.Urls;
 import com.squareup.okhttp.Request;
@@ -93,8 +94,8 @@ public class BrandDetailActivity extends BaseActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.brand_detail_location:
-//                Intent intent = new Intent(BrandDetailActivity.this, JewelryMapActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(BrandDetailActivity.this, JewelryMapActivity.class);
+                startActivity(intent);
                 break;
             case R.id.brand_detail_return:
                 finish();

@@ -1,21 +1,26 @@
 package com.example.admin.jewelry.forhelp;
 
-import android.content.Context;
-import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
+<<<<<<< HEAD
 import android.view.WindowManager;
+=======
+>>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
+import com.example.admin.jewelry.Utils.OnRefreshListener;
+import com.example.admin.jewelry.Utils.PopuWindowBase;
+import com.example.admin.jewelry.Utils.RefreshListView;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.forhelp.adapter.SurroundAdapter;
+import com.example.admin.jewelry.forhelp.adapter.SurroundPopuAdapter;
 import com.example.admin.jewelry.forhelp.bean.SurrondBean;
+import com.example.admin.jewelry.forhelp.bean.SurroundPopuBean;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.example.admin.jewelry.netrequest.Urls;
 import com.squareup.okhttp.Request;
@@ -27,13 +32,21 @@ import java.util.Map;
  * Created by admin on 2016/8/16.
  * 围观讨论列表
  */
+<<<<<<< HEAD
 public class SurroundChatFragment extends BaseFragment implements AdapterView.OnItemClickListener {
     private ListView listView;
+=======
+public class SurroundChatFragment extends BaseFragment implements OnRefreshListener {
+    private RefreshListView listView;
+    private ListView popuList;
+>>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
     private SurroundAdapter adapter;
-    private PopupWindow popupWindow;
     private View popuView;
-    private RelativeLayout relativeLayout;
+    private LinearLayout relativeLayout;
     private ImageView popuIv;
+    private SurroundPopuAdapter popuAdapter;
+    private String id = "";
+    private SurroundPopuBean bean;
 
     @Override
     protected int setLayout() {
@@ -42,18 +55,51 @@ public class SurroundChatFragment extends BaseFragment implements AdapterView.On
 
     @Override
     protected void initView(View view) {
+<<<<<<< HEAD
         listView = (ListView) view.findViewById(R.id.surround_list);
         listView.setOnItemClickListener(this);
+=======
+        listView = (RefreshListView) view.findViewById(R.id.surround_list);
+>>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
         adapter = new SurroundAdapter(context);
-        popuView = LayoutInflater.from(context).inflate(R.layout.surround_popu,null);
-        relativeLayout = (RelativeLayout) view.findViewById(R.id.surround_jewelry_layout);
+        relativeLayout = (LinearLayout) view.findViewById(R.id.surround_jewelry_layout);
+        popuView = LayoutInflater.from(context).inflate(R.layout.surround_popu, null);
+        popuList = (ListView) popuView.findViewById(R.id.surround_popu_list);
         popuIv = (ImageView) view.findViewById(R.id.surround_popu_iv);
+<<<<<<< HEAD
+=======
+        popuAdapter = new SurroundPopuAdapter(context);
+        listView.setOnRefreshListener(this);
+
+>>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
     }
 
     @Override
     protected void initData() {
+        OkHttpClientManager.postAsyn(Urls.SURROUND_POPU_URL, new OkHttpClientManager.ResultCallback<SurroundPopuBean>() {
+            @Override
+            public void onError(Request request, Exception e) {
+
+            }
+
+            @Override
+            public void onResponse(final SurroundPopuBean response) {
+                bean = response;
+                popuAdapter.setData(response);
+                popuList.setAdapter(popuAdapter);
+                popuList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        PopuWindowBase.dismisPopu();
+                        id = response.getObject().getParentlist().get(i).getEntity_id();
+                    }
+                });
+            }
+        });
+
+
         Map<String, String> maps = new HashMap<>();
-        maps.put("entity_id", "1");
+        maps.put("entity_id", id);
         OkHttpClientManager.postAsyn(Urls.SURROUND_URL, new OkHttpClientManager.ResultCallback<SurrondBean>() {
             @Override
             public void onError(Request request, Exception e) {
@@ -70,34 +116,23 @@ public class SurroundChatFragment extends BaseFragment implements AdapterView.On
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showPopuWindows();
-                popuIv.setImageResource(R.mipmap.drop_top);
+                if (bean != null) {
+                    PopuWindowBase.showPopuWindows(relativeLayout, popuView, context,popuIv);
+                    popuIv.setImageResource(R.mipmap.drop_top);
+                }
             }
         });
 
     }
-    public void showPopuWindows(){
-        WindowManager wm = (WindowManager)context
-                .getSystemService(Context.WINDOW_SERVICE);
-
-        int width = (int) (wm.getDefaultDisplay().getWidth());
 
 
-        popupWindow = new PopupWindow(popuView, width, WindowManager.LayoutParams.WRAP_CONTENT, false) {
-            @Override
-            public void dismiss() {
-                super.dismiss();
-                popuIv.setImageResource(R.mipmap.dropdown);
+    @Override
+    public void onDownPullRefresh() {
+        listView.hideHeaderView();
+    }
 
-            }
-        };
-        //外部获得焦点
-        popupWindow.setOutsideTouchable(true);
-        //内部获得焦点
-        popupWindow.setFocusable(true);
-        popupWindow.setBackgroundDrawable(new BitmapDrawable());
-        popupWindow.setInputMethodMode(popupWindow.INPUT_METHOD_NEEDED);
-        popupWindow.showAsDropDown(relativeLayout);
+    @Override
+    public void onLoadingMore() {
 
     }
 

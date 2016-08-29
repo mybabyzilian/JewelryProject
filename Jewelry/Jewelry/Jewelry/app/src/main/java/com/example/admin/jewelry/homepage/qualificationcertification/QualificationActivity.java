@@ -12,7 +12,10 @@ import com.example.admin.jewelry.base.BaseActivity;
 
 /**
  * Created by admin on 2016/8/24.
+<<<<<<< HEAD
  * 资质认证
+=======
+>>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
  */
 public class QualificationActivity extends BaseActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private RadioButton certificateRb,unCertificateRb;

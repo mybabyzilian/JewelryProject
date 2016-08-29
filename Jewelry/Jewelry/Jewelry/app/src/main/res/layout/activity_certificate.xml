@@ -52,7 +52,7 @@
         android:layout_height="fill_parent"
         android:layout_marginTop="15dp">
 
-        <ListView
+        <com.example.admin.jewelry.Utils.RefreshListView
             android:id="@+id/country_lvcountry"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
