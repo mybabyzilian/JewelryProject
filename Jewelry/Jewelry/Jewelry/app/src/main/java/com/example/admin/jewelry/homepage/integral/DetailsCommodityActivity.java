@@ -1,6 +1,7 @@
 package com.example.admin.jewelry.homepage.integral;
 
 import android.content.Intent;
+import android.os.Binder;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -14,6 +15,7 @@ import com.example.admin.jewelry.base.BaseActivity;
 import com.example.admin.jewelry.homepage.integral.bean.DetailsBean;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.squareup.okhttp.Request;
+import com.youth.banner.Banner;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +25,7 @@ import java.util.Map;
  * 热门兑换——商品详情
  */
 public class DetailsCommodityActivity extends BaseActivity implements View.OnClickListener {
-    private ViewPager viewPager;
+    private Banner banner;
     private ImageView backImage;
     private TextView conversionBtn, titleTv, nameTv, inventoryTv, tradeTv, costTv, priceTv, describeTv;
 
@@ -40,6 +42,10 @@ public class DetailsCommodityActivity extends BaseActivity implements View.OnCli
         backImage = bindView(R.id.details_back_image);
         backImage.setOnClickListener(this);
 
+        banner = bindView(R.id.details_commodity_banner);
+        banner.setDelayTime(3000);
+        banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
+
         titleTv = bindView(R.id.details_title_tv);
         nameTv = bindView(R.id.details_name);
         inventoryTv = bindView(R.id.details_inventory);
@@ -51,7 +57,7 @@ public class DetailsCommodityActivity extends BaseActivity implements View.OnCli
         conversionBtn = bindView(R.id.details_conversion_btn);
         conversionBtn.setOnClickListener(this);
 
-        viewPager = bindView(R.id.my_viewpager);
+
     }
 
     @Override

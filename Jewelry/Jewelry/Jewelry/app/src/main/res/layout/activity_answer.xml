@@ -44,6 +44,8 @@
         android:layout_margin="10dp"
         android:paddingTop="5dp"
         android:hint="请对鉴品进行详细的解答"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
         android:gravity="top"
         android:background="@drawable/shape_edit"/>
 </LinearLayout>

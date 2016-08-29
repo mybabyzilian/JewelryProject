@@ -30,7 +30,7 @@ public class FeedBackActivity extends BaseActivity implements View.OnClickListen
         //去掉手机状态栏
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         bindView(R.id.feedback_back_image).setOnClickListener(this);
-        editText = bindView(R.id.feedback_submit_button);
+        editText = bindView(R.id.write_feedback_et);
         editText.setOnClickListener(this);
         submitBtn = bindView(R.id.feedback_submit_button);
         submitBtn.setOnClickListener(this);

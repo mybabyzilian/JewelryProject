@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -39,7 +40,7 @@
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
             android:text="普通发布"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black" />
 
     </RelativeLayout>
 
@@ -55,7 +56,8 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
-            android:text="发布讨论" />
+            android:text="发布围观讨论"
+            android:textColor="@android:color/black" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -85,7 +87,8 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
-            android:text="发布咨询" />
+            android:text="发布线上咨询"
+            android:textColor="@android:color/black" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -115,7 +118,8 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
-            android:text="发布预约" />
+            android:text="发布线下求助"
+            android:textColor="@android:color/black" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -145,7 +149,8 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
-            android:text="发布转让" />
+            android:text="发布藏品转让"
+            android:textColor="@android:color/black" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -155,13 +160,6 @@
             android:layout_marginRight="15dp"
             android:src="@mipmap/common_icon_arrow" />
     </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@android:color/darker_gray" />
 
     <RelativeLayout
         android:id="@+id/issue_rl_authentication"
@@ -177,7 +175,7 @@
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
             android:text="认证发布"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black" />
 
     </RelativeLayout>
 
@@ -193,7 +191,8 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
-            android:text="发布资讯" />
+            android:text="发布资讯"
+            android:textColor="@android:color/black" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -223,7 +222,8 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
-            android:text="发布培训" />
+            android:text="发布培训"
+            android:textColor="@android:color/black" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -253,37 +253,8 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
-            android:text="发布商品" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
-            android:src="@mipmap/common_icon_arrow" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@android:color/darker_gray" />
-
-    <RelativeLayout
-        android:id="@+id/issue_rl_punctuation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="10dp"
-            android:text="推荐标点" />
+            android:text="发布新品"
+            android:textColor="@android:color/black" />
 
         <ImageView
             android:layout_width="wrap_content"

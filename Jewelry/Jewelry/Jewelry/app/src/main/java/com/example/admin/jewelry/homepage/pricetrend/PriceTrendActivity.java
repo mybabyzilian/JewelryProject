@@ -11,7 +11,11 @@ import android.widget.RadioButton;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
+<<<<<<< HEAD
 import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
+=======
+import com.example.admin.jewelry.homepage.qualificationcertification.CertifacateFragment;
+>>>>>>> jindapeng_forhelp
 
 /**
  * Created by admin on 2016/8/16.
@@ -19,8 +23,13 @@ import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
  */
 public class PriceTrendActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
     private RadioButton priceRb, brandRb;
+<<<<<<< HEAD
 
     private ImageView backImage;
+=======
+    private ImageView returnIv,mapIv;
+
+>>>>>>> jindapeng_forhelp
 
     private ImageView returnIv,mapIv;
 
@@ -32,8 +41,6 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
 
     @Override
     protected void initView() {
-        backImage = bindView(R.id.trend_return);
-        backImage.setOnClickListener(this);
         priceRb = (RadioButton) findViewById(R.id.rb_trend);
         brandRb = (RadioButton) findViewById(R.id.rb_brand);
         mapIv = (ImageView) findViewById(R.id.trend_map);
@@ -51,7 +58,7 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
         returnIv.setOnClickListener(this);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.price_trend_frame, new DapanTrendFragment());
+        fragmentTransaction.replace(R.id.price_trend_frame, new CertifacateFragment());
         fragmentTransaction.commit();
 
     }
@@ -70,7 +77,10 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (view.getId()) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> jindapeng_forhelp
             case R.id.rb_trend:
                 fragmentTransaction.replace(R.id.price_trend_frame, new DapanTrendFragment());
                 break;
@@ -81,8 +91,13 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
                 finish();
                 break;
             case R.id.trend_map:
+<<<<<<< HEAD
                 Intent intent = new Intent(this, JewelryMapActivity.class);
                 startActivity(intent);
+=======
+//                Intent intent = new Intent(this, JewelryMapActivity.class);
+//                startActivity(intent);
+>>>>>>> jindapeng_forhelp
                 break;
         }
         fragmentTransaction.commit();

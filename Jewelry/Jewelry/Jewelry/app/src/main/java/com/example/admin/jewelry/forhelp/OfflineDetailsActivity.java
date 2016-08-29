@@ -7,13 +7,13 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
 import com.example.admin.jewelry.forhelp.bean.OnlineDetailsBean;
 import com.example.admin.jewelry.forhelp.release.AnswerActivity;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.squareup.okhttp.Request;
-import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -82,7 +82,7 @@ public class OfflineDetailsActivity extends BaseActivity implements View.OnClick
             @Override
             public void onResponse(OnlineDetailsBean response) {
                 String imageUrl = response.getObject().getInfo().getHelp_userHeadPic();
-                Picasso.with(getBaseContext()).load(imageUrl).into(head_image);
+                Glide.with(getBaseContext()).load(imageUrl).into(head_image);
 
                 helpCount.setText("求助次数：" + response.getObject().getHelpCount());
                 payCount.setText("悬赏次数：" + response.getObject().getPayCount());

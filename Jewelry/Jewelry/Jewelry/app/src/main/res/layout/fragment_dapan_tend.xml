@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        android:id="@+id/parent_linear_layout"
+        android:id="@+id/dapand_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:orientation="horizontal">
@@ -25,6 +25,10 @@
                 android:textColor="#000000" />
 
             <ImageView
+<<<<<<< HEAD
+=======
+                android:id="@+id/gold_iv"
+>>>>>>> jindapeng_forhelp
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -49,12 +53,20 @@
             android:orientation="horizontal">
 
             <TextView
+<<<<<<< HEAD
+=======
+
+>>>>>>> jindapeng_forhelp
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="今日"
                 android:textColor="#000000" />
 
             <ImageView
+<<<<<<< HEAD
+=======
+                android:id="@+id/today_iv"
+>>>>>>> jindapeng_forhelp
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -82,6 +94,10 @@
                 android:text="人民币/克"
                 android:textColor="#000000" />
             <ImageView
+<<<<<<< HEAD
+=======
+                android:id="@+id/rmb_iv"
+>>>>>>> jindapeng_forhelp
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

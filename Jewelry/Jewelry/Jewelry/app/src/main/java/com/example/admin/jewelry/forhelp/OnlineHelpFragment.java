@@ -1,6 +1,7 @@
 package com.example.admin.jewelry.forhelp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +18,10 @@ import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseFragment;
+<<<<<<< HEAD
+=======
+import com.example.admin.jewelry.forhelp.OnlineDetailsActivity;
+>>>>>>> jindapeng_forhelp
 import com.example.admin.jewelry.forhelp.adapter.GridViewAdapter;
 import com.example.admin.jewelry.forhelp.adapter.PopuAdapter;
 import com.example.admin.jewelry.forhelp.bean.OnlineBean;
@@ -30,8 +35,9 @@ import java.util.Map;
 
 /**
  * Created by admin on 2016/8/16.
+ * 线上求助列表
  */
-public class OnlineHelpFragment extends BaseFragment implements View.OnClickListener {
+public class OnlineHelpFragment extends BaseFragment implements View.OnClickListener, AdapterView.OnItemClickListener {
     private LinearLayout sortlayout,typeLayout,rewardLayout,parentLayout;
     private PopupWindow popupWindow;
     private ImageView sortIv,rewardIv,typeIv;
@@ -42,9 +48,14 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
     private ListView popuListView;
     private GridView gridView;
     private GridViewAdapter adapter;
+<<<<<<< HEAD
     private String id = "";
     private int value = 0;
 
+=======
+    private String id = null;
+    private OnlineBean onlineBean;
+>>>>>>> jindapeng_forhelp
 
     @Override
     protected int setLayout() {
@@ -66,6 +77,7 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
         popuView = LayoutInflater.from(context).inflate(R.layout.view_popu,null);
         popuListView = (ListView) popuView.findViewById(R.id.popu_list);
         gridView = (GridView) view.findViewById(R.id.online_grid_view);
+        gridView.setOnItemClickListener(this);
 
 
     }
@@ -136,6 +148,7 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
 
             @Override
             public void onResponse(OnlineBean response) {
+                onlineBean = response;
                 adapter.setData(response);
                 gridView.setAdapter(adapter);
             }
@@ -207,5 +220,13 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
                 value = 3;
                 break;
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent intent = new Intent(getContext(), OnlineDetailsActivity.class);
+        String entity_id = onlineBean.getObject().getList().get(i).getEntity_id();
+        intent.putExtra("entity_id", entity_id);
+        startActivity(intent);
     }
 }

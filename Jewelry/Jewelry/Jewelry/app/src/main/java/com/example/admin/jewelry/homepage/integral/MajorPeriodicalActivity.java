@@ -8,11 +8,10 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
 import com.example.admin.jewelry.homepage.integral.adapter.JewelryAdapter;
-import com.example.admin.jewelry.homepage.integral.bean.HotExchangeBean;
+import com.example.admin.jewelry.homepage.integral.bean.CategoryBean;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.squareup.okhttp.Request;
 
@@ -27,6 +26,7 @@ public class MajorPeriodicalActivity extends BaseActivity implements View.OnClic
     private ImageView backImage;
     private ListView majorListView;
     private JewelryAdapter jewelryAdapter;
+    private CategoryBean categoryBean;
 
     @Override
     public int setLayout() {
@@ -48,23 +48,24 @@ public class MajorPeriodicalActivity extends BaseActivity implements View.OnClic
         jewelryAdapter = new JewelryAdapter(this);
 
         Map<String, String> maps = new HashMap<>();
-        maps.put("category_id","3");
+        maps.put("category_id", "3");
         maps.put("currentPage", "1");
         maps.put("pageNumber", "20");
         String url = "http://192.168.31.10:8081/boastJewelry/scoreMall/goods/query.do";
-        OkHttpClientManager.postAsyn(url, new OkHttpClientManager.ResultCallback<HotExchangeBean>() {
+        OkHttpClientManager.postAsyn(url, new OkHttpClientManager.ResultCallback<CategoryBean>() {
             @Override
             public void onError(Request request, Exception e) {
                 Log.d("---------", "onErrorResponse: " + e);
             }
 
             @Override
-            public void onResponse(HotExchangeBean response) {
-                jewelryAdapter.setHotExchangeBean(response);
+            public void onResponse(CategoryBean response) {
+                jewelryAdapter.setCategoryBean(response);
+                categoryBean = response;
                 Log.d("---------", "response: " + response);
 
             }
-        });
+        },maps);
 
         majorListView.setAdapter(jewelryAdapter);
     }
@@ -73,14 +74,16 @@ public class MajorPeriodicalActivity extends BaseActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.major_periodical_back_image:
-                Intent intentBack = new Intent(this, IntegralStoreActivity.class);
-                startActivity(intentBack);
+                finish();
                 break;
         }
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        Intent intent = new Intent(this, DetailsCommodityActivity.class);
+        String entity_id = categoryBean.getObject().getGoodslist().get(position).getEntity_id();
+        intent.putExtra("entity_id", entity_id);
+        startActivity(intent);
     }
 }

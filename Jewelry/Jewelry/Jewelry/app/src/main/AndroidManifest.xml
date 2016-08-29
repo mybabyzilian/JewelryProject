@@ -28,6 +28,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
+
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="2a4ed05ea0ddacbd6937092c8a633a56" >//开发者申请的key
@@ -36,6 +37,12 @@
         <activity android:name=".jewelrymap.JewelryMapActivity"/>
         <activity android:name=".homepage.pricetrend.PriceTrendActivity"/>
         <activity android:name=".certificate.CertificateActivity"/>
+
+
+        <activity android:name=".homepage.pricetrend.branddetail.BrandDetailActivity"/>
+        <activity android:name=".homepage.MajorTrain.MajorTrainActivity"/>
+        <activity android:name=".homepage.qualificationcertification.QualificationActivity"/>
+
 
         <activity android:name=".homepage.MainActivity">
             <intent-filter>
@@ -50,7 +57,12 @@
         <activity android:name=".homepage.integral.JewelryActivity" />
         <activity android:name=".homepage.integral.CorrelationActivity" />
         <activity android:name=".homepage.integral.MajorPeriodicalActivity" />
+
+        <!--热门活动-->
         <activity android:name=".homepage.hot_activity.HotActivity" />
+        <activity android:name=".homepage.hot_activity.HotDetailsActivity"/>
+        <activity android:name=".homepage.hot_activity.ParticipateHotActivity"/>
+
         <!--专属功能-->
         <activity android:name=".homepage.exclusive.ExpandConnectionActivity" />
         <activity android:name=".homepage.exclusive.FeedBackActivity" />
@@ -58,6 +70,7 @@
         <activity android:name=".homepage.exclusive.SearchRimActivity" />
         <activity android:name=".homepage.exclusive.SeekServiceActivity" />
 
+        <!--资讯页面-->
         <activity android:name=".information.HotWriterActivity" />
         <activity android:name=".forhelp.OnlineDetailsActivity" />
 
@@ -69,6 +82,10 @@
         <activity android:name=".forhelp.release.CircuseeReleaseActivity"/>
         <activity android:name=".forhelp.release.AnswerActivity"/>
         <activity android:name=".forhelp.release.ClassifyNameActivity"/>
+
+        <!--个人中心-->
+        <activity android:name=".mine.my_home_page.MyHomePageActivity"/>
+
     </application>
 
 </manifest>

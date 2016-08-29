@@ -10,6 +10,7 @@
         android:background="@android:color/holo_red_dark">
 
         <ImageView
+
             android:id="@+id/details_back_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +33,7 @@
         android:background="#FF0033" />
 
     <TextView
-        android:id="@+id/title_one"
+        android:id="@+id/activity_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -40,42 +41,42 @@
         android:text="活动标题:" />
 
     <TextView
-        android:id="@+id/title_two"
+        android:id="@+id/activity_theme_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:text="活动主题内容:" />
 
     <TextView
-        android:id="@+id/title_three"
+        android:id="@+id/activity_rule_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:text="活动规则:" />
 
     <TextView
-        android:id="@+id/title_four"
+        android:id="@+id/acticity_prize_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:text="活动奖励内容:" />
 
     <TextView
-        android:id="@+id/title_fifth"
+        android:id="@+id/acticity_create_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:text="活动日期:" />
 
     <TextView
-        android:id="@+id/title_six"
+        android:id="@+id/acticity_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:text="活动状态:进行中" />
 
     <TextView
-        android:id="@+id/title_seven"
+        android:id="@+id/acticity_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -87,14 +88,31 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray" />
 
-    <TextView
-        android:layout_width="match_parent"
+
+    <RelativeLayout
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
-        android:text="最新排行"
-        android:textSize="18sp" />
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/text_the_latest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="最新排行"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/text_the_latest"
+            android:src="@mipmap/dropdown" />
+
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
@@ -108,19 +126,22 @@
         <GridView
             android:id="@+id/hot_details_grid_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:numColumns="2"
             android:scrollbars="none" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_alignParentBottom="true"
-            android:background="#FF0033">
+            android:background="#ff0033"
+            android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/participate_hot_activity"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="立即参与"
@@ -128,7 +149,8 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="最新排行"
@@ -137,6 +159,5 @@
         </LinearLayout>
 
     </RelativeLayout>
-
 
 </LinearLayout>

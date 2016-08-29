@@ -38,6 +38,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
             android:text="咨询/帮助" />
 
         <ImageView
@@ -68,6 +69,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
             android:text="反馈/建议(加积分)" />
 
         <ImageView
@@ -98,6 +100,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
             android:text="推广/合作" />
 
         <ImageView
@@ -128,6 +131,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
             android:text="举报/投诉" />
 
         <ImageView

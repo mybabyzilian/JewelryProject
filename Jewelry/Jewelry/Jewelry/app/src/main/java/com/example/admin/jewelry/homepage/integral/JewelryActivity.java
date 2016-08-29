@@ -11,7 +11,7 @@ import android.widget.ListView;
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
 import com.example.admin.jewelry.homepage.integral.adapter.JewelryAdapter;
-import com.example.admin.jewelry.homepage.integral.bean.HotExchangeBean;
+import com.example.admin.jewelry.homepage.integral.bean.CategoryBean;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.squareup.okhttp.Request;
 
@@ -26,6 +26,7 @@ public class JewelryActivity extends BaseActivity implements View.OnClickListene
     private ImageView backImage;
     private ListView jewelryListView;
     private JewelryAdapter jewelryAdapter;
+    private CategoryBean categoryBean;
 
     @Override
     public int setLayout() {
@@ -47,25 +48,22 @@ public class JewelryActivity extends BaseActivity implements View.OnClickListene
     protected void initData() {
         jewelryAdapter = new JewelryAdapter(this);
 
-//        Intent intent=getIntent();//getIntent将该项目中包含的原始intent检索出来，将检索出来的intent赋值给一个Intent类型的变量intent
-//        Bundle bundle=intent.getExtras();//.getExtras()得到intent所附带的额外数据
-//        String str=bundle.getString("category_id");//getString()返回指定key的值
-
         Map<String, String> maps = new HashMap<>();
-        maps.put("category_id","1");
+        maps.put("category_id", "1");
         maps.put("currentPage", "1");
         maps.put("pageNumber", "20");
         String url = "http://192.168.31.10:8081/boastJewelry/scoreMall/goods/query.do";
 
-        OkHttpClientManager.postAsyn(url, new OkHttpClientManager.ResultCallback<HotExchangeBean>() {
+        OkHttpClientManager.postAsyn(url, new OkHttpClientManager.ResultCallback<CategoryBean>() {
             @Override
             public void onError(Request request, Exception e) {
                 Log.d("---------", "onErrorResponse: " + e);
             }
 
             @Override
-            public void onResponse(HotExchangeBean response) {
-                jewelryAdapter.setHotExchangeBean(response);
+            public void onResponse(CategoryBean response) {
+                jewelryAdapter.setCategoryBean(response);
+                categoryBean = response;
                 Log.d("---------", "response: " + response);
 
             }
@@ -78,14 +76,17 @@ public class JewelryActivity extends BaseActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.jewelry_accessories_back_image:
-                Intent intentBack = new Intent(this, IntegralStoreActivity.class);
-                startActivity(intentBack);
+                finish();
                 break;
         }
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, DetailsCommodityActivity.class);
+        String entity_id = categoryBean.getObject().getGoodslist().get(position).getEntity_id();
+        intent.putExtra("entity_id", entity_id);
+        startActivity(intent);
 
     }
 }
