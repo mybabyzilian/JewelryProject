@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
@@ -32,7 +32,7 @@ public class SurroundChatFragment extends BaseFragment implements AdapterView.On
     private SurroundAdapter adapter;
     private PopupWindow popupWindow;
     private View popuView;
-    private RelativeLayout relativeLayout;
+    private LinearLayout relativeLayout;
     private ImageView popuIv;
 
     @Override
@@ -46,7 +46,7 @@ public class SurroundChatFragment extends BaseFragment implements AdapterView.On
         listView.setOnItemClickListener(this);
         adapter = new SurroundAdapter(context);
         popuView = LayoutInflater.from(context).inflate(R.layout.surround_popu,null);
-        relativeLayout = (RelativeLayout) view.findViewById(R.id.surround_jewelry_layout);
+        relativeLayout = (LinearLayout) view.findViewById(R.id.surround_jewelry_layout);
         popuIv = (ImageView) view.findViewById(R.id.surround_popu_iv);
 
     }
