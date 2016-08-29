@@ -48,6 +48,7 @@
         <!--热门活动-->
         <activity android:name=".homepage.hot_activity.HotActivity" />
         <activity android:name=".homepage.hot_activity.HotDetailsActivity"/>
+        <activity android:name=".homepage.hot_activity.ParticipateHotActivity"/>
 
         <!--专属功能-->
         <activity android:name=".homepage.exclusive.ExpandConnectionActivity" />
@@ -68,6 +69,10 @@
         <activity android:name=".forhelp.release.CircuseeReleaseActivity"/>
         <activity android:name=".forhelp.release.AnswerActivity"/>
         <activity android:name=".forhelp.release.ClassifyNameActivity"/>
+
+        <!--个人中心-->
+        <activity android:name=".mine.my_home_page.MyHomePageActivity"/>
+
     </application>
 
 </manifest>

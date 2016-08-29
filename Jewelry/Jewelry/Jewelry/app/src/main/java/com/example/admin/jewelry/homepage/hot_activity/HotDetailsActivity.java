@@ -37,8 +37,7 @@ public class HotDetailsActivity extends BaseActivity implements View.OnClickList
 
     @Override
     protected void initView() {
-        backImage = bindView(R.id.hot_details_back_image);
-        backImage.setOnClickListener(this);
+        bindView(R.id.hot_details_back_image).setOnClickListener(this);
 
         activity_title = bindView(R.id.activity_title);
         activity_theme_content = bindView(R.id.activity_theme_content);
@@ -50,6 +49,8 @@ public class HotDetailsActivity extends BaseActivity implements View.OnClickList
 
         gridView = bindView(R.id.hot_details_grid_view);
         gridView.setOnItemClickListener(this);
+
+        bindView(R.id.participate_hot_activity).setOnClickListener(this);
 
     }
 
@@ -90,6 +91,10 @@ public class HotDetailsActivity extends BaseActivity implements View.OnClickList
         switch (view.getId()){
             case R.id.hot_details_back_image:
                 finish();
+                break;
+            case R.id.participate_hot_activity:
+                Intent intent = new Intent(this, ParticipateHotActivity.class);
+                startActivity(intent);
                 break;
         }
     }

@@ -1,5 +1,6 @@
 package com.example.admin.jewelry.homepage.integral;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -25,6 +26,7 @@ public class MajorPeriodicalActivity extends BaseActivity implements View.OnClic
     private ImageView backImage;
     private ListView majorListView;
     private JewelryAdapter jewelryAdapter;
+    private CategoryBean categoryBean;
 
     @Override
     public int setLayout() {
@@ -59,10 +61,11 @@ public class MajorPeriodicalActivity extends BaseActivity implements View.OnClic
             @Override
             public void onResponse(CategoryBean response) {
                 jewelryAdapter.setCategoryBean(response);
+                categoryBean = response;
                 Log.d("---------", "response: " + response);
 
             }
-        });
+        },maps);
 
         majorListView.setAdapter(jewelryAdapter);
     }
@@ -78,6 +81,9 @@ public class MajorPeriodicalActivity extends BaseActivity implements View.OnClic
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        Intent intent = new Intent(this, DetailsCommodityActivity.class);
+        String entity_id = categoryBean.getObject().getGoodslist().get(position).getEntity_id();
+        intent.putExtra("entity_id", entity_id);
+        startActivity(intent);
     }
 }

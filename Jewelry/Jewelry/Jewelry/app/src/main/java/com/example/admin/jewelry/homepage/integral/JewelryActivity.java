@@ -1,5 +1,6 @@
 package com.example.admin.jewelry.homepage.integral;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -25,6 +26,7 @@ public class JewelryActivity extends BaseActivity implements View.OnClickListene
     private ImageView backImage;
     private ListView jewelryListView;
     private JewelryAdapter jewelryAdapter;
+    private CategoryBean categoryBean;
 
     @Override
     public int setLayout() {
@@ -46,10 +48,6 @@ public class JewelryActivity extends BaseActivity implements View.OnClickListene
     protected void initData() {
         jewelryAdapter = new JewelryAdapter(this);
 
-//        Intent intent=getIntent();//getIntent将该项目中包含的原始intent检索出来，将检索出来的intent赋值给一个Intent类型的变量intent
-//        Bundle bundle=intent.getExtras();//.getExtras()得到intent所附带的额外数据
-//        String str=bundle.getString("category_id");//getString()返回指定key的值
-
         Map<String, String> maps = new HashMap<>();
         maps.put("category_id", "1");
         maps.put("currentPage", "1");
@@ -65,6 +63,7 @@ public class JewelryActivity extends BaseActivity implements View.OnClickListene
             @Override
             public void onResponse(CategoryBean response) {
                 jewelryAdapter.setCategoryBean(response);
+                categoryBean = response;
                 Log.d("---------", "response: " + response);
 
             }
@@ -84,6 +83,10 @@ public class JewelryActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, DetailsCommodityActivity.class);
+        String entity_id = categoryBean.getObject().getGoodslist().get(position).getEntity_id();
+        intent.putExtra("entity_id", entity_id);
+        startActivity(intent);
 
     }
 }

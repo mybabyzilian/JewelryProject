@@ -82,6 +82,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="分类名称:" />
 
                 <ImageView
@@ -112,6 +113,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="发布标题:" />
 
                 <ImageView
@@ -142,6 +144,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="鉴品名称:" />
 
                 <ImageView
@@ -172,6 +175,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="鉴品尺寸:" />
 
                 <ImageView
@@ -202,6 +206,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="鉴品重量:" />
 
                 <ImageView
@@ -232,6 +237,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="辅助材料:" />
 
                 <ImageView
@@ -262,6 +268,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="入手时间:" />
 
                 <ImageView
@@ -292,6 +299,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="入手区域:" />
 
                 <ImageView
@@ -322,6 +330,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="入手价格:" />
 
                 <ImageView
@@ -352,6 +361,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="悬赏方式:" />
 
                 <ImageView
@@ -382,6 +392,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="有无证书:" />
 
                 <ImageView
@@ -412,6 +423,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="鉴定方向:" />
 
                 <ImageView
@@ -442,6 +454,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="鉴品简介:" />
 
                 <ImageView
@@ -472,6 +485,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
                     android:text="补充说明:" />
 
                 <ImageView

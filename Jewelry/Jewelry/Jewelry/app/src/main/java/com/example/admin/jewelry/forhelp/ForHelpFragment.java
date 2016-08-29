@@ -12,6 +12,7 @@ import com.example.admin.jewelry.base.BaseFragment;
 
 /**
  * Created by admin on 2016/8/15.
+ * 求助按钮页面
  */
 public class ForHelpFragment extends BaseFragment implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
     private RadioButton onlineForhelpRb,offlineRb,surrondRb;

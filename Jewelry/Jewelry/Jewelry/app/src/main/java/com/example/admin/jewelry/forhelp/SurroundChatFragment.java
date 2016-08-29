@@ -5,6 +5,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -24,8 +25,9 @@ import java.util.Map;
 
 /**
  * Created by admin on 2016/8/16.
+ * 围观讨论列表
  */
-public class SurroundChatFragment extends BaseFragment {
+public class SurroundChatFragment extends BaseFragment implements AdapterView.OnItemClickListener {
     private ListView listView;
     private SurroundAdapter adapter;
     private PopupWindow popupWindow;
@@ -41,11 +43,11 @@ public class SurroundChatFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         listView = (ListView) view.findViewById(R.id.surround_list);
+        listView.setOnItemClickListener(this);
         adapter = new SurroundAdapter(context);
         popuView = LayoutInflater.from(context).inflate(R.layout.surround_popu,null);
         relativeLayout = (RelativeLayout) view.findViewById(R.id.surround_jewelry_layout);
         popuIv = (ImageView) view.findViewById(R.id.surround_popu_iv);
-
     }
 
     @Override
@@ -96,6 +98,11 @@ public class SurroundChatFragment extends BaseFragment {
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
         popupWindow.setInputMethodMode(popupWindow.INPUT_METHOD_NEEDED);
         popupWindow.showAsDropDown(relativeLayout);
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
     }
 }

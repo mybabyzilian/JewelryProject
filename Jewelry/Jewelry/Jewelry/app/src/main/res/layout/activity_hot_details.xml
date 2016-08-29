@@ -87,14 +87,30 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray" />
 
-    <TextView
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
-        android:text="最新排行"
-        android:textSize="18sp" />
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/text_the_latest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="最新排行"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/text_the_latest"
+            android:src="@mipmap/dropdown" />
+
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
@@ -120,6 +136,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/participate_hot_activity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

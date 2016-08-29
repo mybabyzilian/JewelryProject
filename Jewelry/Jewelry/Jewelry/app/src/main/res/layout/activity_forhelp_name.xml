@@ -9,43 +9,36 @@
         android:background="@android:color/holo_red_dark">
 
         <ImageView
-            android:id="@+id/i_answer_back_image"
+            android:id="@+id/release_help_back_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:src="@mipmap/mine_icon_arrow" />
 
         <TextView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="我来解答"
+            android:text="鉴品名称"
+            android:textSize="18sp"
             android:textColor="@android:color/white" />
 
         <TextView
-            android:id="@+id/submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="提交"
+            android:text="保存"
             android:textColor="@android:color/white"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:textSize="13sp"/>
-
+            android:layout_marginRight="15dp"/>
     </RelativeLayout>
 
     <EditText
-        android:id="@+id/edit_content"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_margin="10dp"
-        android:paddingTop="5dp"
-        android:hint="请对鉴品进行详细的解答"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
         android:textColor="@android:color/black"
-        android:textColorHint="@android:color/black"
-        android:gravity="top"
-        android:background="@drawable/shape_edit"/>
+        android:hint="填写鉴品名称"
+        android:textColorHint="@android:color/black"/>
 </LinearLayout>

@@ -29,7 +29,7 @@ public class ClassifyNameActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public int setLayout() {
-        return R.layout.activity_classify_name;
+        return R.layout.activity_forhelp_classify;
     }
 
     @Override
