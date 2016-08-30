@@ -1,7 +1,9 @@
 package com.example.admin.jewelry.homepage.jewerydisplay;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -79,6 +81,7 @@ public class JewelryNewFragment extends BaseFragment implements View.OnClickList
         });
 
 
+
         OkHttpClientManager.postAsyn(Urls.JEWELRY_DISPLAY_NEW_URL, new OkHttpClientManager.ResultCallback<DisplayNewBean>() {
             @Override
             public void onError(Request request, Exception e) {
@@ -86,7 +89,7 @@ public class JewelryNewFragment extends BaseFragment implements View.OnClickList
             }
 
             @Override
-            public void onResponse(DisplayNewBean response) {
+            public void onResponse(final DisplayNewBean response) {
                 for (int i = 0; i < response.getObject().getList().size(); i++) {
                     listBeen.add(response.getObject().getList().get(i));
                 }
@@ -99,6 +102,16 @@ public class JewelryNewFragment extends BaseFragment implements View.OnClickList
                         holder.setText(R.id.new_goods_price,"平台:"+item.getGoods_salePrice());
                         holder.setImageByUrl(R.id.new_facepic_iv,item.getGoods_facePic());
                         holder.setImageByUrl(R.id.user_new_iv,item.getUserHeadPic());
+
+                    }
+                });
+                gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(context,NewDetailActivity.class);
+                        intent.putExtra("id",listBeen.get(i).getEntity_id());
+                        context.startActivity(intent);
+
                     }
                 });
 

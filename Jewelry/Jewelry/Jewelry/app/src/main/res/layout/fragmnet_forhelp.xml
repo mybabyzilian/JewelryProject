@@ -3,7 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/allRed"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,7 +15,7 @@
         <RelativeLayout
             android:id="@+id/title"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:background="#8f0303"
             android:orientation="horizontal">
 
@@ -117,6 +120,4 @@
         android:layout_height="match_parent"
         android:background="#000000"
         android:alpha="0.5"/>
-
-
 </LinearLayout>

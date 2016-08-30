@@ -4,7 +4,7 @@
 
 
     <!--用于进行网络定位-->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!--用于访问GPS定位-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
     <!--获取运营商信息，用于支持提供运营商信息相关的接口-->
@@ -31,25 +31,24 @@
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="2a4ed05ea0ddacbd6937092c8a633a56" >//开发者申请的key
-        </meta-data>
-        <activity android:name=".homepage.jewerydisplay.JewelryDisplayActivity"/>
-        <activity android:name=".homepage.pricetrend.branddetail.BrandDetailActivity"/>
-        <activity android:name=".homepage.MajorTrain.MajorTrainActivity"/>
+            android:value="2a4ed05ea0ddacbd6937092c8a633a56">//开发者申请的key</meta-data>
+
+        <activity android:name=".homepage.jewerydisplay.JewelryDisplayActivity" />
+        <activity android:name=".homepage.pricetrend.branddetail.BrandDetailActivity" />
+        <activity android:name=".homepage.MajorTrain.MajorTrainActivity" />
+
         <service android:name="com.amap.api.location.APSService" />
-        <activity android:name=".jewelrymap.JewelryMapActivity"/>
-        <activity android:name=".homepage.pricetrend.PriceTrendActivity"/>
 
-        <activity android:name=".homepage.qualificationcertification.QualificationActivity"/>
-        <activity android:name=".homepage.certificate.CertificateActivity"/>
+        <activity android:name=".jewelrymap.JewelryMapActivity" />
+        <activity android:name=".homepage.pricetrend.PriceTrendActivity" />
 
+        <activity android:name=".homepage.qualificationcertification.QualificationActivity" />
+        <activity android:name=".homepage.certificate.CertificateActivity" />
+        <activity android:name=".homepage.jewerydisplay.NewDetailActivity" />
 
-        <activity android:name=".homepage.pricetrend.branddetail.BrandDetailActivity"/>
-        <activity android:name=".homepage.MajorTrain.MajorTrainActivity"/>
-        <activity android:name=".homepage.qualificationcertification.QualificationActivity"/>
-
-
-        <activity android:name=".homepage.MainActivity">
+        <activity
+            android:name=".homepage.MainActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -65,8 +64,8 @@
 
         <!--热门活动-->
         <activity android:name=".homepage.hot_activity.HotActivity" />
-        <activity android:name=".homepage.hot_activity.HotDetailsActivity"/>
-        <activity android:name=".homepage.hot_activity.ParticipateHotActivity"/>
+        <activity android:name=".homepage.hot_activity.HotDetailsActivity" />
+        <activity android:name=".homepage.hot_activity.ParticipateHotActivity" />
 
         <!--专属功能-->
         <activity android:name=".homepage.exclusive.ExpandConnectionActivity" />
@@ -81,15 +80,15 @@
 
 
         <!--求助发布-->
-        <activity android:name=".forhelp.release.ReleaseHelpActivity"/>
-        <activity android:name=".forhelp.release.OnlineReleaseActivity"/>
-        <activity android:name=".forhelp.release.OfflineReleaseActivity"/>
-        <activity android:name=".forhelp.release.CircuseeReleaseActivity"/>
-        <activity android:name=".forhelp.release.AnswerActivity"/>
-        <activity android:name=".forhelp.release.ClassifyNameActivity"/>
+        <activity android:name=".forhelp.release.ReleaseHelpActivity" />
+        <activity android:name=".forhelp.release.OnlineReleaseActivity" />
+        <activity android:name=".forhelp.release.OfflineReleaseActivity" />
+        <activity android:name=".forhelp.release.CircuseeReleaseActivity" />
+        <activity android:name=".forhelp.release.AnswerActivity" />
+        <activity android:name=".forhelp.release.ClassifyNameActivity" />
 
         <!--个人中心-->
-        <activity android:name=".mine.my_home_page.MyHomePageActivity"/>
+        <activity android:name=".mine.my_home_page.MyHomePageActivity" />
 
     </application>
 

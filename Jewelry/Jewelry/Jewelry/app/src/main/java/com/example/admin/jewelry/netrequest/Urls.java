@@ -1,8 +1,8 @@
 package com.example.admin.jewelry.netrequest;
 
 /**
- * Created by admin on 2016/8/15.
- */
+ * Created by admin on 2016/8/15.*/
+
 public class Urls {
     public static  final  String BASE = "192.168.31.10:8081";
     public static final String EPHRITEURL = "http://"+ BASE +"/boastJewelry/messageQ/two.do";
@@ -21,5 +21,6 @@ public class Urls {
     public static final String JEWELRY_DISPLAY_URL = "http://"+ BASE +"/boastJewelry/objectGoods/old/two.do";
     public static final String JEWELRY_DISPLAY_POPU_NEW_URL = "http://"+ BASE +"/boastJewelry/objectGoods/new/one.do";
     public static final String JEWELRY_DISPLAY_NEW_URL = "http://"+ BASE +"/boastJewelry/objectGoods/new/two.do";
+    public static final String JEWELRY_DISPLAY_NEW_DETAIL_URL = "http://"+ BASE +"/boastJewelry/objectGoods/new/info.do?eid=1";
 
 }

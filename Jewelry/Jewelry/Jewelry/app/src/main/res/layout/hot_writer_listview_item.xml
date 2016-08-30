@@ -26,7 +26,7 @@
         android:layout_margin="15dp"
         android:layout_toRightOf="@+id/image_view"
         android:text="大师傅"
-        android:textColor="@android:color/holo_red_dark"
+        android:textColor="@color/allRed"
         android:textSize="18sp" />
 
     <TextView
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:layout_toRightOf="@+id/tv_worker"
-        android:background="@android:color/holo_red_dark"
+        android:background="@color/allRed"
         android:text="鉴定师"
         android:textColor="@android:color/white"
         android:textSize="18sp" />

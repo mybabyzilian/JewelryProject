@@ -1,12 +1,7 @@
 package com.example.admin.jewelry.forhelp;
 
-<<<<<<< HEAD
-import android.content.Context;
+
 import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
-import android.util.Log;
-=======
->>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,10 +15,6 @@ import android.widget.Toast;
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.Utils.PopuWindowBase;
 import com.example.admin.jewelry.base.BaseFragment;
-<<<<<<< HEAD
-=======
-import com.example.admin.jewelry.forhelp.OnlineDetailsActivity;
->>>>>>> jindapeng_forhelp
 import com.example.admin.jewelry.forhelp.adapter.GridViewAdapter;
 import com.example.admin.jewelry.forhelp.adapter.PopuAdapter;
 import com.example.admin.jewelry.forhelp.bean.OnlineBean;
@@ -39,39 +30,22 @@ import java.util.Map;
  * Created by admin on 2016/8/16.
  * 线上求助列表
  */
-<<<<<<< HEAD
+
 public class OnlineHelpFragment extends BaseFragment implements View.OnClickListener, AdapterView.OnItemClickListener {
     private LinearLayout sortlayout,typeLayout,rewardLayout,parentLayout;
-    private PopupWindow popupWindow;
     private ImageView sortIv,rewardIv,typeIv;
     private TextView sortTv,typeTv,rewardTv;
-=======
-public class OnlineHelpFragment extends BaseFragment implements View.OnClickListener {
-    private LinearLayout sortlayout, typeLayout, rewardLayout, parentLayout;
-    private ImageView sortIv, rewardIv, typeIv;
-    private TextView sortTv, typeTv, rewardTv;
->>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
     private View popuView;
     private PopuBean bean;
     private PopuAdapter popuAdapter;
     private ListView popuListView;
     private GridView gridView;
     private GridViewAdapter adapter;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    private String id = "";
-=======
     private String id ="";
     private String type = "";
     private String reward = "";
->>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
     private int value = 0;
-
-=======
-    private String id = null;
     private OnlineBean onlineBean;
->>>>>>> jindapeng_forhelp
-
     @Override
     protected int setLayout() {
         return R.layout.fragment_online_help;

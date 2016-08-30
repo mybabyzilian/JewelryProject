@@ -3,201 +3,318 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <com.youth.banner.Banner
-        android:id="@+id/new_detail_banner"
-        android:layout_width="match_parent"
-        android:layout_height="140sp" />
-
-    <TextView
-        android:id="@+id/new_detailGood_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="45454545454545" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+        android:background="@color/allRed">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/new_title_return"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/new_detail_oldprice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4545" />
-
-            <TextView
-                android:id="@+id/new_detail_saleprice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="4545" />
-        </LinearLayout>
-
-        <LinearLayout
+            android:layout_margin="15dp"
+            android:src="@mipmap/fanhui" />
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:src="@mipmap/share" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="一键分享"
-                android:textSize="10sp" />
-        </LinearLayout>
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="商品详情"
+            android:textColor="@android:color/white" />
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_marginTop="8dp"
-        android:background="#cdcdcd" />
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:scrollbars="none">
 
-        <RelativeLayout
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/realnameauthentication"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:src="@mipmap/realnameauthentication" />
+            <com.youth.banner.Banner
+                android:id="@+id/new_detail_banner"
+                android:layout_width="match_parent"
+                android:layout_height="140dp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/new_detailGood_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/realnameauthentication"
-                android:layout_centerHorizontal="true"
-                android:text="实名认证" />
-        </RelativeLayout>
+                android:layout_marginLeft="10dp"
+                android:text="45454545454545"
+                android:textColor="@color/colorBlack" />
 
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/platformsecurity"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:src="@mipmap/platformsecurity" />
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/new_detail_oldprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4545"
+                        android:textColor="@color/colorBlack" />
+
+                    <TextView
+                        android:id="@+id/new_detail_saleprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="4545"
+                        android:textColor="@color/colorBlack" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/new_share_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@mipmap/share" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="一键分享"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="8dp"
+                android:background="#cdcdcd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/realnameauthentication"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@mipmap/realnameauthentication" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/realnameauthentication"
+                        android:layout_centerHorizontal="true"
+                        android:text="实名认证"
+                        android:textColor="@color/colorBlack" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/platformsecurity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@mipmap/platformsecurity" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/platformsecurity"
+                        android:layout_centerHorizontal="true"
+                        android:text="平台推荐"
+                        android:textColor="@color/colorBlack" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/supportforinspection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@mipmap/supportforinspection" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/supportforinspection"
+                        android:layout_centerHorizontal="true"
+                        android:text="线上支付"
+                        android:textColor="@color/colorBlack" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/authoritycertificate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:src="@mipmap/authoritycertificate" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/authoritycertificate"
+                        android:layout_centerHorizontal="true"
+                        android:text="实名认证"
+                        android:textColor="@color/colorBlack" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="8dp"
+                android:background="#cdcdcd" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/platformsecurity"
-                android:layout_centerHorizontal="true"
-                android:text="平台推荐" />
-        </RelativeLayout>
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:text="详细介绍"
+                android:textColor="@color/colorBlack" />
 
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/supportforinspection"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:src="@mipmap/supportforinspection" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_marginTop="8dp"
+                android:background="#cdcdcd" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/new_detail_sort"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/supportforinspection"
-                android:layout_centerHorizontal="true"
-                android:text="线上支付" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <ImageView
-                android:id="@+id/authoritycertificate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:src="@mipmap/authoritycertificate" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="45454"
+                android:textColor="@color/colorBlack" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/new_detail_style"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/authoritycertificate"
-                android:layout_centerHorizontal="true"
-                android:text="实名认证" />
-        </RelativeLayout>
-    </LinearLayout>
+                android:layout_marginLeft="10dp"
+                android:text="45454"
+                android:textColor="@color/colorBlack" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_marginTop="8dp"
-        android:background="#cdcdcd" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="详细介绍"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="10dp"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.7dp"
-        android:background="#cdcdcd"
-        android:layout_marginTop="8dp"/>
-    <TextView
-        android:id="@+id/new_detail_sort"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="45454"
-        android:layout_marginLeft="10dp"/>
-    <TextView
-        android:id="@+id/new_detail_style"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="45454"/>
-    <TextView
-        android:id="@+id/new_detail_describe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="454545"
-        android:layout_marginLeft="10dp"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_marginTop="5dp"
-        android:background="#cdcdcd" />
-    
+            <TextView
+                android:id="@+id/new_detail_describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="454545"
+                android:textColor="@color/colorBlack" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
 
+                <ImageView
+                    android:id="@+id/new_user_iv"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"/>
 
+                <TextView
+                    android:id="@+id/new_user_nick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@+id/new_user_iv"
+                    android:text="45454545"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:id="@+id/new_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@+id/new_user_nick"
+                    android:background="@drawable/surround_text_shape"
+                    android:text="454545"
+                    android:layout_centerVertical="true"
+                    android:textColor="#ffffff" />
+
+                <LinearLayout
+                    android:id="@+id/new_other_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="其他商品"
+                        android:layout_marginRight="5dp"
+                        android:layout_gravity="center_vertical"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/common_icon_arrow"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="图文详情"
+                android:textColor="@color/allRed"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="8dp"
+                android:background="#cdcdcd" />
+
+            <com.example.admin.jewelry.base.NoScrollGridView
+                android:id="@+id/new_no_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

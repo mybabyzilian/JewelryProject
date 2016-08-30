@@ -1,20 +1,22 @@
 package com.example.admin.jewelry.homepage;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseFragment;
-
+import com.example.admin.jewelry.homepage.MajorTrain.MajorTrainActivity;
+import com.example.admin.jewelry.homepage.certificate.CertificateActivity;
 import com.example.admin.jewelry.homepage.exclusive.ExpandConnectionActivity;
 import com.example.admin.jewelry.homepage.exclusive.IssueWindowsActivity;
 import com.example.admin.jewelry.homepage.exclusive.SearchRimActivity;
 import com.example.admin.jewelry.homepage.exclusive.SeekServiceActivity;
 import com.example.admin.jewelry.homepage.hot_activity.HotActivity;
 import com.example.admin.jewelry.homepage.integral.IntegralStoreActivity;
-import com.example.admin.jewelry.homepage.MajorTrain.MajorTrainActivity;
-import com.example.admin.jewelry.homepage.certificate.CertificateActivity;
 import com.example.admin.jewelry.homepage.jewerydisplay.JewelryDisplayActivity;
 import com.example.admin.jewelry.homepage.pricetrend.PriceTrendActivity;
 import com.example.admin.jewelry.homepage.qualificationcertification.QualificationActivity;
@@ -28,10 +30,8 @@ import com.youth.banner.Banner;
  */
 public class HomePageFragment extends BaseFragment implements View.OnClickListener {
     private Banner banner;
-
+    private EditText editText;
     private LinearLayout hotLinear, integralLinear;
-
-
 
 
     @Override
@@ -47,6 +47,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
 
         banner.setDelayTime(3000);
         banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
+        editText = (EditText) view.findViewById(R.id.homepage_search);
         view.findViewById(R.id.certificate_query).setOnClickListener(this);
         view.findViewById(R.id.price_trend).setOnClickListener(this);
         view.findViewById(R.id.major_train).setOnClickListener(this);
@@ -72,7 +73,9 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     protected void initData() {
-
+        InputMethodManager imm =
+                (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
     }
 
     @Override
