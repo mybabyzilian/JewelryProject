@@ -5,6 +5,7 @@ import com.example.admin.jewelry.base.BaseActivity;
 
 /**
  * Created by admin on 2016/8/25.
+ * 专业培训
  */
 public class MajorTrainActivity extends BaseActivity {
 

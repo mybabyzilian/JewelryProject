@@ -35,6 +35,7 @@ public class ViewHolder {
     /**
      * 拿到一个ViewHolder对象
      */
+
     public static ViewHolder get(Context context,View convertView, ViewGroup parent, int layoutId, int position) {
         if (convertView == null) {
             return new ViewHolder(context,parent, layoutId, position);
@@ -61,6 +62,7 @@ public class ViewHolder {
     /**
      * 设置字符串
      */
+
     public ViewHolder setText(int viewId,String text){
         TextView tv = getView(viewId);
         tv.setText(text);
@@ -70,6 +72,7 @@ public class ViewHolder {
     /**
      * 设置图片
      */
+
     public ViewHolder setImageResource(int viewId,int drawableId){
         ImageView iv = getView(viewId);
         iv.setImageResource(drawableId);
@@ -88,6 +91,7 @@ public class ViewHolder {
     /**
      * 设置图片
      */
+
     public ViewHolder setImageByUrl(int viewId,String url){
         Glide.with(context).load(url).into((ImageView) getView(viewId));
 //        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(context));

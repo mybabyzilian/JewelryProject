@@ -22,7 +22,6 @@ public abstract class CommonAdaper<T> extends BaseAdapter {
     private LayoutInflater inflater;
     private int itemLayoutId;
 
-
     public CommonAdaper(Context context, List<T> list,int itemLayoutId) {
         this.context = context;
         this.list = list;

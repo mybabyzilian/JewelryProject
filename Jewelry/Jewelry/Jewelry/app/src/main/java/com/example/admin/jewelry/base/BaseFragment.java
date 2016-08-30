@@ -38,7 +38,18 @@ public abstract class BaseFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         initData();
     }
+
     protected abstract int setLayout();
+
     protected abstract void initView(View view);
+
     protected abstract void initData();
+
+    //    这个方法使组件实例化不需要转型
+    //    使用方式:
+    //    TextView textView = bindView(R.id.tv);
+    //    这样使用这个方法的时候是不需要强转的
+    protected <T extends View> T bindView(int id) {
+        return (T) getView().findViewById(id);
+    }
 }

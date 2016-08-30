@@ -25,6 +25,7 @@ import java.util.Map;
 
 /**
  * Created by admin on 2016/8/22.
+ * 品牌价位
  */
 public class BrandPriceFragment extends BaseFragment implements View.OnClickListener {
     private LinearLayout goldLayput, lastlayout, brandLayout;

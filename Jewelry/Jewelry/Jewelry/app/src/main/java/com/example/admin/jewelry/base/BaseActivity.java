@@ -34,4 +34,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void initView();
 
     protected abstract void initData();
+
+    /**
+     * 使组件实例化不需要转型
+     * 使用方式:
+     * TextView textView = bindView(R.id.tv);
+     * 这样使用这个方法的时候是不需要强转的
+     */
+    protected <T extends View> T bindView(int id){
+        return (T) findViewById(id);
+    }
 }

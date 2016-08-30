@@ -16,6 +16,7 @@ import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
 
 /**
  * Created by admin on 2016/8/16.
+ * 金价走势
  */
 public class PriceTrendActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
     private RadioButton priceRb, brandRb;
@@ -35,6 +36,7 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
         returnIv = (ImageView) findViewById(R.id.trend_return);
         priceRb.setOnClickListener(this);
         brandRb.setOnClickListener(this);
+        mapIv.setOnClickListener(this);
     }
 
     @Override

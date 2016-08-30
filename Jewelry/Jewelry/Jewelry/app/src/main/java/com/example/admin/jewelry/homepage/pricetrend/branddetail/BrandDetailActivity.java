@@ -23,6 +23,7 @@ import java.util.Map;
 
 /**
  * Created by admin on 2016/8/25.
+ * 品牌详情
  */
 public class BrandDetailActivity extends BaseActivity implements View.OnClickListener {
     private String id;

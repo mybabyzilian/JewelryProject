@@ -254,6 +254,7 @@
                             android:orientation="horizontal">
 
                             <LinearLayout
+                                android:id="@+id/integral_store"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -284,6 +285,7 @@
                                 android:background="#cdcdcd" />
 
                             <LinearLayout
+                                android:id="@+id/hot_activity"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -539,6 +541,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <LinearLayout
+                        android:id="@+id/seek_service"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -557,6 +560,7 @@
 
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/search_rim"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -575,6 +579,7 @@
 
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/expand_connection"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -593,6 +598,7 @@
 
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/issue_windows"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -635,7 +641,7 @@
     <RelativeLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:background="#8f0303"
         android:orientation="horizontal">
 

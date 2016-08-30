@@ -26,10 +26,13 @@ import java.util.Map;
 
 /**
  * Created by admin on 2016/8/16.
+ * 围观讨论列表
  */
-public class SurroundChatFragment extends BaseFragment implements OnRefreshListener {
+
+public class SurroundChatFragment extends BaseFragment implements OnRefreshListener, AdapterView.OnItemClickListener {
     private RefreshListView listView;
     private ListView popuList;
+
     private SurroundAdapter adapter;
     private View popuView;
     private LinearLayout relativeLayout;
@@ -45,7 +48,10 @@ public class SurroundChatFragment extends BaseFragment implements OnRefreshListe
 
     @Override
     protected void initView(View view) {
+
         listView = (RefreshListView) view.findViewById(R.id.surround_list);
+        listView.setOnItemClickListener(this);
+
         adapter = new SurroundAdapter(context);
         relativeLayout = (LinearLayout) view.findViewById(R.id.surround_jewelry_layout);
         popuView = LayoutInflater.from(context).inflate(R.layout.surround_popu, null);
@@ -53,6 +59,7 @@ public class SurroundChatFragment extends BaseFragment implements OnRefreshListe
         popuIv = (ImageView) view.findViewById(R.id.surround_popu_iv);
         popuAdapter = new SurroundPopuAdapter(context);
         listView.setOnRefreshListener(this);
+
 
     }
 
@@ -99,7 +106,7 @@ public class SurroundChatFragment extends BaseFragment implements OnRefreshListe
             @Override
             public void onClick(View view) {
                 if (bean != null) {
-                    PopuWindowBase.showPopuWindows(relativeLayout, popuView, context,popuIv);
+                    PopuWindowBase.showPopuWindows(relativeLayout, popuView, context, popuIv);
                     popuIv.setImageResource(R.mipmap.drop_top);
                 }
             }
@@ -115,6 +122,11 @@ public class SurroundChatFragment extends BaseFragment implements OnRefreshListe
 
     @Override
     public void onLoadingMore() {
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
     }
 }

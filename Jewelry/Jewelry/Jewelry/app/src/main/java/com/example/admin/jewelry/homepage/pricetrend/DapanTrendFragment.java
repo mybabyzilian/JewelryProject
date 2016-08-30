@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * Created by admin on 2016/8/22.
+ * 大盘价位
  */
 public class DapanTrendFragment extends BaseFragment implements View.OnClickListener {
     private LinearLayout glodLayout,todayLayout,rmbLayout,dapanLayout;
@@ -28,9 +29,6 @@ public class DapanTrendFragment extends BaseFragment implements View.OnClickList
     private List<GoldPopuBean> data,getData;
     private GoldPopuAdapter goldPopuAdapter;
     private ImageView goldIv,todayIv,rmbIv;
-
-
-
 
     @Override
     protected int setLayout() {
