@@ -1,5 +1,6 @@
 package com.example.admin.jewelry.homepage.hot_activity;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;

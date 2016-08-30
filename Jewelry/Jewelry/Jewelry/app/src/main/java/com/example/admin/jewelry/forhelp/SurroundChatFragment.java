@@ -2,10 +2,6 @@ package com.example.admin.jewelry.forhelp;
 
 import android.view.LayoutInflater;
 import android.view.View;
-<<<<<<< HEAD
-import android.view.WindowManager;
-=======
->>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -32,14 +28,11 @@ import java.util.Map;
  * Created by admin on 2016/8/16.
  * 围观讨论列表
  */
-<<<<<<< HEAD
-public class SurroundChatFragment extends BaseFragment implements AdapterView.OnItemClickListener {
-    private ListView listView;
-=======
-public class SurroundChatFragment extends BaseFragment implements OnRefreshListener {
+
+public class SurroundChatFragment extends BaseFragment implements OnRefreshListener, AdapterView.OnItemClickListener {
     private RefreshListView listView;
     private ListView popuList;
->>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
+
     private SurroundAdapter adapter;
     private View popuView;
     private LinearLayout relativeLayout;
@@ -55,23 +48,19 @@ public class SurroundChatFragment extends BaseFragment implements OnRefreshListe
 
     @Override
     protected void initView(View view) {
-<<<<<<< HEAD
-        listView = (ListView) view.findViewById(R.id.surround_list);
-        listView.setOnItemClickListener(this);
-=======
+
         listView = (RefreshListView) view.findViewById(R.id.surround_list);
->>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
+        listView.setOnItemClickListener(this);
+
         adapter = new SurroundAdapter(context);
         relativeLayout = (LinearLayout) view.findViewById(R.id.surround_jewelry_layout);
         popuView = LayoutInflater.from(context).inflate(R.layout.surround_popu, null);
         popuList = (ListView) popuView.findViewById(R.id.surround_popu_list);
         popuIv = (ImageView) view.findViewById(R.id.surround_popu_iv);
-<<<<<<< HEAD
-=======
         popuAdapter = new SurroundPopuAdapter(context);
         listView.setOnRefreshListener(this);
 
->>>>>>> bba5147b6ea0b0447664d9763043484f648e540f
+
     }
 
     @Override
@@ -117,7 +106,7 @@ public class SurroundChatFragment extends BaseFragment implements OnRefreshListe
             @Override
             public void onClick(View view) {
                 if (bean != null) {
-                    PopuWindowBase.showPopuWindows(relativeLayout, popuView, context,popuIv);
+                    PopuWindowBase.showPopuWindows(relativeLayout, popuView, context, popuIv);
                     popuIv.setImageResource(R.mipmap.drop_top);
                 }
             }

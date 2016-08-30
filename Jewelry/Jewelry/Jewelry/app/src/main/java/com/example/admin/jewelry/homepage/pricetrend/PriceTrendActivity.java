@@ -13,7 +13,6 @@ import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
 import com.example.admin.jewelry.homepage.qualificationcertification.CertifacateFragment;
 import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
-import com.example.admin.jewelry.homepage.qualificationcertification.CertifacateFragment;
 
 /**
  * Created by admin on 2016/8/16.
@@ -21,8 +20,6 @@ import com.example.admin.jewelry.homepage.qualificationcertification.Certifacate
  */
 public class PriceTrendActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
     private RadioButton priceRb, brandRb;
-    private ImageView returnIv,mapIv;
-
     private ImageView returnIv,mapIv;
 
 
@@ -79,8 +76,8 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
                 finish();
                 break;
             case R.id.trend_map:
-//                Intent intent = new Intent(this, JewelryMapActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(this, JewelryMapActivity.class);
+                startActivity(intent);
                 break;
         }
         fragmentTransaction.commit();

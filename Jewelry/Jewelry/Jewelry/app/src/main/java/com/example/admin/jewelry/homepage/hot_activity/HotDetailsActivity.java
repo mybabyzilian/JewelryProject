@@ -37,7 +37,7 @@ public class HotDetailsActivity extends BaseActivity implements View.OnClickList
 
     @Override
     protected void initView() {
-        bindView(R.id.hot_details_back_image).setOnClickListener(this);
+        bindView(R.id.details_back_image).setOnClickListener(this);
 
         activity_title = bindView(R.id.activity_title);
         activity_theme_content = bindView(R.id.activity_theme_content);
@@ -66,7 +66,7 @@ public class HotDetailsActivity extends BaseActivity implements View.OnClickList
         OkHttpClientManager.postAsyn(url, new OkHttpClientManager.ResultCallback<HotBean>() {
             @Override
             public void onError(Request request, Exception e) {
-                Log.d("url", "onError: " + e);
+
             }
 
             @Override
@@ -89,7 +89,7 @@ public class HotDetailsActivity extends BaseActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.hot_details_back_image:
+            case R.id.details_back_image:
                 finish();
                 break;
             case R.id.participate_hot_activity:
