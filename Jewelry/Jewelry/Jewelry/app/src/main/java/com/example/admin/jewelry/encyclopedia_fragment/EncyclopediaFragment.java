@@ -1,8 +1,6 @@
 package com.example.admin.jewelry.encyclopedia_fragment;
 
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,13 +10,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
-import com.example.admin.jewelry.base.BaseFragment;
-import com.example.admin.jewelry.netrequest.OkHttpClientManager;
-import com.example.admin.jewelry.netrequest.Urls;
 import com.example.admin.jewelry.Utils.CharacterParser;
 import com.example.admin.jewelry.Utils.ClearEditText;
 import com.example.admin.jewelry.Utils.PinyinComparator;
 import com.example.admin.jewelry.Utils.SideBar;
+import com.example.admin.jewelry.base.BaseFragment;
+import com.example.admin.jewelry.netrequest.OkHttpClientManager;
+import com.example.admin.jewelry.netrequest.Urls;
 import com.squareup.okhttp.Request;
 
 import java.util.ArrayList;
@@ -126,24 +124,6 @@ public class EncyclopediaFragment extends BaseFragment {
         });
 
 
-        mClearEditText.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                filterData(s.toString());
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-            }
-        });
 
     }
 

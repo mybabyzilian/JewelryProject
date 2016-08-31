@@ -22,7 +22,7 @@ import java.util.Map;
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
     private CheckBox chekBox;
     private boolean a = true;
-    private EditText numEt,passwordEt;
+    private EditText numEt, passwordEt;
     private UserLoginBean bean;
 
 
@@ -34,7 +34,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @Override
     protected void initView() {
         chekBox = bindView(R.id.check_iv);
-        numEt= (EditText) findViewById(R.id.num_edit);
+        numEt = (EditText) findViewById(R.id.num_edit);
         passwordEt = (EditText) findViewById(R.id.password_edit);
         findViewById(R.id.login_bt).setOnClickListener(this);
         findViewById(R.id.register_bt).setOnClickListener(this);
@@ -45,43 +45,44 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     protected void initData() {
 
 
-
     }
 
     @Override
     public void onClick(View view) {
-       switch (view.getId()){
-           case R.id.login_bt:
-               String num = numEt.getText().toString();
-               String password = passwordEt.getText().toString();
-               Map<String,String> map = new HashMap<>();
-               map.put("user_account",num);
-               map.put("user_password",password);
-               OkHttpClientManager.postAsyn(Urls.USER_LOGIN_URL, new OkHttpClientManager.ResultCallback<UserLoginBean>() {
-                   @Override
-                   public void onError(Request request, Exception e) {
+        switch (view.getId()) {
+            case R.id.login_bt:
+                Toast.makeText(this, "555", Toast.LENGTH_SHORT).show();
+                String num = numEt.getText().toString();
+                String password = passwordEt.getText().toString();
+                Map<String, String> map = new HashMap<>();
+                map.put("user_account", num);
+                map.put("user_password", password);
+                OkHttpClientManager.postAsyn(Urls.USER_LOGIN_URL, new OkHttpClientManager.ResultCallback<UserLoginBean>() {
+                    @Override
+                    public void onError(Request request, Exception e) {
 
-                   }
+                    }
 
-                   @Override
-                   public void onResponse(UserLoginBean response) {
-                       bean = response;
-                       if (bean.getMsg().equals("登录成功")){
-                           Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-                           Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                           startActivity(intent);
-                           finish();
-                       }else if (bean.getMsg().equals("无效账号")){
-                           Toast.makeText(LoginActivity.this, "无效账号", Toast.LENGTH_SHORT).show();
-                       }
-                   }
-               },map);
+                    @Override
+                    public void onResponse(UserLoginBean response) {
+                        bean = response;
+                        if (bean.getMsg().equals("登录成功")) {
+                            Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else if (bean.getMsg().equals("无效账号")) {
+                            Toast.makeText(LoginActivity.this, "无效账号", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, map);
 
-               break;
-           case R.id.register_bt:
+                break;
+            case R.id.register_bt:
+                Intent intent = new Intent(this, RegisterActivity.class);
+                startActivity(intent);
+                break;
 
-               break;
-
-       }
+        }
     }
 }

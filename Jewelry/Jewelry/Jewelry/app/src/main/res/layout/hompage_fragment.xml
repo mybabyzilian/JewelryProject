@@ -642,9 +642,9 @@
     </ScrollView>
     <View
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="15dp"
         android:background="@color/allRed"/>
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -653,42 +653,53 @@
         >
         <ImageView
             android:id="@+id/user_image"
-            android:layout_width="20dp"
+            android:layout_width="0dp"
             android:layout_height="20dp"
             android:scaleType="fitXY"
-            android:layout_centerVertical="true"
+            android:layout_weight="0.5"
+            android:layout_gravity="center_vertical"
             android:layout_marginLeft="15dp"
             android:src="@mipmap/user" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="horizontal"
+            android:layout_margin="7dp"
+            android:background="@drawable/homepage_search_shape">
 
-        <EditText
-            android:id="@+id/homepage_search"
-            android:layout_width="240dp"
-            android:layout_height="25dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/user_image"
-            android:contextClickable="false"
-            android:background="@drawable/homepage_search_shape" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/search"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="搜索话题"
+                android:layout_marginLeft="3dp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
 
         <ImageView
             android:id="@+id/homepage_comment"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:scaleType="fitXY"
-            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
             android:layout_marginRight="15dp"
-            android:layout_toLeftOf="@+id/homepage_sign"
             android:src="@mipmap/news" />
 
         <ImageView
             android:id="@+id/homepage_sign"
-            android:layout_width="20dp"
+            android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:scaleType="fitXY"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
             android:layout_marginRight="15dp"
             android:src="@mipmap/sign" />
-    </RelativeLayout>
+    </LinearLayout>
 
 </RelativeLayout>

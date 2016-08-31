@@ -1,9 +1,7 @@
 package com.example.admin.jewelry.homepage;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -47,7 +45,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
 
         banner.setDelayTime(3000);
         banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
-        editText = (EditText) view.findViewById(R.id.homepage_search);
+    //    editText = (EditText) view.findViewById(R.id.homepage_search);
         view.findViewById(R.id.certificate_query).setOnClickListener(this);
         view.findViewById(R.id.price_trend).setOnClickListener(this);
         view.findViewById(R.id.major_train).setOnClickListener(this);
@@ -73,9 +71,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     protected void initData() {
-        InputMethodManager imm =
-                (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+
     }
 
     @Override

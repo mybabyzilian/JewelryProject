@@ -42,7 +42,7 @@
             android:layout_height="20dp"
             android:scaleType="fitXY"
             android:layout_centerVertical="true"
-            android:src="@mipmap/user"
+            android:src="@mipmap/userr"
             android:layout_marginLeft="20dp"/>
         <EditText
             android:id="@+id/num_edit"
@@ -131,7 +131,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="记住登录密码?"
+            android:text="忘记密码?"
             android:textColor="@color/allRed"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
