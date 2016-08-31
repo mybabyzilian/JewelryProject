@@ -11,7 +11,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_dark">
+            android:background="@color/allRed">
 
             <ImageView
                 android:id="@+id/my_home_page_back_image"
@@ -116,7 +116,7 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
-        android:background="@android:color/holo_red_dark">
+        android:background="@color/allRed">
 
         <View
             android:layout_width="1dp"

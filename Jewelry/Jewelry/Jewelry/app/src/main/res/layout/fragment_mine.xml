@@ -4,6 +4,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#930606">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="个人中心"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -14,20 +39,6 @@
                     android:scaleType="fitXY"
                     android:src="@mipmap/pr_bg" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="#930606">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="个人中心"
-                        android:textColor="#ffffff"
-                        android:textSize="20sp" />
-                </RelativeLayout>
 
                 <ImageView
                     android:id="@+id/personal_camera"
@@ -99,7 +110,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -119,19 +130,28 @@
                     android:text="我的资料"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_1"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
+
 
             </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_1"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
 
             <RelativeLayout
                 android:id="@+id/my_home_page_rl"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -151,18 +171,27 @@
                     android:text="我的主页"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_2"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
+
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_2"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -182,18 +211,27 @@
                     android:text="我的账户"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_3"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
+
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_3"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -213,18 +251,27 @@
                     android:text="我的相册"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_4"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
+
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_4"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -244,18 +291,27 @@
                     android:text="我的发布"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_5"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
+
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_5"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -275,18 +331,27 @@
                     android:text="我的收藏"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_6"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
+
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_6"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -306,18 +371,27 @@
                     android:text="我的参与"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_7"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
+
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_7"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -337,18 +411,27 @@
                     android:text="我的店铺"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_8"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
+
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_8"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -368,18 +451,27 @@
                     android:text="宝贝管理"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_9"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
+
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_9"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -399,18 +491,27 @@
                     android:text="订单管理"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_10"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
+
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_10"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -430,18 +531,27 @@
                     android:text="预约客户"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_11"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
+
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_11"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp">
 
                 <ImageView
@@ -461,12 +571,22 @@
                     android:text="设置"
                     android:textColor="#000000" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.7dp"
-                    android:layout_below="@+id/pr_12"
-                    android:layout_marginTop="5dp"
-                    android:background="#cdcdcd" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/common_icon_arrow" />
 
             </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_below="@+id/pr_12"
+                android:layout_marginTop="5dp"
+                android:background="#cdcdcd" />
         </LinearLayout>
+    </ScrollView>
+</LinearLayout>

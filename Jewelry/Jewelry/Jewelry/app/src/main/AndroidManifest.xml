@@ -45,9 +45,10 @@
         <activity android:name=".homepage.qualificationcertification.QualificationActivity" />
         <activity android:name=".homepage.certificate.CertificateActivity" />
         <activity android:name=".homepage.jewerydisplay.NewDetailActivity" />
-
+        <activity android:name=".homepage.MainActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
         <activity
-            android:name=".homepage.MainActivity"
+            android:name=".login.LoginActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
