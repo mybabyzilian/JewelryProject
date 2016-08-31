@@ -33,17 +33,23 @@
             android:name="com.amap.api.v2.apikey"
             android:value="2a4ed05ea0ddacbd6937092c8a633a56">//开发者申请的key</meta-data>
 
-        <activity android:name=".homepage.jewerydisplay.JewelryDisplayActivity" />
-        <activity android:name=".homepage.pricetrend.branddetail.BrandDetailActivity" />
-        <activity android:name=".homepage.MajorTrain.MajorTrainActivity" />
+        <activity android:name=".homepage.jewerydisplay.JewelryDisplayActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity android:name=".homepage.pricetrend.branddetail.BrandDetailActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity android:name=".homepage.MajorTrain.MajorTrainActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
 
         <service android:name="com.amap.api.location.APSService" />
 
         <activity android:name=".jewelrymap.JewelryMapActivity" />
-        <activity android:name=".homepage.pricetrend.PriceTrendActivity" />
+        <activity android:name=".homepage.pricetrend.PriceTrendActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
 
-        <activity android:name=".homepage.qualificationcertification.QualificationActivity" />
-        <activity android:name=".homepage.certificate.CertificateActivity" />
+        <activity android:name=".homepage.qualificationcertification.QualificationActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity android:name=".homepage.certificate.CertificateActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
         <activity android:name=".homepage.jewerydisplay.NewDetailActivity" />
         <activity android:name=".homepage.MainActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden"/>

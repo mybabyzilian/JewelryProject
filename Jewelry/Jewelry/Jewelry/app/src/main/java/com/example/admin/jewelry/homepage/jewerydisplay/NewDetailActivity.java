@@ -81,8 +81,10 @@ public class NewDetailActivity extends BaseActivity {
                // i[0] = response.getObject().getInfo().getGoods_facePic();
                // banner.setImages(i);
                // banner.setDelayTime(2000);
+
             }
         }, map);
+
 
     }
 }

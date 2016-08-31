@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
@@ -25,7 +24,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private boolean a = true;
     private EditText numEt,passwordEt;
     private UserLoginBean bean;
-    private ProgressBar progressBar;
+
 
     @Override
     public int setLayout() {
@@ -39,7 +38,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         passwordEt = (EditText) findViewById(R.id.password_edit);
         findViewById(R.id.login_bt).setOnClickListener(this);
         findViewById(R.id.register_bt).setOnClickListener(this);
-        progressBar = (ProgressBar) findViewById(R.id.login_progress_bar);
+
     }
 
     @Override
@@ -53,7 +52,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View view) {
        switch (view.getId()){
            case R.id.login_bt:
-               progressBar.setVisibility(View.VISIBLE);
                String num = numEt.getText().toString();
                String password = passwordEt.getText().toString();
                Map<String,String> map = new HashMap<>();
@@ -72,9 +70,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                            Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                            startActivity(intent);
+                           finish();
                        }else if (bean.getMsg().equals("无效账号")){
                            Toast.makeText(LoginActivity.this, "无效账号", Toast.LENGTH_SHORT).show();
-
                        }
                    }
                },map);
