@@ -2,7 +2,6 @@ package com.example.admin.jewelry.homepage;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.example.admin.jewelry.R;
@@ -33,7 +32,6 @@ import java.util.List;
  */
 public class HomePageFragment extends BaseFragment implements View.OnClickListener {
     private Banner banner;
-    private EditText editText;
     private LinearLayout hotLinear, integralLinear;
     private String[] url = {"http://img4.duitang.com/uploads/item/201512/18/20151218141838_UdZGf.jpeg",
             "http://img0.imgtn.bdimg.com/it/u=2604831194,922890958&fm=11&gp=0.jpg"};
