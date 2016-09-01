@@ -30,6 +30,8 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
     private Banner banner;
     private EditText editText;
     private LinearLayout hotLinear, integralLinear;
+    private String[] url = {"http://img4.duitang.com/uploads/item/201512/18/20151218141838_UdZGf.jpeg",
+    "http://img0.imgtn.bdimg.com/it/u=2604831194,922890958&fm=11&gp=0.jpg"};
 
 
     @Override
@@ -41,9 +43,9 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
     protected void initView(View view) {
         banner = (Banner) view.findViewById(R.id.homepage_banner);
 
-        //  banner.setImages();
+          banner.setImages(url);
 
-        banner.setDelayTime(3000);
+        banner.setDelayTime(2000);
         banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
     //    editText = (EditText) view.findViewById(R.id.homepage_search);
         view.findViewById(R.id.certificate_query).setOnClickListener(this);
