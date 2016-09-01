@@ -40,7 +40,7 @@
                     android:src="@mipmap/pr_bg" />
 
 
-                <com.example.admin.jewelry.Utils.XCRoundImageView
+                <com.example.admin.jewelry.Utils.RoundImageView
                     android:id="@+id/personal_camera"
                     android:layout_width="50dp"
                     android:layout_height="50dp"

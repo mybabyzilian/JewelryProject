@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
-import com.example.admin.jewelry.Utils.XCRoundImageView;
+import com.example.admin.jewelry.Utils.RoundImageView;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.mine.my_home_page.MyHomePageActivity;
 
@@ -24,7 +24,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     private static final int CAPTURE_CODE = 100;
     private ViewPager viewPager;
     private TabLayout tabLayout;
-    private XCRoundImageView cameraIv;
+    private RoundImageView cameraIv;
     private static final int IMAGE_CODE = 101;
     private Bitmap bm;
 
@@ -39,7 +39,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     @Override
     protected void initView(View view) {
         view.findViewById(R.id.my_home_page_rl).setOnClickListener(this);//我的主页
-        cameraIv = (XCRoundImageView) view.findViewById(R.id.personal_camera);
+        cameraIv = (RoundImageView) view.findViewById(R.id.personal_camera);
         cameraIv.setOnClickListener(this);
 
     }
