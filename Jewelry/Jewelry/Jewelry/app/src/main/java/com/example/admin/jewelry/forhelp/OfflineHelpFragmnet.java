@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseFragment;
-import com.example.admin.jewelry.forhelp.OfflineDetailsActivity;
 import com.example.admin.jewelry.forhelp.adapter.GridViewAdapter;
 import com.example.admin.jewelry.forhelp.adapter.OfflinePopuAdapter;
 import com.example.admin.jewelry.forhelp.bean.OfflinePopuBean;
@@ -142,7 +141,6 @@ public class OfflineHelpFragmnet extends BaseFragment implements AdapterView.OnI
                 sortIv.setImageResource(R.mipmap.drop_top);
                 areaIv.setImageResource(R.mipmap.drop_top);
                 stateIv.setImageResource(R.mipmap.drop_top);
-
 
             }
         };

@@ -51,6 +51,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login_bt:
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
                 String num = numEt.getText().toString();
                 String password = passwordEt.getText().toString();
                 Map<String, String> map = new HashMap<>();
@@ -68,8 +70,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                             Toast.makeText(LoginActivity.this, bean.getMsg(), Toast.LENGTH_SHORT).show();
                         if (bean.getMsg().equals("登录成功")) {
                             Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
+
                             finish();
                         } else if (bean.getMsg().equals("无效账号")) {
                             Toast.makeText(LoginActivity.this, "无效账号", Toast.LENGTH_SHORT).show();
@@ -79,8 +80,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
                 break;
             case R.id.register_bt:
-                Intent intent = new Intent(this, RegisterActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(this, RegisterActivity.class);
+                startActivity(intent1);
                 break;
 
         }
