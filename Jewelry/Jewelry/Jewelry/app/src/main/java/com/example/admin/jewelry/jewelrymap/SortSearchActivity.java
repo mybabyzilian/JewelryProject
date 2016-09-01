@@ -1,5 +1,6 @@
 package com.example.admin.jewelry.jewelrymap;
 
+import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
 
 /**
@@ -8,7 +9,7 @@ import com.example.admin.jewelry.base.BaseActivity;
 public class SortSearchActivity extends BaseActivity {
     @Override
     public int setLayout() {
-        return 0;
+        return R.layout.activity_search_sort;
     }
 
     @Override

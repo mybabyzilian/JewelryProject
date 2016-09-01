@@ -348,6 +348,7 @@
                     android:orientation="horizontal">
 
                     <RelativeLayout
+                        android:id="@+id/gemstone_bar_layout"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
@@ -389,11 +390,13 @@
                         android:background="#cdcdcd" />
 
                     <RelativeLayout
+                        android:id="@+id/ephrite_bar_layout"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
 
                         <ImageView
+
                             android:id="@+id/jade"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -437,6 +440,7 @@
                     android:orientation="horizontal">
 
                     <RelativeLayout
+                        android:id="@+id/wenwan_bar_layout"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
@@ -478,6 +482,7 @@
                         android:background="#cdcdcd" />
 
                     <RelativeLayout
+                        android:id="@+id/other_bar_layout"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">

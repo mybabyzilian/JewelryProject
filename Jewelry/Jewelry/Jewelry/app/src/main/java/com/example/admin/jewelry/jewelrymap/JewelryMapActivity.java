@@ -38,6 +38,7 @@ public class JewelryMapActivity extends AppCompatActivity implements AMapLocatio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         returnIv = (ImageView) findViewById(R.id.trend_return);
+        searchTv = (TextView) findViewById(R.id.trend_map_tv);
         returnIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

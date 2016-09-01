@@ -51,12 +51,13 @@
         <activity android:name=".homepage.certificate.CertificateActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
         <activity android:name=".homepage.jewerydisplay.NewDetailActivity" />
-        <activity android:name=".login.LoginActivity"
+        <activity android:name=".homepage.MainActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
         <activity android:name=".login.RegisterActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity android:name=".homepage.gemstonepostbar.PostBarActivity"/>
         <activity
-            android:name=".homepage.MainActivity"
+            android:name=".login.LoginActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

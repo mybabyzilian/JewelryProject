@@ -14,6 +14,7 @@ import com.example.admin.jewelry.homepage.exclusive.ExpandConnectionActivity;
 import com.example.admin.jewelry.homepage.exclusive.IssueWindowsActivity;
 import com.example.admin.jewelry.homepage.exclusive.SearchRimActivity;
 import com.example.admin.jewelry.homepage.exclusive.SeekServiceActivity;
+import com.example.admin.jewelry.homepage.gemstonepostbar.PostBarActivity;
 import com.example.admin.jewelry.homepage.hot_activity.HotActivity;
 import com.example.admin.jewelry.homepage.integral.IntegralStoreActivity;
 import com.example.admin.jewelry.homepage.jewerydisplay.JewelryDisplayActivity;
@@ -53,7 +54,6 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
 
         banner.setDelayTime(2000);
         banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
-        //    editText = (EditText) view.findViewById(R.id.homepage_search);
         view.findViewById(R.id.certificate_query).setOnClickListener(this);
         view.findViewById(R.id.price_trend).setOnClickListener(this);
         view.findViewById(R.id.major_train).setOnClickListener(this);
@@ -75,6 +75,10 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
         view.findViewById(R.id.search_rim).setOnClickListener(this);
         view.findViewById(R.id.expand_connection).setOnClickListener(this);
         view.findViewById(R.id.issue_windows).setOnClickListener(this);
+        view.findViewById(R.id.gemstone_bar_layout).setOnClickListener(this);
+        view.findViewById(R.id.ephrite_bar_layout).setOnClickListener(this);
+        view.findViewById(R.id.wenwan_bar_layout).setOnClickListener(this);
+        view.findViewById(R.id.other_bar_layout).setOnClickListener(this);
         tipView = (TipView) view.findViewById(R.id.homepage_tip_view);
     }
 
@@ -142,6 +146,26 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
             case R.id.jewelry_display_layout:
                 Intent intent11 = new Intent(context, JewelryDisplayActivity.class);
                 context.startActivity(intent11);
+                break;
+            case R.id.gemstone_bar_layout:
+                Intent intent13 = new Intent(context, PostBarActivity.class);
+                intent13.putExtra("name","宝石贴吧");
+                startActivity(intent13);
+                break;
+            case R.id.ephrite_bar_layout:
+                Intent intent14 = new Intent(context,PostBarActivity.class);
+                intent14.putExtra("name","玉石贴吧");
+                startActivity(intent14);
+                break;
+            case R.id.wenwan_bar_layout:
+                Intent intent15 = new Intent(context,PostBarActivity.class);
+                intent15.putExtra("name","文玩贴吧");
+                startActivity(intent15);
+                break;
+            case R.id.other_bar_layout:
+                Intent intent16 = new Intent(context,PostBarActivity.class);
+                intent16.putExtra("name","其他品类");
+                startActivity(intent16);
                 break;
         }
     }
