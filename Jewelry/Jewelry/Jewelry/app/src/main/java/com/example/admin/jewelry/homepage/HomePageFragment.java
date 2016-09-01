@@ -6,6 +6,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.example.admin.jewelry.R;
+import com.example.admin.jewelry.Utils.TipView;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.homepage.MajorTrain.MajorTrainActivity;
 import com.example.admin.jewelry.homepage.certificate.CertificateActivity;
@@ -21,6 +22,9 @@ import com.example.admin.jewelry.homepage.qualificationcertification.Qualificati
 import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
 import com.youth.banner.Banner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by admin on 2016/8/15.
@@ -31,7 +35,9 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
     private EditText editText;
     private LinearLayout hotLinear, integralLinear;
     private String[] url = {"http://img4.duitang.com/uploads/item/201512/18/20151218141838_UdZGf.jpeg",
-    "http://img0.imgtn.bdimg.com/it/u=2604831194,922890958&fm=11&gp=0.jpg"};
+            "http://img0.imgtn.bdimg.com/it/u=2604831194,922890958&fm=11&gp=0.jpg"};
+    private TipView tipView;
+    private static final String TIP_PREFIX = "this is tip No.";
 
 
     @Override
@@ -43,11 +49,11 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
     protected void initView(View view) {
         banner = (Banner) view.findViewById(R.id.homepage_banner);
 
-          banner.setImages(url);
+        banner.setImages(url);
 
         banner.setDelayTime(2000);
         banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
-    //    editText = (EditText) view.findViewById(R.id.homepage_search);
+        //    editText = (EditText) view.findViewById(R.id.homepage_search);
         view.findViewById(R.id.certificate_query).setOnClickListener(this);
         view.findViewById(R.id.price_trend).setOnClickListener(this);
         view.findViewById(R.id.major_train).setOnClickListener(this);
@@ -69,11 +75,20 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
         view.findViewById(R.id.search_rim).setOnClickListener(this);
         view.findViewById(R.id.expand_connection).setOnClickListener(this);
         view.findViewById(R.id.issue_windows).setOnClickListener(this);
+        tipView = (TipView) view.findViewById(R.id.homepage_tip_view);
     }
 
     @Override
     protected void initData() {
+        tipView.setTipList(generateTips());
+    }
 
+    private List<String> generateTips() {
+        List<String> tips = new ArrayList<>();
+        for (int i = 100; i < 120; i++) {
+            tips.add(TIP_PREFIX + i);
+        }
+        return tips;
     }
 
     @Override

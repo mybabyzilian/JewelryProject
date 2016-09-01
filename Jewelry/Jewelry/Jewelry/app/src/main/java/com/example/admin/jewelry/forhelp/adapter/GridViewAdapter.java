@@ -77,8 +77,6 @@ public class GridViewAdapter extends BaseAdapter {
             titleTv = (TextView) view.findViewById(R.id.user_help_title);
             helpTv = (TextView) view.findViewById(R.id.help_money_tv);
             rewardTv = (TextView) view.findViewById(R.id.reward_type);
-
-
         }
     }
 }

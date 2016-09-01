@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -29,6 +30,7 @@ public class JewelryMapActivity extends AppCompatActivity implements AMapLocatio
     private AMap aMap;
     private LocationSource.OnLocationChangedListener mListener;
     private ImageView returnIv;
+    private TextView searchTv;
 
 
     @Override
@@ -40,6 +42,12 @@ public class JewelryMapActivity extends AppCompatActivity implements AMapLocatio
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        searchTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
         mapView = (MapView) findViewById(R.id.map);
