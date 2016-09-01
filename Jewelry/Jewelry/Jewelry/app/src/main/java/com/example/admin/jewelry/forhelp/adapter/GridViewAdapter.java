@@ -56,7 +56,7 @@ public class GridViewAdapter extends BaseAdapter {
         }
         holder.helpTv.setText(data.getObject().getList().get(i).getHelp_money());
         holder.titleTv.setText(data.getObject().getList().get(i).getHelp_title());
-        if (data.getObject().getList().get(i).getHelp_type().equals("MONEY")){
+        if (data.getObject().getList().get(i).getHelp_type().equals("MONEY")&&data.getObject().getList().get(i).getHelp_type()!=null){
             holder.rewardTv.setText("元");
         }else if(data.getObject().getList().get(i).getHelp_type().equals("SCORE")) {
             holder.rewardTv.setText("积分");
