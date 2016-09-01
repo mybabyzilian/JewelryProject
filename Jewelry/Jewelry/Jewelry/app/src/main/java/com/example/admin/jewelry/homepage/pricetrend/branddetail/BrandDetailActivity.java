@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.Utils.CommonAdaper;
+import com.example.admin.jewelry.Utils.RefreshListView;
 import com.example.admin.jewelry.Utils.ViewHolder;
 import com.example.admin.jewelry.base.BaseActivity;
 import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
@@ -27,7 +27,7 @@ import java.util.Map;
  */
 public class BrandDetailActivity extends BaseActivity implements View.OnClickListener {
     private String id;
-    private ListView listView;
+    private RefreshListView listView;
     private List<BrandDetailBean.ObjectBean.BrandAllDetailBean> list;
     private LinearLayout linearLayout;
     private ImageView returnIv;
@@ -42,7 +42,7 @@ public class BrandDetailActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     protected void initView() {
-        listView = (ListView) findViewById(R.id.Brand_Detail_list);
+        listView = (RefreshListView) findViewById(R.id.Brand_Detail_list);
         linearLayout = (LinearLayout) findViewById(R.id.brand_detail_location);
         returnIv = (ImageView) findViewById(R.id.brand_detail_return);
         nameTv = (TextView) findViewById(R.id.Brand_Detail_title);

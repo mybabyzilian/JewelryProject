@@ -1,5 +1,6 @@
 package com.example.admin.jewelry.jewelrymap;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -48,7 +49,8 @@ public class JewelryMapActivity extends AppCompatActivity implements AMapLocatio
         searchTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(JewelryMapActivity.this,SortSearchActivity.class);
+                startActivity(intent);
             }
         });
         mapView = (MapView) findViewById(R.id.map);

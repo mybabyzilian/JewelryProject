@@ -56,6 +56,7 @@
         <activity android:name=".login.RegisterActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
         <activity android:name=".homepage.gemstonepostbar.PostBarActivity"/>
+        <activity android:name=".jewelrymap.SortSearchActivity"/>
         <activity
             android:name=".login.LoginActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden">

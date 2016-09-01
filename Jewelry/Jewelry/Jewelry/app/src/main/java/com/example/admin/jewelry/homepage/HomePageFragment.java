@@ -89,7 +89,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
 
     private List<String> generateTips() {
         List<String> tips = new ArrayList<>();
-        for (int i = 100; i < 120; i++) {
+        for (int i = 1; i < 120; i++) {
             tips.add(TIP_PREFIX + i);
         }
         return tips;

@@ -54,8 +54,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 String num = numEt.getText().toString();
                 String password = passwordEt.getText().toString();
                 Map<String, String> map = new HashMap<>();
-                map.put("user_account", num);
-                map.put("user_password", password);
+                map.put("user_account", "15142409283");
+                map.put("user_password", "123456");
                 OkHttpClientManager.postAsyn(Urls.USER_LOGIN_URL, new OkHttpClientManager.ResultCallback<UserLoginBean>() {
                     @Override
                     public void onError(Request request, Exception e) {
