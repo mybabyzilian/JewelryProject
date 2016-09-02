@@ -11,7 +11,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:scaleType="fitXY"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:layout_centerHorizontal="true"
         android:src="@mipmap/ic_launcher"
         />
@@ -26,8 +26,6 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:scaleType="fitXY"
-            android:layout_marginLeft="9dp"
-
             />
         <TextView
             android:id="@+id/user_help_title"
@@ -59,9 +57,5 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#870808"/>
-
     </LinearLayout>
-
-
-
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.admin.jewelry.homepage;
 
 import android.content.Intent;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.LinearLayout;
 
 import com.example.admin.jewelry.R;
@@ -37,6 +38,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
             "http://img0.imgtn.bdimg.com/it/u=2604831194,922890958&fm=11&gp=0.jpg"};
     private TipView tipView;
     private static final String TIP_PREFIX = "this is tip No.";
+    private WebView webView;
 
 
     @Override
@@ -52,6 +54,15 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
 
         banner.setDelayTime(2000);
         banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
+        webView = (WebView) view.findViewById(R.id.homepage_web);
+        banner.setOnBannerClickListener(new Banner.OnBannerClickListener() {
+            @Override
+            public void OnBannerClick(View view, int position) {
+               Intent intent = new Intent(context,JewelryMapActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
         view.findViewById(R.id.certificate_query).setOnClickListener(this);
         view.findViewById(R.id.price_trend).setOnClickListener(this);
         view.findViewById(R.id.major_train).setOnClickListener(this);
@@ -116,7 +127,6 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
                 Intent intent4 = new Intent(context, JewelryMapActivity.class);
                 context.startActivity(intent4);
                 break;
-
             case R.id.integral_store:
                 Intent intent9 = new Intent(getContext(), IntegralStoreActivity.class);
                 startActivity(intent9);
@@ -165,6 +175,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
                 intent16.putExtra("name","其他品类");
                 startActivity(intent16);
                 break;
+
         }
     }
 }
