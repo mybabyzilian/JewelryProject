@@ -53,7 +53,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
         banner.setImages(url);
 
         banner.setDelayTime(2000);
-        banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
+        banner.setBannerStyle(Banner.FIND_VIEWS_WITH_TEXT);
         webView = (WebView) view.findViewById(R.id.homepage_web);
         banner.setOnBannerClickListener(new Banner.OnBannerClickListener() {
             @Override

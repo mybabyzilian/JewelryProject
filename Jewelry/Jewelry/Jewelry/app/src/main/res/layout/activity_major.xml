@@ -1,7 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/allRed">
+        <ImageView
+            android:id="@+id/major_train_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/fanhui" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="专业培训"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/pagedescription" />
+    </RelativeLayout>
+
+    <com.youth.banner.Banner
+        android:id="@+id/major_train_banner"
+        android:layout_width="match_parent"
+        android:layout_height="140dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="#cdcdcd" />
+    <LinearLayout
+        android:id="@+id/parent_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="25dp">
+        <LinearLayout
+            android:id="@+id/sort_major_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/sort_major_Tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="品类"
+                android:textColor="#000000" />
+            <ImageView
+                android:id="@+id/sort_major_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="3dp"
+                android:src="@mipmap/dropdown" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.01"
+            android:background="#cdcdcd" />
+
+        <LinearLayout
+            android:id="@+id/mechanism_major_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/mechanism_major_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="机制"
+                android:textColor="#000000" />
+            <ImageView
+                android:id="@+id/mechanism_major_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="3dp"
+                android:src="@mipmap/dropdown" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.01"
+            android:background="#cdcdcd" />
+        <LinearLayout
+            android:id="@+id/major_time_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/major_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="时间"
+                android:textColor="#000000" />
+            <ImageView
+                android:id="@+id/major_time_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="3dp"
+                android:src="@mipmap/dropdown" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.01"
+            android:background="#cdcdcd" />
+        <LinearLayout
+            android:id="@+id/major_city_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/major_city_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="城市"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:id="@+id/major_city_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="3dp"
+                android:src="@mipmap/dropdown" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="#cdcdcd" />
+    <com.example.admin.jewelry.Utils.RefreshListView
+        android:id="@+id/major_list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
