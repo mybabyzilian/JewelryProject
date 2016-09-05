@@ -70,6 +70,7 @@
             android:layout_marginLeft="15dp"
             android:src="@mipmap/user" />
         <LinearLayout
+            android:id="@+id/ency_search"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="6"

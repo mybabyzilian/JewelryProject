@@ -1,10 +1,12 @@
 package com.example.admin.jewelry.encyclopedia_fragment;
 
+import android.content.Intent;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +19,7 @@ import com.example.admin.jewelry.Utils.SideBar;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.example.admin.jewelry.netrequest.Urls;
+import com.example.admin.jewelry.search.JewelrySearchActivity;
 import com.squareup.okhttp.Request;
 
 import java.util.ArrayList;
@@ -29,7 +32,7 @@ import java.util.Map;
  * Created by admin on 2016/8/15.
  * 百科页面
  */
-public class EncyclopediaFragment extends BaseFragment {
+public class EncyclopediaFragment extends BaseFragment implements View.OnClickListener {
     private ListView sortListView;
     private SideBar sideBar;
     private TextView dialog;
@@ -42,6 +45,7 @@ public class EncyclopediaFragment extends BaseFragment {
     private GridView gridView;
     private EncyGridAdapter gridAdapter;
     private List<EncyBean.ObjectBean.IndexlistBean.EncyDetailBean> data;
+    private LinearLayout searchLayout;
 
 
     @Override
@@ -62,6 +66,7 @@ public class EncyclopediaFragment extends BaseFragment {
         characterParser = CharacterParser.getInstance();
         pinyinComparator = new PinyinComparator();
         mClearEditText = (ClearEditText) view.findViewById(R.id.filter_edit);
+        view.findViewById(R.id.ency_search).setOnClickListener(this);
 
     }
 
@@ -184,4 +189,13 @@ public class EncyclopediaFragment extends BaseFragment {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.ency_search:
+                Intent intent = new Intent(context, JewelrySearchActivity.class);
+                context.startActivity(intent);
+                break;
+        }
+    }
 }

@@ -22,6 +22,7 @@ import com.example.admin.jewelry.homepage.jewerydisplay.JewelryDisplayActivity;
 import com.example.admin.jewelry.homepage.pricetrend.PriceTrendActivity;
 import com.example.admin.jewelry.homepage.qualificationcertification.QualificationActivity;
 import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
+import com.example.admin.jewelry.search.JewelrySearchActivity;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ import java.util.List;
  */
 public class HomePageFragment extends BaseFragment implements View.OnClickListener {
     private Banner banner;
-    private LinearLayout hotLinear, integralLinear;
+    private LinearLayout hotLinear, integralLinear,searchLayout;
     private String[] url = {"http://img4.duitang.com/uploads/item/201512/18/20151218141838_UdZGf.jpeg",
             "http://img0.imgtn.bdimg.com/it/u=2604831194,922890958&fm=11&gp=0.jpg"};
     private TipView tipView;
@@ -89,6 +90,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
         view.findViewById(R.id.ephrite_bar_layout).setOnClickListener(this);
         view.findViewById(R.id.wenwan_bar_layout).setOnClickListener(this);
         view.findViewById(R.id.other_bar_layout).setOnClickListener(this);
+        view.findViewById(R.id.homepage_search_layout).setOnClickListener(this);
         tipView = (TipView) view.findViewById(R.id.homepage_tip_view);
         tipView.setOnClickListener(this);
     }
@@ -180,6 +182,10 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
             case R.id.homepage_tip_view:
                 Intent intent17 = new Intent(context, DaHuaHotActivity.class);
                 context.startActivity(intent17);
+                break;
+            case R.id.homepage_search_layout:
+                Intent intent18 = new Intent(context, JewelrySearchActivity.class);
+                context.startActivity(intent18);
                 break;
 
         }

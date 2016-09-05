@@ -24,6 +24,7 @@
 
 
     <application
+        android:name=".base.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -61,6 +62,9 @@
         <activity android:name=".homepage.gemstonepostbar.PostBarActivity"/>
         <activity android:name=".jewelrymap.SortSearchActivity"/>
         <activity android:name=".homepage.dahuahot.DaHuaHotActivity"/>
+        <activity android:name=".search.JewelrySearchActivity"/>
+        <activity android:name=".mine.mymaterial.MyMaterialActivity"/>
+        <activity android:name=".mine.mymaterial.SetUserNameActivitry"/>
         <activity
             android:name=".login.LoginActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden">

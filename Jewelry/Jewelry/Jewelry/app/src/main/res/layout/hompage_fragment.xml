@@ -729,6 +729,7 @@
             android:src="@mipmap/user" />
 
         <LinearLayout
+            android:id="@+id/homepage_search_layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="7dp"
