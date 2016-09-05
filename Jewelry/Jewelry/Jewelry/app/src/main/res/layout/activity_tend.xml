@@ -10,13 +10,19 @@
         android:background="#8f0303"
         android:orientation="horizontal">
 
-        <ImageView
+        <RelativeLayout
             android:id="@+id/trend_return"
-            android:layout_width="wrap_content"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
-            android:src="@mipmap/fanhui" />
+            android:layout_centerVertical="true">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/fanhui"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"

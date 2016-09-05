@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.Utils.CommonAdaper;
 import com.example.admin.jewelry.Utils.PopuWindowBase;
+import com.example.admin.jewelry.Utils.RefreshListView;
 import com.example.admin.jewelry.Utils.ViewHolder;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.homepage.pricetrend.branddetail.BrandDetailActivity;
@@ -29,7 +30,7 @@ import java.util.Map;
  */
 public class BrandPriceFragment extends BaseFragment implements View.OnClickListener {
     private LinearLayout goldLayput, lastlayout, brandLayout;
-    private ListView listView;
+    private RefreshListView listView;
     private View popuView;
     private ListView popuList;
     private PricePopuAdapter adapter;
@@ -54,7 +55,7 @@ public class BrandPriceFragment extends BaseFragment implements View.OnClickList
         goldLayput = (LinearLayout) view.findViewById(R.id.brandgold_linear_layout);
         lastlayout = (LinearLayout) view.findViewById(R.id.brand_last_linear_layout);
         brandLayout = (LinearLayout) view.findViewById(R.id.brand_linear_layout);
-        listView = (ListView) view.findViewById(R.id.brand_list);
+        listView = (RefreshListView) view.findViewById(R.id.brand_list);
         brandIv = (ImageView) view.findViewById(R.id.brand_gold_iv);
         lastIv = (ImageView) view.findViewById(R.id.last_time_iv);
 

@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="@color/allRed" />
-
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@color/allRed">
-
         <RelativeLayout
-            android:id="@+id/post_bar_return"
+            android:id="@+id/dahua_hot_return"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -28,20 +23,25 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/post_bar_name"
+            android:id="@+id/detail_major_train_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="宝石贴吧"
+            android:text="大话热点"
             android:textColor="#ffffff"
             android:textSize="20sp" />
     </RelativeLayout>
-
-
-    <com.example.admin.jewelry.Utils.RefreshListView
-       android:id="@+id/post_bar_list"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
-
+    <android.support.design.widget.TabLayout
+        android:id="@+id/DaHua_hot_tab"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        app:tabSelectedTextColor="@color/allRed"
+        app:tabIndicatorColor="@color/allRed"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/DaHua_hot_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9.2" />
 </LinearLayout>

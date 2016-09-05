@@ -78,7 +78,7 @@
         android:layout_height="0.7dp"
         android:background="#cdcdcd" />
 
-    <ListView
+    <com.example.admin.jewelry.Utils.RefreshListView
         android:id="@+id/brand_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

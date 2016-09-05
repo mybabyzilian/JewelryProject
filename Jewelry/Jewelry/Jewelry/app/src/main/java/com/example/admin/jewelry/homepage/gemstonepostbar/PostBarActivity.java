@@ -1,6 +1,8 @@
 package com.example.admin.jewelry.homepage.gemstonepostbar;
 
 import android.content.Intent;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.admin.jewelry.R;
@@ -20,6 +22,7 @@ public class PostBarActivity extends BaseActivity {
     private RefreshListView listView;
     private SurroundAdapter adapter;
     private TextView titleTv;
+    private RelativeLayout returnIv;
 
     @Override
     public int setLayout() {
@@ -31,6 +34,13 @@ public class PostBarActivity extends BaseActivity {
         adapter = new SurroundAdapter(this);
         listView = bindView(R.id.post_bar_list);
         titleTv = bindView(R.id.post_bar_name);
+        returnIv = bindView(R.id.post_bar_return);
+        returnIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     @Override

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
@@ -20,7 +21,8 @@ import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
  */
 public class PriceTrendActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
     private RadioButton priceRb, brandRb;
-    private ImageView returnIv,mapIv;
+    private ImageView mapIv;
+    private RelativeLayout returnIv;
 
 
     @Override
@@ -33,7 +35,7 @@ public class PriceTrendActivity extends BaseActivity implements CompoundButton.O
         priceRb = (RadioButton) findViewById(R.id.rb_trend);
         brandRb = (RadioButton) findViewById(R.id.rb_brand);
         mapIv = (ImageView) findViewById(R.id.trend_map);
-        returnIv = (ImageView) findViewById(R.id.trend_return);
+        returnIv = (RelativeLayout) findViewById(R.id.trend_return);
         priceRb.setOnClickListener(this);
         brandRb.setOnClickListener(this);
         mapIv.setOnClickListener(this);

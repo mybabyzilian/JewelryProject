@@ -58,11 +58,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         switch (view.getId()){
             case R.id.rb_homepage:
                 fragmentTransaction.replace(R.id.homepage_framelaout, new HomePageFragment());
-
                 break;
             case R.id.rb_information:
                 fragmentTransaction.replace(R.id.homepage_framelaout,new InformationFragment());
-
                 break;
             case R.id.rb_forhelp:
                 fragmentTransaction.replace(R.id.homepage_framelaout,new ForHelpFragment());

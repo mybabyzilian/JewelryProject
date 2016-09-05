@@ -1,7 +1,9 @@
 package com.example.admin.jewelry.homepage.MajorTrain;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -120,16 +122,35 @@ public class MajorTrainActivity extends BaseActivity implements View.OnClickList
                 data.addAll(response.getObject());
                 listView.setAdapter(new CommonAdaper<MajorBean.ObjectBean>(MajorTrainActivity.this, data, R.layout.major_item) {
                     @Override
-                    public void convert(ViewHolder holder, MajorBean.ObjectBean item) {
+                    public void convert(ViewHolder holder, final MajorBean.ObjectBean item) {
                         holder.setText(R.id.major_item_tv, item.getTrain_course_title());
                         holder.setText(R.id.mec_item_tv, item.getTrain_mechanism());
                         holder.setText(R.id.major_item_date, item.getTrain_course_start_date());
                         holder.setText(R.id.major_item_city, item.getTrain_city());
 
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                Intent intent = new Intent(MajorTrainActivity.this,MajorDetailActivity.class);
+                                intent.putExtra("sort",item.getTrain_category());
+                                intent.putExtra("name",item.getTrain_course_title());
+                                intent.putExtra("place",item.getTrain_address());
+                                intent.putExtra("date",item.getTrain_course_start_date());
+                                intent.putExtra("cycle",item.getTrain_cycle());
+                                intent.putExtra("kecheng",item.getTrain_mechanism());
+                                intent.putExtra("zhenghsu",item.getTrain_certificates_available());
+                                intent.putExtra("cost",item.getTrain_cost());
+                                intent.putExtra("phone",item.getTrain_phone());
+                                intent.putExtra("shuoming",item.getTrain_description());
+                                startActivity(intent);
+                            }
+                        });
+
                     }
                 });
             }
         });
+
     }
 
     @Override

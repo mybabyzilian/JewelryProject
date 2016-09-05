@@ -10,6 +10,7 @@ import com.example.admin.jewelry.Utils.TipView;
 import com.example.admin.jewelry.base.BaseFragment;
 import com.example.admin.jewelry.homepage.MajorTrain.MajorTrainActivity;
 import com.example.admin.jewelry.homepage.certificate.CertificateActivity;
+import com.example.admin.jewelry.homepage.dahuahot.DaHuaHotActivity;
 import com.example.admin.jewelry.homepage.exclusive.ExpandConnectionActivity;
 import com.example.admin.jewelry.homepage.exclusive.IssueWindowsActivity;
 import com.example.admin.jewelry.homepage.exclusive.SearchRimActivity;
@@ -89,6 +90,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
         view.findViewById(R.id.wenwan_bar_layout).setOnClickListener(this);
         view.findViewById(R.id.other_bar_layout).setOnClickListener(this);
         tipView = (TipView) view.findViewById(R.id.homepage_tip_view);
+        tipView.setOnClickListener(this);
     }
 
     @Override
@@ -174,6 +176,10 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
                 Intent intent16 = new Intent(context,PostBarActivity.class);
                 intent16.putExtra("name","其他品类");
                 startActivity(intent16);
+                break;
+            case R.id.homepage_tip_view:
+                Intent intent17 = new Intent(context, DaHuaHotActivity.class);
+                context.startActivity(intent17);
                 break;
 
         }

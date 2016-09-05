@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
@@ -30,7 +30,7 @@ public class JewelryMapActivity extends AppCompatActivity implements AMapLocatio
     private AMapLocationClient mlocationClient;
     private AMap aMap;
     private LocationSource.OnLocationChangedListener mListener;
-    private ImageView returnIv;
+    private RelativeLayout returnIv;
     private TextView searchTv;
 
 
@@ -38,7 +38,7 @@ public class JewelryMapActivity extends AppCompatActivity implements AMapLocatio
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        returnIv = (ImageView) findViewById(R.id.trend_return);
+        returnIv = (RelativeLayout) findViewById(R.id.map_return);
         searchTv = (TextView) findViewById(R.id.trend_map_tv);
         returnIv.setOnClickListener(new View.OnClickListener() {
             @Override

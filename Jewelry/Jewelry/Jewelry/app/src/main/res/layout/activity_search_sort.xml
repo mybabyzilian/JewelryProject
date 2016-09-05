@@ -53,6 +53,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <LinearLayout
+            android:id="@+id/sort_search_near"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -74,6 +75,7 @@
                 android:layout_gravity="center_horizontal"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/sort_search_desgin"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -103,6 +105,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <LinearLayout
+            android:id="@+id/sort_search_institution"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -124,6 +127,7 @@
                 android:layout_gravity="center_horizontal"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/sort_search_train"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -153,6 +157,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <LinearLayout
+            android:id="@+id/sort_search_origin"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -174,6 +179,7 @@
                 android:layout_gravity="center_horizontal"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/sort_search_all"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
