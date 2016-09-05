@@ -1,17 +1,17 @@
 package com.example.admin.jewelry.mine.my_baby;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
-import com.example.admin.jewelry.netrequest.OkHttpClientManager;
-import com.squareup.okhttp.Request;
 
 /**
- * Created by JINDAPENG on 2016/8/30.
+ * Created by JINDAPENG on 2016/9/5.
+ * 宝贝管理
  */
 public class MyBabyActivity extends BaseActivity implements View.OnClickListener {
     private ListView listView;
@@ -25,22 +25,21 @@ public class MyBabyActivity extends BaseActivity implements View.OnClickListener
     @Override
     protected void initView() {
         bindView(R.id.my_baby_back_image).setOnClickListener(this);
+        bindView(R.id.my_baby_release).setOnClickListener(this);
+        listView = bindView(R.id.baby_list_view);
 
     }
 
     @Override
     protected void initData() {
-        String url = "http://192.168.31.10:8081/boastJewelry/objectGoods/my/one.do";
-
-        myBabyAdapter = new MyBabyAdapter(getBaseContext());
-        bindView(R.id.baby_list_view);
+        myBabyAdapter = new MyBabyAdapter(this);
+        listView.setAdapter(myBabyAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
             }
         });
-        listView.setAdapter(myBabyAdapter);
 
     }
 
@@ -49,6 +48,10 @@ public class MyBabyActivity extends BaseActivity implements View.OnClickListener
         switch (view.getId()) {
             case R.id.my_baby_back_image:
                 finish();
+                break;
+            case R.id.my_baby_release:
+                Intent intent = new Intent(this, MyBabyReleaseActivity.class);
+                startActivity(intent);
                 break;
         }
     }

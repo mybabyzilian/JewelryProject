@@ -30,15 +30,15 @@ public class MyParticipateActivity extends BaseActivity implements View.OnClickL
 
     @Override
     public int setLayout() {
-        return R.layout.activity_my_participate;
+        return R.layout.activity_my_home_page;
     }
 
     @Override
     protected void initView() {
-        backImg = bindView(R.id.my_participate_back_image);
+        backImg = bindView(R.id.my_back_image);
         backImg.setOnClickListener(this);
-        tabLayout = bindView(R.id.my_participate_tablayout);
-        viewPager = bindView(R.id.my_participate_viewpager);
+        tabLayout = bindView(R.id.my_tablayout);
+        viewPager = bindView(R.id.my_view_pager);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class MyParticipateActivity extends BaseActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.my_participate_back_image:
+            case R.id.my_back_image:
                 finish();
                 break;
         }

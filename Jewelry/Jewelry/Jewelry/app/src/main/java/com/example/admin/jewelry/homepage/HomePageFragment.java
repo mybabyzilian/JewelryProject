@@ -7,10 +7,10 @@ import android.widget.LinearLayout;
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseFragment;
 
-import com.example.admin.jewelry.homepage.exclusive.ExpandConnectionActivity;
-import com.example.admin.jewelry.homepage.exclusive.IssueWindowsActivity;
-import com.example.admin.jewelry.homepage.exclusive.SearchRimActivity;
-import com.example.admin.jewelry.homepage.exclusive.SeekServiceActivity;
+import com.example.admin.jewelry.homepage.exclusive.connection.ExpandConnectionActivity;
+import com.example.admin.jewelry.homepage.exclusive.issue_windows.IssueWindowsActivity;
+import com.example.admin.jewelry.homepage.exclusive.rim.SearchRimActivity;
+import com.example.admin.jewelry.homepage.exclusive.seek_service.SeekServiceActivity;
 import com.example.admin.jewelry.homepage.hot_activity.HotActivity;
 import com.example.admin.jewelry.homepage.integral.IntegralStoreActivity;
 import com.example.admin.jewelry.homepage.MajorTrain.MajorTrainActivity;

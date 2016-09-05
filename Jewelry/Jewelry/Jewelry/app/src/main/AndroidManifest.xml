@@ -63,17 +63,18 @@
         <activity android:name=".homepage.hot_activity.ParticipateHotActivity"/>
 
         <!--专属功能-->
-        <activity android:name=".homepage.exclusive.ExpandConnectionActivity" />
-        <activity android:name=".homepage.exclusive.FeedBackActivity" />
-        <activity android:name=".homepage.exclusive.IssueWindowsActivity" />
-        <activity android:name=".homepage.exclusive.CollectionPublishActivity"/>
-        <activity android:name=".homepage.exclusive.SearchRimActivity" />
+        <activity android:name=".homepage.exclusive.connection.ExpandConnectionActivity" />
+        <activity android:name=".homepage.exclusive.seek_service.FeedBackActivity" />
+        <activity android:name=".homepage.exclusive.issue_windows.IssueWindowsActivity" />
+        <activity android:name=".homepage.exclusive.issue_windows.CollectionPublishActivity"/>
+        <activity android:name=".homepage.exclusive.issue_windows.NewPublishActivity"/>
+        <activity android:name=".homepage.exclusive.rim.SearchRimActivity" />
         <activity android:name=".homepage.exclusive.rim.RimMerchantsActivity"/>
         <activity android:name=".homepage.exclusive.rim.RimProcessActivity"/>
         <activity android:name=".homepage.exclusive.rim.RimAuthenticateActivity"/>
         <activity android:name=".homepage.exclusive.rim.RimTrainActivity"/>
         <activity android:name=".homepage.exclusive.rim.RimOrganizationActivity"/>
-        <activity android:name=".homepage.exclusive.SeekServiceActivity" />
+        <activity android:name=".homepage.exclusive.seek_service.SeekServiceActivity" />
 
         <!--资讯页面-->
         <activity android:name=".information.HotWriterActivity" />
@@ -93,8 +94,9 @@
         <activity android:name=".mine.my_account.MyAccountActivity"/>
         <activity android:name=".mine.my_store.MyStoreActivity"/>
         <activity android:name=".mine.my_setting.MySettingActivity"/>
-        <activity android:name=".mine.my_baby.MyBabyActivity"/>
         <activity android:name=".mine.my_issue.MyIssueActivity"/>
+        <activity android:name=".mine.my_baby.MyBabyActivity"/>
+        <activity android:name=".mine.my_baby.MyBabyReleaseActivity"/>
         <activity android:name=".mine.my_order.MyOrderActivity"/>
         <activity android:name=".mine.my_collection.MyCollectionActivity"/>
         <activity android:name=".mine.my_participate.MyParticipateActivity"/>

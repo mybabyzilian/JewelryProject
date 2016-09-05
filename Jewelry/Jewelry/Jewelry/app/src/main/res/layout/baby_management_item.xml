@@ -12,7 +12,7 @@
             android:id="@+id/my_baby_image_view"
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:layout_margin="15dp"
+            android:padding="10dp"
             android:src="@mipmap/ic_launcher" />
 
         <RelativeLayout
@@ -25,16 +25,15 @@
                 android:id="@+id/my_baby_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:text="天然鎏金梳子"
                 android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/my_baby_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:text="620"
                 android:textColor="@android:color/holo_red_dark" />
 
@@ -42,7 +41,7 @@
                 android:id="@+id/my_baby_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="40dp"
                 android:text="2016-07-09"
                 android:textColor="@android:color/black" />
 
@@ -50,7 +49,7 @@
                 android:id="@+id/my_baby_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="60dp"
                 android:text="阅读量：12345"
                 android:textColor="@android:color/black" />
 
@@ -80,7 +79,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="25dp"
         android:orientation="horizontal">
 
         <RelativeLayout

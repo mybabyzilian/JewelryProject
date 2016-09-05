@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@android:color/holo_red_dark">
-
-    <ImageView
-        android:id="@+id/collection_publish_back_image"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:src="@mipmap/mine_icon_arrow" />
+        android:background="@android:color/holo_red_dark">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="藏品发布"
-        android:textSize="18sp"
-        android:textColor="@android:color/white" />
+        <ImageView
+            android:id="@+id/new_publish_back_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:src="@mipmap/mine_icon_arrow" />
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="新品发布"
+            android:textSize="18sp"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -60,7 +59,7 @@
         android:layout_height="25dp">
 
         <LinearLayout
-            android:id="@+id/sort_linear_layout"
+            android:id="@+id/category_linear_layout"
             android:layout_width="0dp"
             android:layout_height="25dp"
             android:layout_weight="1"
@@ -68,15 +67,15 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/sort_Tv"
+                android:id="@+id/category_Tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="分类"
+                android:text="品类"
                 android:textColor="#000000" />
 
             <ImageView
-                android:id="@+id/sort_iv"
+                android:id="@+id/category_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -93,7 +92,7 @@
             android:background="#cdcdcd" />
 
         <LinearLayout
-            android:id="@+id/type_linear_layout"
+            android:id="@+id/style_linear_layout"
             android:layout_width="0dp"
             android:layout_height="25dp"
             android:layout_weight="1"
@@ -101,14 +100,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/type_tv"
+                android:id="@+id/style_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="类型"
+                android:text="款式"
                 android:textColor="#000000" />
 
             <ImageView
-                android:id="@+id/type_iv"
+                android:id="@+id/style_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -124,7 +123,7 @@
             android:background="#cdcdcd" />
 
         <LinearLayout
-            android:id="@+id/reward_linear_layout"
+            android:id="@+id/certificate_linear_layout"
             android:layout_width="0dp"
             android:layout_height="25dp"
             android:layout_weight="1"
@@ -132,14 +131,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/reward_tv"
+                android:id="@+id/certificate_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="打赏"
+                android:text="证书"
                 android:textColor="#000000" />
 
             <ImageView
-                android:id="@+id/reward_iv"
+                android:id="@+id/certificate_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -187,14 +186,14 @@
         android:background="@android:color/darker_gray" />
 
     <RelativeLayout
-        android:id="@+id/collection_old_price"
+        android:id="@+id/retail_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="原来价位："
+            android:text="零售价位："
             android:textSize="15sp"
             android:textColor="@android:color/black"
             android:layout_margin="10dp"
@@ -221,7 +220,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="转让价位："
+            android:text="平台价位："
             android:textSize="15sp"
             android:textColor="@android:color/black"
             android:layout_margin="10dp"
@@ -249,33 +248,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="详情介绍："
-            android:textSize="15sp"
-            android:textColor="@android:color/black"
-            android:layout_margin="10dp"
-            />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/common_icon_arrow"
-            android:layout_alignParentRight="true"
-            android:layout_margin="10dp"/>
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-
-    <RelativeLayout
-        android:id="@+id/where_area"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="所在区域："
             android:textSize="15sp"
             android:textColor="@android:color/black"
             android:layout_margin="10dp"

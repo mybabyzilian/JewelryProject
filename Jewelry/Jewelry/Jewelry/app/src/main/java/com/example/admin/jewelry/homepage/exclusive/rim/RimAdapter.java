@@ -1,4 +1,4 @@
-package com.example.admin.jewelry.mine.my_baby;
+package com.example.admin.jewelry.homepage.exclusive.rim;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,19 +6,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.admin.jewelry.R;
-
 
 /**
  * Created by JINDAPENG on 2016/9/5.
  */
-public class MyBabyAdapter extends BaseAdapter {
+public class RimAdapter extends BaseAdapter{
     private Context context;
 
-    public MyBabyAdapter(Context context) {
+    public RimAdapter(Context context) {
         this.context = context;
     }
 
@@ -41,7 +40,7 @@ public class MyBabyAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder;
         if (view == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.baby_management_item, viewGroup, false);
+            view = LayoutInflater.from(context).inflate(R.layout.rim_merchants_list_item, viewGroup, false);
             holder = new ViewHolder(view);
             view.setTag(holder);
         } else {
@@ -49,15 +48,18 @@ public class MyBabyAdapter extends BaseAdapter {
         }
         return view;
     }
-
     class ViewHolder {
-        ImageView babyImg;
-        TextView baby_shelves;
+        TextView name,address,distance;
+        ImageView mapImg;
+        LinearLayout details,gotoTv;
 
         public ViewHolder(View view) {
-            babyImg = (ImageView) view.findViewById(R.id.my_baby_image_view);
-            baby_shelves = (TextView) view.findViewById(R.id.my_baby_shelves);
+            mapImg = (ImageView) view.findViewById(R.id.rim_merchants_map_img);
+            name = (TextView) view.findViewById(R.id.rim_merchants_name_tv);
+            address = (TextView) view.findViewById(R.id.rim_merchants_address);
+            distance = (TextView) view.findViewById(R.id.rim_merchants_distance);
+            details = (LinearLayout) view.findViewById(R.id.rim_merchants_details);
+            gotoTv = (LinearLayout) view.findViewById(R.id.rim_merchants_goto);
         }
-
     }
 }

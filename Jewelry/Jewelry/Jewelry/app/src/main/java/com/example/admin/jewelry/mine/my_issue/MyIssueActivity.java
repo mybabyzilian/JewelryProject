@@ -26,15 +26,15 @@ public class MyIssueActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public int setLayout() {
-        return R.layout.activity_my_issue;
+        return R.layout.activity_my_home_page;
     }
 
     @Override
     protected void initView() {
-        backImg = bindView(R.id.my_issue_back_image);
+        backImg = bindView(R.id.my_back_image);
         backImg.setOnClickListener(this);
-        tabLayout = bindView(R.id.my_issue_tablayout);
-        viewPager = bindView(R.id.my_issue_viewpager);
+        tabLayout = bindView(R.id.my_tablayout);
+        viewPager = bindView(R.id.my_view_pager);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class MyIssueActivity extends BaseActivity implements View.OnClickListene
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.my_issue_back_image:
+            case R.id.my_back_image:
                 finish();
                 break;
         }

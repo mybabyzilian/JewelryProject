@@ -29,45 +29,45 @@ public class HotAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return hotBean == null ? 0 :hotBean.getObject().size();
+        return hotBean == null ? 0 : hotBean.getObject().size();
     }
 
     @Override
-    public Object getItem(int position) {
+    public Object getItem(int i) {
         return null;
     }
 
     @Override
-    public long getItemId(int position) {
+    public long getItemId(int i) {
         return 0;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder;
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.hot_list_item, parent, false);
-            holder = new ViewHolder(convertView);
-            convertView.setTag(holder);
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.hot_list_item, viewGroup, false);
+            holder = new ViewHolder(view);
+            view.setTag(holder);
         } else {
-            holder = (ViewHolder) convertView.getTag();
+            holder = (ViewHolder) view.getTag();
         }
 
-        if (hotBean.getObject().get(position).getActicity_status()=="1") {
-            String imageUrl = hotBean.getObject().get(position).getActivity_picture_url();
+        if (hotBean.getObject().get(i).getActicity_status() == "1") {
+            String imageUrl = hotBean.getObject().get(i).getActivity_picture_url();
             Glide.with(context).load(imageUrl).into(holder.underwayImg);
         } else {
-            String imageUrl = hotBean.getObject().get(position).getActivity_picture_url();
+            String imageUrl = hotBean.getObject().get(i).getActivity_picture_url();
             Glide.with(context).load(imageUrl).into(holder.underwayImg);
         }
-        holder.titleTv.setText(hotBean.getObject().get(position).getActivity_title());
-        holder.howTv.setText(hotBean.getObject().get(position).getActicity_amount() + "人参加");
+        holder.titleTv.setText(hotBean.getObject().get(i).getActivity_title());
+        holder.howTv.setText(hotBean.getObject().get(i).getActicity_amount() + "人参加");
 
-        return convertView;
+        return view;
     }
 
     class ViewHolder {
-        TextView titleTv,howTv;
+        TextView titleTv, howTv;
         ImageView underwayImg;
 
         public ViewHolder(View view) {
@@ -77,3 +77,4 @@ public class HotAdapter extends BaseAdapter {
         }
     }
 }
+

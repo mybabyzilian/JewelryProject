@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class MyParticipateAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragmentList;
-    private String[] tabs = {"资讯", "咨询", "求助", "讨论"};
+    private String[] tabs = {"资讯", "咨询", "求助", "讨论","活动"};
 
     public MyParticipateAdapter(FragmentManager fm) {
         super(fm);

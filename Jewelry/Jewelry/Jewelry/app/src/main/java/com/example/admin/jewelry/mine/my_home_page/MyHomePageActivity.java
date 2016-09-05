@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
@@ -23,6 +24,8 @@ public class MyHomePageActivity extends BaseActivity implements View.OnClickList
     private MyHomePageAdapter myHomePageAdapter;
     private List<Fragment> fragmentList;
     private ImageView backImg;
+    private RelativeLayout relativeLayout ,buttonRl;
+
 
     @Override
     public int setLayout() {
@@ -31,10 +34,16 @@ public class MyHomePageActivity extends BaseActivity implements View.OnClickList
 
     @Override
     protected void initView() {
-        backImg = bindView(R.id.my_home_page_back_image);
+        backImg = bindView(R.id.my_back_image);
         backImg.setOnClickListener(this);
+
         tabLayout = bindView(R.id.my_tablayout);
-        viewPager = bindView(R.id.my_home_page_viewpager);
+        viewPager = bindView(R.id.my_view_pager);
+
+        relativeLayout = bindView(R.id.my_home_rl);
+        relativeLayout.setVisibility(View.VISIBLE);
+        buttonRl = bindView(R.id.my_button_rl);
+        buttonRl.setVisibility(View.VISIBLE);
 
     }
 
@@ -64,7 +73,7 @@ public class MyHomePageActivity extends BaseActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.my_home_page_back_image:
+            case R.id.my_back_image:
                 finish();
                 break;
 

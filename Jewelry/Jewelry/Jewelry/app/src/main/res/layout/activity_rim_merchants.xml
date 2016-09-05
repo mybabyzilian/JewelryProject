@@ -22,23 +22,24 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="周边商家"
+            android:text="此处占位"
             android:textSize="18sp"
             android:textColor="@android:color/white" />
 
         <TextView
+            android:id="@+id/show_map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
-            android:text="地图显示"/>
+            android:text=" "/>
 
     </RelativeLayout>
 
     <ListView
         android:id="@+id/rim_merchants_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
 </LinearLayout>

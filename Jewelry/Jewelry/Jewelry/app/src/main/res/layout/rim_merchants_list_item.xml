@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/rim_merchants_map_img"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="13dp"
             android:maxLines="15"
             android:text="红旗街399米"
             android:textColor="@android:color/black" />

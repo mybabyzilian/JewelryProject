@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,30 +18,34 @@
 
         <EditText
             android:id="@+id/search_edit"
-            android:layout_width="300dp"
-            android:layout_height="30dp"
-            android:background="@drawable/my_baby_search_shape"
+            android:layout_width="260dp"
+            android:layout_height="25dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:background="@drawable/my_baby_search_shape"
+            android:cursorVisible="false"
             android:hint="         搜索相关产品"
+            android:maxLength="20"
+            android:textColor="@android:color/black"
             android:textColorHint="@android:color/black"
-            android:textColor="@android:color/black"/>
+            android:textSize="15sp" />
 
         <ImageView
+            android:id="@+id/my_baby_release"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/uparrow"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"/>
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:src="@mipmap/uparrow" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/search"
-            android:layout_centerVertical="true"
             android:layout_alignLeft="@+id/search_edit"
-            android:paddingLeft="10dp"/>
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:src="@mipmap/search" />
 
     </RelativeLayout>
 
@@ -58,16 +63,16 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/sorte_Tv"
+                android:id="@+id/sorte_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="分类"
-                android:gravity="center_vertical"
                 android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:text="分类"
                 android:textColor="#000000" />
 
             <ImageView
-                android:id="@+id/sort_iv"
+                android:id="@+id/sorte_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -107,13 +112,14 @@
                 android:src="@mipmap/dropdown" />
         </LinearLayout>
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray" />
 
     <ListView
         android:id="@+id/baby_list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 </LinearLayout>
