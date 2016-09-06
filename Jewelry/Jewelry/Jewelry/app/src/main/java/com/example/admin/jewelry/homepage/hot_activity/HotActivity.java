@@ -3,7 +3,6 @@ package com.example.admin.jewelry.homepage.hot_activity;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -34,8 +33,6 @@ public class HotActivity extends BaseActivity implements View.OnClickListener, A
 
     @Override
     protected void initView() {
-        //去掉手机状态栏
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         backImage = bindView(R.id.hot_back_image);
         backImage.setOnClickListener(this);
         listView = bindView(R.id.hot_list_view);
@@ -48,7 +45,7 @@ public class HotActivity extends BaseActivity implements View.OnClickListener, A
         hotAdapter = new HotAdapter(this);
         String url = "http://192.168.31.10:8081/boastJewelry/s_activity/query.do";
         Map<String, String> maps = new HashMap<>();
-        maps.put("currentPage", "1");
+        maps.put("currentPage", " ");
 
         OkHttpClientManager.postAsyn(url, new OkHttpClientManager.ResultCallback<HotBean>() {
             @Override
@@ -81,8 +78,8 @@ public class HotActivity extends BaseActivity implements View.OnClickListener, A
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, HotDetailsActivity.class);
-        String entity_id = hotBean.getObject().get(position).getActivity_id();
-        intent.putExtra("entity_id", entity_id);
+        String activity_id = hotBean.getObject().get(position).getActivity_id();
+        intent.putExtra("activity_id", activity_id);
         startActivity(intent);
     }
 }

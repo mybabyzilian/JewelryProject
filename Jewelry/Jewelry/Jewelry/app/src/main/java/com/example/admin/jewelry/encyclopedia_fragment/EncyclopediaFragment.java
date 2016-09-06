@@ -1,5 +1,6 @@
 package com.example.admin.jewelry.encyclopedia_fragment;
 
+
 import android.content.Intent;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -32,7 +33,9 @@ import java.util.Map;
  * Created by admin on 2016/8/15.
  * 百科页面
  */
+
 public class EncyclopediaFragment extends BaseFragment implements View.OnClickListener {
+
     private ListView sortListView;
     private SideBar sideBar;
     private TextView dialog;
@@ -45,6 +48,7 @@ public class EncyclopediaFragment extends BaseFragment implements View.OnClickLi
     private GridView gridView;
     private EncyGridAdapter gridAdapter;
     private List<EncyBean.ObjectBean.IndexlistBean.EncyDetailBean> data;
+
     private LinearLayout searchLayout;
 
 
@@ -65,8 +69,9 @@ public class EncyclopediaFragment extends BaseFragment implements View.OnClickLi
         sortListView.addHeaderView(listHeadView);
         characterParser = CharacterParser.getInstance();
         pinyinComparator = new PinyinComparator();
-        mClearEditText = (ClearEditText) view.findViewById(R.id.filter_edit);
+     //   mClearEditText = (ClearEditText) view.findViewById(R.id.filter_edit);
         view.findViewById(R.id.ency_search).setOnClickListener(this);
+
 
     }
 
@@ -128,6 +133,26 @@ public class EncyclopediaFragment extends BaseFragment implements View.OnClickLi
             }
         });
 
+
+
+//        mClearEditText.addTextChangedListener(new TextWatcher() {
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//                filterData(s.toString());
+//            }
+//
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count,
+//                                          int after) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//            }
+//        });
 
 
     }
@@ -198,4 +223,5 @@ public class EncyclopediaFragment extends BaseFragment implements View.OnClickLi
                 break;
         }
     }
+
 }

@@ -137,7 +137,6 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
                 updateData();
             }
 
-
             @Override
             public void onResponse(OnlineBean response) {
                 onlineBean = response;
@@ -148,8 +147,6 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
         }, maps);
 
     }
-
-
 
 
     @Override

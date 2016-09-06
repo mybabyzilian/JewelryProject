@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:background="@color/allRed">
 
+
         <ImageView
             android:id="@+id/hot_back_image"
             android:layout_width="wrap_content"
@@ -22,6 +23,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="热门活动"
+            android:textSize="18sp"
             android:textColor="@android:color/white" />
 
     </RelativeLayout>

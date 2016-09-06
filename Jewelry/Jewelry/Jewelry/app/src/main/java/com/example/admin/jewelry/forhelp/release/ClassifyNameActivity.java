@@ -1,7 +1,6 @@
 package com.example.admin.jewelry.forhelp.release;
 
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -34,12 +33,9 @@ public class ClassifyNameActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     protected void initView() {
-        //去掉手机状态栏
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         backImage = bindView(R.id.classify_back_image);
         backImage.setOnClickListener(this);
-//        listView = bindView(R.id.classify_name_list);
-//        listView.setOnItemClickListener(this);
+
     }
 
     @Override
@@ -58,9 +54,6 @@ public class ClassifyNameActivity extends BaseActivity implements View.OnClickLi
             }
 
         }, map);
-
-
-
 
     }
 

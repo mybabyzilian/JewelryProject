@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.admin.jewelry">
+
     <!--系统相机访问权限-->
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <!--用于进行网络定位-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
     <!--用于访问GPS定位-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
     <!--获取运营商信息，用于支持提供运营商信息相关的接口-->
@@ -34,46 +38,64 @@
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="2a4ed05ea0ddacbd6937092c8a633a56">//开发者申请的key</meta-data>
-        <activity android:name=".homepage.MajorTrain.MajorDetailActivity"/>
 
-        <activity android:name=".homepage.jewerydisplay.JewelryDisplayActivity"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
-        <activity android:name=".homepage.pricetrend.branddetail.BrandDetailActivity"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
-        <activity android:name=".homepage.MajorTrain.MajorTrainActivity"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+            android:value="2a4ed05ea0ddacbd6937092c8a633a56">//开发者申请的key</meta-data>
+
+        <activity android:name=".homepage.MajorTrain.MajorDetailActivity" />
+
+        <activity
+            android:name=".homepage.jewerydisplay.JewelryDisplayActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".homepage.pricetrend.branddetail.BrandDetailActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".homepage.MajorTrain.MajorTrainActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
 
         <service android:name="com.amap.api.location.APSService" />
 
         <activity android:name=".jewelrymap.JewelryMapActivity" />
-        <activity android:name=".homepage.pricetrend.PriceTrendActivity"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity
+            android:name=".homepage.pricetrend.PriceTrendActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
 
-        <activity android:name=".homepage.qualificationcertification.QualificationActivity"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
-        <activity android:name=".homepage.certificate.CertificateActivity"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity
+            android:name=".homepage.qualificationcertification.QualificationActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".homepage.certificate.CertificateActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity android:name=".homepage.jewerydisplay.NewDetailActivity" />
-        <activity android:name=".homepage.MainActivity"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
-        <activity android:name=".login.RegisterActivity"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
-        <activity android:name=".homepage.gemstonepostbar.PostBarActivity"/>
-        <activity android:name=".jewelrymap.SortSearchActivity"/>
-        <activity android:name=".homepage.dahuahot.DaHuaHotActivity"/>
-        <activity android:name=".search.JewelrySearchActivity"/>
-        <activity android:name=".mine.mymaterial.MyMaterialActivity"/>
-        <activity android:name=".mine.mymaterial.SetUserNameActivitry"/>
+        <activity
+            android:name=".homepage.MainActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".login.RegisterActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity android:name=".homepage.gemstonepostbar.PostBarActivity" />
+        <activity android:name=".jewelrymap.SortSearchActivity" />
+        <activity android:name=".homepage.dahuahot.DaHuaHotActivity" />
+        <activity android:name=".search.JewelrySearchActivity" />
+        <activity android:name=".mine.mymaterial.MyMaterialActivity" />
+        <activity android:name=".mine.mymaterial.SetUserNameActivitry" />
+
+
+        <service android:name="com.amap.api.location.APSService" />
+
+
         <activity
             android:name=".login.LoginActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".homepage.exclusive.ExpandConnectionActivity"/>
+        <activity android:name=".homepage.exclusive.IssueWindowsActivity"/>
         <!--积分商城-->
         <activity android:name=".homepage.integral.IntegralStoreActivity" />
         <activity android:name=".homepage.integral.DetailsCommodityActivity" />
@@ -83,15 +105,9 @@
 
         <!--热门活动-->
         <activity android:name=".homepage.hot_activity.HotActivity" />
+        <activity android:name=".homepage.exclusive.SearchRimActivity"/>
         <activity android:name=".homepage.hot_activity.HotDetailsActivity" />
-        <activity android:name=".homepage.hot_activity.ParticipateHotActivity" />
 
-        <!--专属功能-->
-        <activity android:name=".homepage.exclusive.ExpandConnectionActivity" />
-        <activity android:name=".homepage.exclusive.FeedBackActivity" />
-        <activity android:name=".homepage.exclusive.IssueWindowsActivity" />
-        <activity android:name=".homepage.exclusive.SearchRimActivity" />
-        <activity android:name=".homepage.exclusive.SeekServiceActivity" />
 
         <!--资讯页面-->
         <activity android:name=".information.HotWriterActivity" />
@@ -105,9 +121,37 @@
         <activity android:name=".forhelp.release.CircuseeReleaseActivity" />
         <activity android:name=".forhelp.release.AnswerActivity" />
         <activity android:name=".forhelp.release.ClassifyNameActivity" />
+        <activity android:name=".homepage.exclusive.CollectionPublishActivity"/>
+
+        <activity android:name=".homepage.hot_activity.ParticipateHotActivity" />
+
+        <!--专属功能-->
+        <activity android:name=".homepage.exclusive.connection.ExpandConnectionActivity" />
+        <activity android:name=".homepage.exclusive.FeedBackActivity" />
+        <activity android:name=".homepage.exclusive.issue_windows.IssueWindowsActivity" />
+        <activity android:name=".homepage.exclusive.issue_windows.CollectionPublishActivity" />
+        <activity android:name=".homepage.exclusive.issue_windows.NewPublishActivity" />
+        <activity android:name=".homepage.exclusive.rim.SearchRimActivity" />
+        <activity android:name=".homepage.exclusive.rim.RimMerchantsActivity" />
+        <activity android:name=".homepage.exclusive.rim.RimProcessActivity" />
+        <activity android:name=".homepage.exclusive.rim.RimAuthenticateActivity" />
+        <activity android:name=".homepage.exclusive.rim.RimTrainActivity" />
+        <activity android:name=".homepage.exclusive.rim.RimOrganizationActivity" />
+        <activity android:name=".homepage.exclusive.IssueWindowsActivity$SeekServiceActivity" />
+
 
         <!--个人中心-->
         <activity android:name=".mine.my_home_page.MyHomePageActivity" />
+        <activity android:name=".mine.my_account.MyAccountActivity" />
+        <activity android:name=".mine.my_store.MyStoreActivity" />
+        <activity android:name=".mine.my_setting.MySettingActivity" />
+        <activity android:name=".mine.my_issue.MyIssueActivity" />
+        <activity android:name=".mine.my_baby.MyBabyActivity" />
+        <activity android:name=".mine.my_baby.MyBabyReleaseActivity" />
+        <activity android:name=".mine.my_order.MyOrderActivity" />
+        <activity android:name=".mine.my_collection.MyCollectionActivity" />
+        <activity android:name=".mine.my_participate.MyParticipateActivity" />
+
 
     </application>
 

@@ -17,12 +17,12 @@ public class MyReleaseFragment extends BaseFragment implements AdapterView.OnIte
 
     @Override
     protected int setLayout() {
-        return R.layout.fragment_my_home_release;
+        return R.layout.fragment_my_home_list;
     }
 
     @Override
     protected void initView(View view) {
-        listView = bindView(R.id.my_release_list);
+        listView = bindView(R.id.my_home_list);
         listView.setOnItemClickListener(this);
 
     }

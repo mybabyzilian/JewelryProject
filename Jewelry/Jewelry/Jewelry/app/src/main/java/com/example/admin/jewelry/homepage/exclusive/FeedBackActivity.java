@@ -1,11 +1,8 @@
 package com.example.admin.jewelry.homepage.exclusive;
 
-import android.content.Intent;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
@@ -15,7 +12,6 @@ import com.example.admin.jewelry.base.BaseActivity;
  * 找客服——写反馈
  */
 public class FeedBackActivity extends BaseActivity implements View.OnClickListener {
-    private ImageView backImage;
     private EditText editText;
     private Button submitBtn;
 
@@ -27,8 +23,6 @@ public class FeedBackActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     protected void initView() {
-        //去掉手机状态栏
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         bindView(R.id.feedback_back_image).setOnClickListener(this);
         editText = bindView(R.id.write_feedback_et);
         editText.setOnClickListener(this);

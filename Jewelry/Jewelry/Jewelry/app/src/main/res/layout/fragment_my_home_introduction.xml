@@ -6,10 +6,9 @@
 
     <GridView
         android:id="@+id/my_GridView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:columnWidth="90dp"
-        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
         android:numColumns="3"
-        android:stretchMode="columnWidth" />
+        />
 </LinearLayout>

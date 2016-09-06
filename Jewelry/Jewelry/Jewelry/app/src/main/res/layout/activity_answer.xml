@@ -16,12 +16,12 @@
             android:src="@mipmap/mine_icon_arrow" />
 
         <TextView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="我来解答"
+            android:textSize="18sp"
             android:textColor="@android:color/white" />
 
         <TextView

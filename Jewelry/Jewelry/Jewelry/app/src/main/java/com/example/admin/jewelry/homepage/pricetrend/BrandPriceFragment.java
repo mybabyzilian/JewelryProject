@@ -119,7 +119,7 @@ public class BrandPriceFragment extends BaseFragment implements View.OnClickList
                 }else {
                     return;
                 }
-                listView.setAdapter(new CommonAdaper<BrandPriceBean.BrandDetailBean>(context,list,R.layout.gold_trend_item) {
+                listView.setAdapter(new CommonAdaper<BrandPriceBean.BrandDetailBean>(context,list, R.layout.gold_trend_item) {
                     @Override
                     public void convert(ViewHolder holder, BrandPriceBean.BrandDetailBean item) {
                         holder.setImageByUrl(R.id.company_iv,item.getCompany_logo());

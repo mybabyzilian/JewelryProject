@@ -2,7 +2,6 @@ package com.example.admin.jewelry.forhelp.release;
 
 import android.content.Intent;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -25,8 +24,6 @@ public class ReleaseHelpActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     protected void initView() {
-        //去掉手机状态栏
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         backImage = bindView(R.id.release_help_back_image);
         backImage.setOnClickListener(this);
         online_rl = bindView(R.id.online_rl);

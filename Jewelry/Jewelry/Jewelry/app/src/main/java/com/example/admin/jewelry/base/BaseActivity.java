@@ -22,6 +22,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             decorView.setSystemUiVisibility(option);
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
+
         initView();
         initData();
 

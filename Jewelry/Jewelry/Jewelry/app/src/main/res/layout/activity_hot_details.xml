@@ -23,6 +23,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="活动详情"
+            android:textSize="18sp"
             android:textColor="@android:color/white" />
 
     </RelativeLayout>
@@ -39,6 +40,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:text="活动标题:" />
+
 
     <TextView
         android:id="@+id/activity_theme_content"

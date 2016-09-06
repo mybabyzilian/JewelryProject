@@ -10,6 +10,7 @@
         android:background="#8f0303"
         android:orientation="horizontal">
 
+
         <RelativeLayout
             android:id="@+id/trend_return"
             android:layout_width="20dp"
@@ -23,6 +24,7 @@
                 android:layout_centerHorizontal="true"
                 />
         </RelativeLayout>
+
 
         <TextView
             android:layout_width="wrap_content"

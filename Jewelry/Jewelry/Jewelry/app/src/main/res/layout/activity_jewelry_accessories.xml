@@ -22,6 +22,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="珠宝饰品"
+            android:textSize="18sp"
             android:textColor="@android:color/white" />
 
     </RelativeLayout>

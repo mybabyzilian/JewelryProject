@@ -22,6 +22,7 @@ import com.example.admin.jewelry.forhelp.adapter.GridViewAdapter;
 import com.example.admin.jewelry.forhelp.adapter.OfflinePopuAdapter;
 import com.example.admin.jewelry.forhelp.bean.OfflinePopuBean;
 import com.example.admin.jewelry.forhelp.bean.OnlineBean;
+import com.example.admin.jewelry.forhelp.release.OfflineDetailsActivity;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.squareup.okhttp.Request;
 

@@ -2,9 +2,7 @@ package com.example.admin.jewelry.forhelp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,9 +11,9 @@ import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
 import com.example.admin.jewelry.forhelp.bean.OnlineDetailsBean;
 import com.example.admin.jewelry.forhelp.release.AnswerActivity;
-import com.example.admin.jewelry.forhelp.release.CircuseeReleaseActivity;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.squareup.okhttp.Request;
+import com.youth.banner.Banner;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +31,7 @@ public class OnlineDetailsActivity extends BaseActivity implements View.OnClickL
     private ImageView head_image;
     private TextView helpCount, payCount, help_title, goods_name, goods_size, goods_weight;
     private TextView attach_data, get_datetime, get_area, get_price, book_pic, ask_channel, help_info, remark_info, help_money;
+    private Banner banner;
 
     @Override
     public int setLayout() {
@@ -41,10 +40,12 @@ public class OnlineDetailsActivity extends BaseActivity implements View.OnClickL
 
     @Override
     protected void initView() {
-        //去掉手机状态栏
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         backImage = (ImageView) findViewById(R.id.online_details_back_image);
         backImage.setOnClickListener(this);
+
+        banner = bindView(R.id.online_details_banner);
+        banner.setDelayTime(3000);
+        banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
 
         head_image = bindView(R.id.head_image);
         helpCount = bindView(R.id.helpCount);

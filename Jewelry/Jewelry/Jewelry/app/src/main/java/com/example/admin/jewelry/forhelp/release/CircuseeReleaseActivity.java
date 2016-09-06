@@ -2,7 +2,6 @@ package com.example.admin.jewelry.forhelp.release;
 
 import android.content.Intent;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -29,8 +28,6 @@ public class CircuseeReleaseActivity extends BaseActivity implements View.OnClic
 
     @Override
     protected void initView() {
-        //去掉手机状态栏
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         backImage = bindView(R.id.circusee_back_image);
         backImage.setOnClickListener(this);
         titleEt = bindView(R.id.circusee_title_et);

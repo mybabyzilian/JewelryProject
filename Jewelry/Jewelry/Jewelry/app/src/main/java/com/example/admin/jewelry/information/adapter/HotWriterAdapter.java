@@ -47,7 +47,9 @@ public class HotWriterAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
+
         holder.tv_number.setText(String.valueOf(position + 1));
+
         return convertView;
     }
 

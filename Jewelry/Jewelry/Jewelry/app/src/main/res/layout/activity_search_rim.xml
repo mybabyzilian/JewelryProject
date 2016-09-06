@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_dark">
+        android:background="@color/allRed">
 
         <ImageView
             android:id="@+id/rim_back_image"
@@ -22,6 +22,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="搜周边"
+            android:textSize="18sp"
             android:textColor="@android:color/white" />
 
     </RelativeLayout>
@@ -151,7 +152,7 @@
         android:background="@android:color/darker_gray" />
 
     <RelativeLayout
-        android:id="@+id/rim_rl_activity"
+        android:id="@+id/rim_rl_organization"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -163,7 +164,8 @@
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
             android:textColor="@android:color/black"
-            android:text="周边活动" />
+            android:text="周边组织" />
+
 
         <ImageView
             android:layout_width="wrap_content"

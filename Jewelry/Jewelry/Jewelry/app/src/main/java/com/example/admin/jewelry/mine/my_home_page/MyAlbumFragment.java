@@ -9,7 +9,7 @@ import com.example.admin.jewelry.base.BaseFragment;
  * Created by JINDAPENG on 2016/8/29.
  * 我的主页——简介
  */
-public class MyAlbumFragment extends BaseFragment{
+public class MyAlbumFragment extends BaseFragment {
 
     @Override
     protected int setLayout() {

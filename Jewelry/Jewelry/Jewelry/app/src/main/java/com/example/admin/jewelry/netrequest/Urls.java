@@ -1,7 +1,9 @@
 package com.example.admin.jewelry.netrequest;
 
 /**
+
  * Created by admin on 2016/8/15.*/
+
 
 public class Urls {
     public static  final  String BASE = "192.168.31.10:8081";
@@ -16,15 +18,18 @@ public class Urls {
     public static final String DAPAN_POPU = "http://"+ BASE +"/boastJewelry/combobox/queryProductCategory.do";
     public static final String BRAND_PRICE_URL = "http://"+ BASE +"/boastJewelry/brandprice/query.do";
     public static final String BRAND_DETAIL_URL = "http://"+ BASE +"/boastJewelry/brandprice/queryCompanyDetail.do";
+
     public static final String JEWELRY_DISPLAY_POPU_URL = "http://"+ BASE +"/boastJewelry/objectGoods/old/one.do";
     public static final String JEWELRY_DISPLAY_URL = "http://"+ BASE +"/boastJewelry/objectGoods/old/two.do";
     public static final String JEWELRY_DISPLAY_POPU_NEW_URL = "http://"+ BASE +"/boastJewelry/objectGoods/new/one.do";
     public static final String JEWELRY_DISPLAY_NEW_URL = "http://"+ BASE +"/boastJewelry/objectGoods/new/two.do";
+
     public static final String JEWELRY_DISPLAY_NEW_DETAIL_URL = "http://"+ BASE +"/boastJewelry/objectGoods/new/info.do?eid=1";
     public static final String USER_LOGIN_URL = "http://"+ BASE +"/boastJewelry/user/user_login.do";
     public static final String REGISTER_GET_YZM = "http://"+ BASE +"/boastJewelry/userr/user_getchecksum.do";
     public static final String MAJOR_POPU_URL = "http://192.168.31.10:8081/boastJewelry/combobox/queryDtrainParameter.do";
     public static final String MAJOR_URL = "http://192.168.31.10:8081/boastJewelry/d_train/queryDTrainInfo.do";
     public static final String MAJOR_BANNER_URL = "http://192.168.31.10:8081/boastJewelry/d_train/query_banner.do";
+
 
 }

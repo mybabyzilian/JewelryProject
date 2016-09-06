@@ -30,15 +30,18 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:text="线上鉴品详情"
+                    android:textSize="18sp"
                     android:textColor="@android:color/white" />
 
             </RelativeLayout>
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/online_viewpager"
-                android:layout_width="match_parent"
-                android:layout_height="100dp" />
 
+
+            <com.youth.banner.Banner
+                android:id="@+id/online_details_banner"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="#d8e614" />
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">

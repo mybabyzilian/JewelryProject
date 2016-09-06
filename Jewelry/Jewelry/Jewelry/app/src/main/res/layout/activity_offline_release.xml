@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_dark">
+        android:background="@color/allRed">
 
         <ImageView
             android:id="@+id/offline_back_image"
@@ -23,6 +23,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="线下发布"
+            android:textSize="18sp"
             android:textColor="@android:color/white" />
 
     </RelativeLayout>
@@ -83,7 +84,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
-                    android:text="分类名称:"
+                    android:text="品类名称:"
                     android:textColor="@android:color/black" />
 
                 <ImageView

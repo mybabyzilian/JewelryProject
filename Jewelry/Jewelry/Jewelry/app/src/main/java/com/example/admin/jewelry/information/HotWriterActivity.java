@@ -26,8 +26,10 @@ public class HotWriterActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     protected void initView() {
+
         //去掉手机状态栏
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         backImage = bindView(R.id.hot_writer_back_image);
         backImage.setOnClickListener(this);
         landmarkImage = bindView(R.id.landmark_image);

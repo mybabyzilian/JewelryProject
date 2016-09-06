@@ -1,12 +1,9 @@
 package com.example.admin.jewelry.homepage.integral;
 
 import android.content.Intent;
-import android.os.Binder;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,8 +34,6 @@ public class DetailsCommodityActivity extends BaseActivity implements View.OnCli
 
     @Override
     protected void initView() {
-        //去掉手机状态栏
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         backImage = bindView(R.id.details_back_image);
         backImage.setOnClickListener(this);
 

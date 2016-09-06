@@ -3,7 +3,6 @@ package com.example.admin.jewelry.homepage.integral;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -41,8 +40,6 @@ public class IntegralStoreActivity extends BaseActivity implements View.OnClickL
 
     @Override
     protected void initView() {
-        //去掉手机状态栏
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         backImage = bindView(R.id.integral_back_image);
         backImage.setOnClickListener(this);
 

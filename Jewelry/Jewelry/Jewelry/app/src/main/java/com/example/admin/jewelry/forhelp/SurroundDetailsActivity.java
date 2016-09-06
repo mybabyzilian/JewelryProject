@@ -16,6 +16,7 @@ public class SurroundDetailsActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
         //去掉手机状态栏
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 

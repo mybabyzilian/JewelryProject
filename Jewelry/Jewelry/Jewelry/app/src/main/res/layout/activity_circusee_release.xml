@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_dark">
+        android:background="@color/allRed">
 
         <ImageView
             android:id="@+id/circusee_back_image"
@@ -22,6 +22,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="围观讨论发布"
+            android:textSize="18sp"
             android:textColor="@android:color/white" />
 
     </RelativeLayout>

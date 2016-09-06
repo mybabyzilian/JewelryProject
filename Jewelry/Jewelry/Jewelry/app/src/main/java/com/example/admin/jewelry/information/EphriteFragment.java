@@ -1,6 +1,7 @@
 package com.example.admin.jewelry.information;
 
 import android.view.View;
+
 import android.widget.AdapterView;
 
 import com.example.admin.jewelry.R;
@@ -57,12 +58,14 @@ public class EphriteFragment extends BaseFragment implements OnRefreshListener {
         }, maps);
 
         listView.setOnRefreshListener(this);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
             }
         });
+
 
     }
 

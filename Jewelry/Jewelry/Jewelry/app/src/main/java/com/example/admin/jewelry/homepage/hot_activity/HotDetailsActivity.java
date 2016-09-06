@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.admin.jewelry.R;
@@ -22,10 +21,9 @@ import java.util.Map;
  * 热门活动——详情页面
  */
 public class HotDetailsActivity extends BaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
-    private TextView activity_title,activity_theme_content,activity_rule_content,acticity_prize_content,
-            acticity_create_time,acticity_status,acticity_amount;
+    private TextView activity_title, activity_theme_content, activity_rule_content, acticity_prize_content,
+            acticity_create_time, acticity_status, acticity_amount;
     private GridView gridView;
-    private ImageView backImage;
     private HotBean hotBean;
     private HotDetailsBean hotDetailsBean;
 
@@ -44,7 +42,7 @@ public class HotDetailsActivity extends BaseActivity implements View.OnClickList
         activity_rule_content = bindView(R.id.activity_rule_content);
         acticity_prize_content = bindView(R.id.acticity_prize_content);
         acticity_create_time = bindView(R.id.acticity_create_time);
-        acticity_status =  bindView(R.id.acticity_status);
+        acticity_status = bindView(R.id.acticity_status);
         acticity_amount = bindView(R.id.acticity_amount);
 
         gridView = bindView(R.id.hot_details_grid_view);
@@ -56,13 +54,15 @@ public class HotDetailsActivity extends BaseActivity implements View.OnClickList
 
     @Override
     protected void initData() {
-        Intent intent=getIntent();//getIntent将该项目中包含的原始intent检索出来，将检索出来的intent赋值给一个Intent类型的变量intent
-        Bundle bundle=intent.getExtras();//.getExtras()得到intent所附带的额外数据
-        String str=bundle.getString("entity_id");//getString()返回指定key的值
         String url = "http://192.168.31.10:8081/boastJewelry/s_activity/query.do";
+
+        Intent intent = getIntent();//getIntent将该项目中包含的原始intent检索出来，将检索出来的intent赋值给一个Intent类型的变量intent
+        final Bundle bundle = intent.getExtras();//.getExtras()得到intent所附带的额外数据
+        final String activity_id = bundle.getString("activity_id");//getString()返回指定key的值
         Map<String, String> maps = new HashMap<>();
-        maps.put("currentPage", "");
-        maps.put("entity_id", str);
+        maps.put("user_id", "");
+        maps.put("orderType", "");
+        maps.put("activity_id", activity_id);
         OkHttpClientManager.postAsyn(url, new OkHttpClientManager.ResultCallback<HotBean>() {
             @Override
             public void onError(Request request, Exception e) {
@@ -72,23 +72,29 @@ public class HotDetailsActivity extends BaseActivity implements View.OnClickList
             @Override
             public void onResponse(HotBean response) {
                 Log.d("url", "onResponse: " + response);
-                activity_title.setText("活动标题:" + response.getObject().get(1).getActivity_title());
-                activity_theme_content.setText("活动主题内容:" + response.getObject().get(2).getActivity_theme_content());
-                activity_rule_content.setText("活动规则:" + response.getObject().get(3).getActivity_rule_content());
-                acticity_prize_content.setText("活动奖励内容:" + response.getObject().get(4).getActicity_prize_content());
-                acticity_create_time.setText("活动日期:" + response.getObject().get(5).getActicity_create_time());
-                acticity_status.setText("活动状态:进行中" + response.getObject().get(6).getActicity_status());
-                acticity_amount.setText("活动参与人数:" + response.getObject().get(7).getActicity_amount());
+                int i = Integer.valueOf(activity_id).intValue();
+
+                activity_title.setText("活动标题:" + response.getObject().get(i).getActivity_title());
+                activity_theme_content.setText("活动主题内容:" + response.getObject().get(i).getActivity_theme_content());
+                activity_rule_content.setText("活动规则:" + response.getObject().get(i).getActivity_rule_content());
+                acticity_prize_content.setText("活动奖励内容:" + response.getObject().get(i).getActicity_prize_content());
+                acticity_create_time.setText("活动日期:" + response.getObject().get(i).getActicity_create_time());
+                if (response.getObject().get(i).getActicity_status() == "1") {
+                    acticity_status.setText("活动状态:进行中");
+                    acticity_amount.setText("活动参与人数:" + response.getObject().get(i).getActicity_amount());
+                } else {
+                    acticity_status.setText("活动状态:已结束");
+                    acticity_amount.setText("活动参与人数:" + response.getObject().get(i).getActicity_amount());
+                }
+
+
             }
         });
-
-
-
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.details_back_image:
                 finish();
                 break;

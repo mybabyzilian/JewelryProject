@@ -193,6 +193,7 @@
                 android:background="#cdcdcd" />
 
             <RelativeLayout
+                android:id="@+id/my_account_rl"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp">
@@ -273,6 +274,7 @@
                 android:background="#cdcdcd" />
 
             <RelativeLayout
+                android:id="@+id/my_issue_rl"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp">
@@ -313,6 +315,7 @@
                 android:background="#cdcdcd" />
 
             <RelativeLayout
+                android:id="@+id/my_collection_rl"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp">
@@ -353,6 +356,7 @@
                 android:background="#cdcdcd" />
 
             <RelativeLayout
+                android:id="@+id/my_participate_rl"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp">
@@ -393,6 +397,7 @@
                 android:background="#cdcdcd" />
 
             <RelativeLayout
+                android:id="@+id/my_store_rl"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp">
@@ -433,6 +438,7 @@
                 android:background="#cdcdcd" />
 
             <RelativeLayout
+                android:id="@+id/my_baby_rl"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp">
@@ -473,6 +479,7 @@
                 android:background="#cdcdcd" />
 
             <RelativeLayout
+                android:id="@+id/my_order_rl"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp">
@@ -553,6 +560,7 @@
                 android:background="#cdcdcd" />
 
             <RelativeLayout
+                android:id="@+id/my_setting_rl"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp">

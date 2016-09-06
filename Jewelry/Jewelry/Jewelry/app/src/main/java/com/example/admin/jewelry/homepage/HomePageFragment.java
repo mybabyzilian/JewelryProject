@@ -14,7 +14,6 @@ import com.example.admin.jewelry.homepage.dahuahot.DaHuaHotActivity;
 import com.example.admin.jewelry.homepage.exclusive.ExpandConnectionActivity;
 import com.example.admin.jewelry.homepage.exclusive.IssueWindowsActivity;
 import com.example.admin.jewelry.homepage.exclusive.SearchRimActivity;
-import com.example.admin.jewelry.homepage.exclusive.SeekServiceActivity;
 import com.example.admin.jewelry.homepage.gemstonepostbar.PostBarActivity;
 import com.example.admin.jewelry.homepage.hot_activity.HotActivity;
 import com.example.admin.jewelry.homepage.integral.IntegralStoreActivity;
@@ -29,18 +28,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
+
 /**
  * Created by admin on 2016/8/15.
  * 首页页面
  */
 public class HomePageFragment extends BaseFragment implements View.OnClickListener {
     private Banner banner;
-    private LinearLayout hotLinear, integralLinear,searchLayout;
+
+
     private String[] url = {"http://img4.duitang.com/uploads/item/201512/18/20151218141838_UdZGf.jpeg",
             "http://img0.imgtn.bdimg.com/it/u=2604831194,922890958&fm=11&gp=0.jpg"};
     private TipView tipView;
     private static final String TIP_PREFIX = "this is tip No.";
     private WebView webView;
+
+
+    private LinearLayout hotLinear, integralLinear;
+
+
+
 
 
     @Override
@@ -65,6 +73,12 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
             }
         });
 
+
+        //  banner.setImages();
+
+        banner.setDelayTime(3000);
+        banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
+
         view.findViewById(R.id.certificate_query).setOnClickListener(this);
         view.findViewById(R.id.price_trend).setOnClickListener(this);
         view.findViewById(R.id.major_train).setOnClickListener(this);
@@ -86,6 +100,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
         view.findViewById(R.id.search_rim).setOnClickListener(this);
         view.findViewById(R.id.expand_connection).setOnClickListener(this);
         view.findViewById(R.id.issue_windows).setOnClickListener(this);
+
         view.findViewById(R.id.gemstone_bar_layout).setOnClickListener(this);
         view.findViewById(R.id.ephrite_bar_layout).setOnClickListener(this);
         view.findViewById(R.id.wenwan_bar_layout).setOnClickListener(this);
@@ -93,10 +108,12 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
         view.findViewById(R.id.homepage_search_layout).setOnClickListener(this);
         tipView = (TipView) view.findViewById(R.id.homepage_tip_view);
         tipView.setOnClickListener(this);
+
     }
 
     @Override
     protected void initData() {
+
         tipView.setTipList(generateTips());
     }
 
@@ -106,6 +123,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
             tips.add(TIP_PREFIX + i);
         }
         return tips;
+
     }
 
     @Override
@@ -131,16 +149,17 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
                 Intent intent4 = new Intent(context, JewelryMapActivity.class);
                 context.startActivity(intent4);
                 break;
+
             case R.id.integral_store:
-                Intent intent9 = new Intent(getContext(), IntegralStoreActivity.class);
+                Intent intent9 = new Intent(context, IntegralStoreActivity.class);
                 startActivity(intent9);
                 break;
             case R.id.hot_activity:
-                Intent intent10 = new Intent(getContext(), HotActivity.class);
+                Intent intent10 = new Intent(context, HotActivity.class);
                 startActivity(intent10);
                 break;
             case R.id.seek_service:
-                Intent intent6 = new Intent(context, SeekServiceActivity.class);
+                Intent intent6 = new Intent(context, IssueWindowsActivity.SeekServiceActivity.class);
                 context.startActivity(intent6);
                 break;
             case R.id.search_rim:
@@ -159,6 +178,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
                 Intent intent11 = new Intent(context, JewelryDisplayActivity.class);
                 context.startActivity(intent11);
                 break;
+
             case R.id.gemstone_bar_layout:
                 Intent intent13 = new Intent(context, PostBarActivity.class);
                 intent13.putExtra("name","宝石贴吧");
@@ -187,6 +207,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
                 Intent intent18 = new Intent(context, JewelrySearchActivity.class);
                 context.startActivity(intent18);
                 break;
+
 
         }
     }
