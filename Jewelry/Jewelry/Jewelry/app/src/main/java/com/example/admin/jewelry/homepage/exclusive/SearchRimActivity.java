@@ -19,7 +19,9 @@ public class SearchRimActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     public int setLayout() {
+
         return R.layout.activity_search_rim;
+
     }
 
     @Override

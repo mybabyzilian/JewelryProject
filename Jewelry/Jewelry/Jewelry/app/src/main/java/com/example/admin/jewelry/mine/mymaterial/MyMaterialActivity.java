@@ -24,8 +24,8 @@ import com.example.admin.jewelry.base.MyApp;
  */
 public class MyMaterialActivity extends BaseActivity implements View.OnClickListener {
     private static final int CAPTURE_CODE = 100;
-    private RoundImageView cameraIv;
     private static final int IMAGE_CODE = 101;
+    private RoundImageView cameraIv;
     private Bitmap bm;
     private FinishProjectPopupWindows popupWindows;
     private RelativeLayout headLayout;

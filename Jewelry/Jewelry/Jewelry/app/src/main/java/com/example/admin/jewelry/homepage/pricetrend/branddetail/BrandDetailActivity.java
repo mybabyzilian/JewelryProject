@@ -15,6 +15,7 @@ import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
 import com.example.admin.jewelry.netrequest.Urls;
 import com.squareup.okhttp.Request;
+import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,6 +33,8 @@ public class BrandDetailActivity extends BaseActivity implements View.OnClickLis
     private LinearLayout linearLayout;
     private ImageView returnIv;
     private TextView nameTv;
+    private Banner banner;
+    private List<String> imageUrl;
 
     @Override
     public int setLayout() {
@@ -46,6 +49,7 @@ public class BrandDetailActivity extends BaseActivity implements View.OnClickLis
         linearLayout = (LinearLayout) findViewById(R.id.brand_detail_location);
         returnIv = (ImageView) findViewById(R.id.brand_detail_return);
         nameTv = (TextView) findViewById(R.id.Brand_Detail_title);
+        banner = bindView(R.id.brand_banner);
 
     }
 
@@ -59,6 +63,11 @@ public class BrandDetailActivity extends BaseActivity implements View.OnClickLis
         id = intent.getStringExtra("id");
         nameTv.setText(intent.getStringExtra("name"));
         list = new ArrayList<>();
+        imageUrl = new ArrayList<>();
+        imageUrl.add(intent.getStringExtra("imagUrl"));
+        banner.setImages(imageUrl);
+        banner.setDelayTime(3000);
+        banner.setBannerStyle(Banner.CIRCLE_INDICATOR_TITLE);
         Map<String, String> map = new HashMap<>();
         map.put("company_id", id);
 

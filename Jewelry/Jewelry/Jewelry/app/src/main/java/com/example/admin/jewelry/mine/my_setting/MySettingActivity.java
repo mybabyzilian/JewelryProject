@@ -49,7 +49,13 @@ public class MySettingActivity extends BaseActivity implements View.OnClickListe
                 break;
             case R.id.clear_the_cache:
                 clearAllCache(getBaseContext());
-                // 清除缓存
+                String totalCacheSize = null;//读取缓存大小
+                try {
+                    totalCacheSize = getTotalCacheSize(getBaseContext());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                cache.setText(totalCacheSize);// 显示缓存大小
                 break;
 
 

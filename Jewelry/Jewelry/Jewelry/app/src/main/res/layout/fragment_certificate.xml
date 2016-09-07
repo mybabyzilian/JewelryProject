@@ -10,10 +10,8 @@
         android:layout_height="25dp">
 
         <RelativeLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <TextView
                 android:id="@+id/certificate_tv"
                 android:layout_width="wrap_content"
@@ -21,7 +19,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:text="全部" />
-
             <ImageView
                 android:id="@+id/certificate_popu_iv"
                 android:layout_width="wrap_content"
@@ -34,12 +31,10 @@
 
         </RelativeLayout>
     </LinearLayout>
-
     <View
         android:layout_width="match_parent"
         android:layout_height="0.7dp"
         android:background="#cdcdcd" />
-
     <ListView
         android:id="@+id/fragment_certificate_list"
         android:layout_width="match_parent"

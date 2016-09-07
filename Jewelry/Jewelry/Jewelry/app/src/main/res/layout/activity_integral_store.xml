@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_dark">
+        android:background="@color/allRed">
 
         <ImageView
             android:id="@+id/integral_back_image"
@@ -37,7 +37,7 @@
     <com.youth.banner.Banner
         android:id="@+id/integral_store_banner"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="100dp"
         android:background="#d8e614" />
 
     <LinearLayout
@@ -49,10 +49,14 @@
 
         <RelativeLayout
             android:id="@+id/good_luck_rl"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
             android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true">
 
             <ImageView
                 android:id="@+id/wheeloffortune_image"
@@ -63,22 +67,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/wheeloffortune_image"
                 android:text="幸运轮盘"
+                android:layout_gravity="center_vertical"
                 android:textColor="@android:color/black"
                 android:textSize="17sp" />
-
+            </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/exchange_centre_rl"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
             android:layout_weight="1">
-
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_centerHorizontal="true">
             <ImageView
                 android:id="@+id/exchange_image"
                 android:layout_width="wrap_content"
@@ -88,12 +94,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/exchange_image"
                 android:text="兑换中心"
+                android:layout_gravity="center_vertical"
                 android:textColor="@android:color/black"
                 android:textSize="17sp" />
+             </LinearLayout>
 
         </RelativeLayout>
     </LinearLayout>

@@ -38,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="140dp" />
     <View
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="0.7dp"
         android:background="#cdcdcd" />

@@ -3,7 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#cdcdcd"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,10 +18,12 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <RelativeLayout
+                android:id="@+id/zhuanye_zizhi"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_gravity="center_horizontal"
                 android:background="#ffffff"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="20dp">
 
                 <LinearLayout
@@ -51,10 +56,12 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <RelativeLayout
+                android:id="@+id/qiye_shangjia"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_gravity="center_horizontal"
                 android:background="#ffffff"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="20dp">
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -89,8 +96,10 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <RelativeLayout
+                android:id="@+id/zuzhi_jigou"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
+                android:layout_marginLeft="15dp"
                 android:layout_gravity="center_horizontal"
                 android:background="#ffffff"
                 >
@@ -125,8 +134,10 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <RelativeLayout
+                android:id="@+id/geren_shiming"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
+                android:layout_marginRight="15dp"
                 android:layout_gravity="center_horizontal"
                 android:background="#ffffff"
                 >

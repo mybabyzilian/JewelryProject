@@ -25,7 +25,7 @@ import java.util.Random;
 public class TipView extends FrameLayout {
 
     /**  动画间隔  */
-    private static final int ANIM_DELAYED_MILLIONS = 3 * 1000;
+    private static final int ANIM_DELAYED_MILLIONS = 2* 1000;
     /**  动画持续时长  */
     private static final int ANIM_DURATION = 1 * 1000;
     /**  默认字体颜色  */

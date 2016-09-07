@@ -56,7 +56,6 @@ public class QualificationActivity extends BaseActivity implements View.OnClickL
             case R.id.rb_uncertificate_:
                 fragmentTransaction.replace(R.id.qualification_frame, new UnCertificateFragment());
                 break;
-
         }
         fragmentTransaction.commit();
     }

@@ -38,7 +38,6 @@ public class ForHelpFragment extends BaseFragment implements CompoundButton.OnCh
         onlineForhelpRb.setOnClickListener(this);
         offlineRb.setOnClickListener(this);
         surrondRb.setOnClickListener(this);
-
         helpImage = (ImageView) view.findViewById(R.id.forhelp_homepage_sign);
         helpImage.setOnClickListener(this);
     }

@@ -15,6 +15,7 @@ public class CertifacateFragment extends BaseFragment implements View.OnClickLis
     private LinearLayout linearLayout;
     private View popuView;
     private ListView popuList;
+    private ListView listView;
 
 
     @Override
@@ -27,12 +28,14 @@ public class CertifacateFragment extends BaseFragment implements View.OnClickLis
         linearLayout = (LinearLayout) view.findViewById(R.id.certificate_layout);
         popuView = LayoutInflater.from(context).inflate(R.layout.view_popu,null);
         popuList = (ListView) popuView.findViewById(R.id.popu_list);
+        listView = (ListView) view.findViewById(R.id.fragment_certificate_list);
 
     }
 
     @Override
     protected void initData() {
         linearLayout.setOnClickListener(this);
+
 
     }
 

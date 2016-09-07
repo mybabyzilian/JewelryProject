@@ -28,7 +28,8 @@ import java.util.Map;
  * Created by admin on 2016/8/22.
  * 品牌价位
  */
-public class BrandPriceFragment extends BaseFragment implements View.OnClickListener {
+public class
+BrandPriceFragment extends BaseFragment implements View.OnClickListener {
     private LinearLayout goldLayput, lastlayout, brandLayout;
     private RefreshListView listView;
     private View popuView;
@@ -135,6 +136,7 @@ public class BrandPriceFragment extends BaseFragment implements View.OnClickList
                         Intent intent = new Intent(context, BrandDetailActivity.class);
                         intent.putExtra("id",list.get(i).getProduct_company_id());
                         intent.putExtra("name",list.get(i).getCompany_name());
+                        intent.putExtra("imageUrl",list.get(i).getCompany_logo());
                         context.startActivity(intent);
                     }
                 });

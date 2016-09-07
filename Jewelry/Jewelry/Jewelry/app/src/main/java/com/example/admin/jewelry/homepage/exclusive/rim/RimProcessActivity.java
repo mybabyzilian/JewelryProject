@@ -1,5 +1,6 @@
 package com.example.admin.jewelry.homepage.exclusive.rim;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -7,6 +8,7 @@ import android.widget.TextView;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
+import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
 
 /**
  * Created by JINDAPENG on 2016/9/2.
@@ -32,7 +34,8 @@ public class RimProcessActivity extends BaseActivity implements View.OnClickList
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                Intent intent = new Intent(RimProcessActivity.this, JewelryMapActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -41,6 +44,7 @@ public class RimProcessActivity extends BaseActivity implements View.OnClickList
     protected void initData() {
         rimAdapter = new RimAdapter(this);
         listView.setAdapter(rimAdapter);
+
     }
 
     @Override

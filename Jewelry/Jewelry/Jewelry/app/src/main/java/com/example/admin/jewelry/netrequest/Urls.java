@@ -27,9 +27,9 @@ public class Urls {
     public static final String JEWELRY_DISPLAY_NEW_DETAIL_URL = "http://"+ BASE +"/boastJewelry/objectGoods/new/info.do?eid=1";
     public static final String USER_LOGIN_URL = "http://"+ BASE +"/boastJewelry/user/user_login.do";
     public static final String REGISTER_GET_YZM = "http://"+ BASE +"/boastJewelry/userr/user_getchecksum.do";
-    public static final String MAJOR_POPU_URL = "http://192.168.31.10:8081/boastJewelry/combobox/queryDtrainParameter.do";
-    public static final String MAJOR_URL = "http://192.168.31.10:8081/boastJewelry/d_train/queryDTrainInfo.do";
-    public static final String MAJOR_BANNER_URL = "http://192.168.31.10:8081/boastJewelry/d_train/query_banner.do";
-
+    public static final String MAJOR_POPU_URL = "http://"+ BASE +"/boastJewelry/combobox/queryDtrainParameter.do";
+    public static final String MAJOR_URL = "http://"+ BASE +"/boastJewelry/d_train/queryDTrainInfo.do";
+    public static final String MAJOR_BANNER_URL = "http://"+ BASE +"/boastJewelry/d_train/query_banner.do";
+    public static final String HOME_PAGE_LUNBO_URL = "http://"+ BASE +"/boastJewelry/webIndex/indexPic.do";
 
 }

@@ -79,8 +79,11 @@
         <activity android:name=".search.JewelrySearchActivity" />
         <activity android:name=".mine.mymaterial.MyMaterialActivity" />
         <activity android:name=".mine.mymaterial.SetUserNameActivitry" />
-
-
+        <activity android:name=".homepage.qualificationcertification.qualificationdetail.ZhuanYeActivity"/>
+        <activity android:name=".homepage.qualificationcertification.qualificationdetail.QiYeActivity"/>
+        <activity android:name=".homepage.qualificationcertification.qualificationdetail.ZuZhiActivity"/>
+        <activity android:name=".homepage.qualificationcertification.qualificationdetail.PersonalActivity"/>
+        <activity android:name=".homepage.qualificationcertification.EditActivity"/>
         <service android:name="com.amap.api.location.APSService" />
 
 

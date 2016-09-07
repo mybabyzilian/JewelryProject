@@ -10,12 +10,12 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="5dp"
+            android:layout_height="20dp"
             android:background="@color/allRed"/>
         <LinearLayout
             android:id="@+id/title"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
             android:background="@color/allRed"
             android:orientation="horizontal"
             >

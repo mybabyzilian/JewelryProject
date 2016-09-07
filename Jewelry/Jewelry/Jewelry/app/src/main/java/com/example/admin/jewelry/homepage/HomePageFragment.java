@@ -1,6 +1,7 @@
 package com.example.admin.jewelry.homepage;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
@@ -21,7 +22,10 @@ import com.example.admin.jewelry.homepage.jewerydisplay.JewelryDisplayActivity;
 import com.example.admin.jewelry.homepage.pricetrend.PriceTrendActivity;
 import com.example.admin.jewelry.homepage.qualificationcertification.QualificationActivity;
 import com.example.admin.jewelry.jewelrymap.JewelryMapActivity;
+import com.example.admin.jewelry.netrequest.OkHttpClientManager;
+import com.example.admin.jewelry.netrequest.Urls;
 import com.example.admin.jewelry.search.JewelrySearchActivity;
+import com.squareup.okhttp.Request;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
@@ -38,8 +42,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
     private Banner banner;
 
 
-    private String[] url = {"http://img4.duitang.com/uploads/item/201512/18/20151218141838_UdZGf.jpeg",
-            "http://img0.imgtn.bdimg.com/it/u=2604831194,922890958&fm=11&gp=0.jpg"};
+    private List<String>  url;
     private TipView tipView;
     private static final String TIP_PREFIX = "this is tip No.";
     private WebView webView;
@@ -60,10 +63,7 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
     protected void initView(View view) {
         banner = (Banner) view.findViewById(R.id.homepage_banner);
 
-        banner.setImages(url);
 
-        banner.setDelayTime(2000);
-        banner.setBannerStyle(Banner.FIND_VIEWS_WITH_TEXT);
         webView = (WebView) view.findViewById(R.id.homepage_web);
         banner.setOnBannerClickListener(new Banner.OnBannerClickListener() {
             @Override
@@ -73,11 +73,6 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
             }
         });
 
-
-        //  banner.setImages();
-
-        banner.setDelayTime(3000);
-        banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
 
         view.findViewById(R.id.certificate_query).setOnClickListener(this);
         view.findViewById(R.id.price_trend).setOnClickListener(this);
@@ -118,6 +113,25 @@ public class HomePageFragment extends BaseFragment implements View.OnClickListen
     }
 
     private List<String> generateTips() {
+        url = new ArrayList<>();
+
+        OkHttpClientManager.postAsyn(Urls.HOME_PAGE_LUNBO_URL, new OkHttpClientManager.ResultCallback<HomePageBannerBean>() {
+            @Override
+            public void onError(Request request, Exception e) {
+
+            }
+
+            @Override
+            public void onResponse(HomePageBannerBean response) {
+                for (int i = 0; i <response.getObject().getTops().size() ; i++) {
+                    Log.d("HomePageFragment", response.getObject().getTops().get(i).getWeb_src());
+                    url.add(response.getObject().getTops().get(i).getWeb_src()); response.getObject().getTops().get(i).getWeb_src();
+                    banner.setImages(url);
+                    banner.setDelayTime(3000);
+                    banner.setBannerStyle(Banner.CIRCLE_INDICATOR_TITLE);
+                }
+            }
+        });
         List<String> tips = new ArrayList<>();
         for (int i = 1; i < 120; i++) {
             tips.add(TIP_PREFIX + i);

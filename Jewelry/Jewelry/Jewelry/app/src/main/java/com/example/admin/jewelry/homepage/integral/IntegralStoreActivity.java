@@ -10,14 +10,18 @@ import android.widget.RelativeLayout;
 
 import com.example.admin.jewelry.R;
 import com.example.admin.jewelry.base.BaseActivity;
+import com.example.admin.jewelry.homepage.HomePageBannerBean;
 import com.example.admin.jewelry.homepage.integral.adapter.IntegralStoreAdapter;
 import com.example.admin.jewelry.homepage.integral.bean.ClassBean;
 import com.example.admin.jewelry.homepage.integral.bean.HotExchangeBean;
 import com.example.admin.jewelry.netrequest.OkHttpClientManager;
+import com.example.admin.jewelry.netrequest.Urls;
 import com.squareup.okhttp.Request;
 import com.youth.banner.Banner;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,6 +36,7 @@ public class IntegralStoreActivity extends BaseActivity implements View.OnClickL
     private ClassBean classBean;
     private ListView hotListView;
     private Banner banner;
+    private List<String> bannerUrl;
 
     @Override
     public int setLayout() {
@@ -42,14 +47,9 @@ public class IntegralStoreActivity extends BaseActivity implements View.OnClickL
     protected void initView() {
         backImage = bindView(R.id.integral_back_image);
         backImage.setOnClickListener(this);
-
         banner = bindView(R.id.integral_store_banner);
-        banner.setDelayTime(3000);
-        banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
-
         hotListView = bindView(R.id.hot_exchange_listview);
         hotListView.setOnItemClickListener(this);
-
         luckRl = bindView(R.id.good_luck_rl);//幸运轮盘
         luckRl.setOnClickListener(this);
         exchangeRl = bindView(R.id.exchange_centre_rl);//兑换中心
@@ -64,6 +64,23 @@ public class IntegralStoreActivity extends BaseActivity implements View.OnClickL
 
     @Override
     protected void initData() {
+        bannerUrl = new ArrayList<>();
+        OkHttpClientManager.postAsyn(Urls.HOME_PAGE_LUNBO_URL, new OkHttpClientManager.ResultCallback<HomePageBannerBean>() {
+            @Override
+            public void onError(Request request, Exception e) {
+
+            }
+
+            @Override
+            public void onResponse(HomePageBannerBean response) {
+                for (int i = 0; i <response.getObject().getTops().size() ; i++) {
+                    bannerUrl.add(response.getObject().getTops().get(i).getWeb_src());
+                }
+                banner.setImages(bannerUrl);
+                banner.setDelayTime(3000);
+                banner.setBannerStyle(Banner.ACCESSIBILITY_LIVE_REGION_ASSERTIVE);
+            }
+        });
 
 
 //解析热门兑换数据

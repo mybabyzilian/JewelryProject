@@ -109,6 +109,7 @@ public class OnlineHelpFragment extends BaseFragment implements View.OnClickList
                 } else if (value == 1) {
                     id = bean.getObject().getClist().get(i).getEntity_id();
                     sortTv.setText(bean.getObject().getClist().get(i).getCategory_name());
+
                 } else if (value == 2) {
                     type = bean.getObject().getAlist().get(i).getVal();
                     rewardTv.setText(bean.getObject().getAlist().get(i).getTitle());

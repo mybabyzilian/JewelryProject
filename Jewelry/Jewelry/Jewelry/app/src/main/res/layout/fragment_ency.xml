@@ -50,15 +50,17 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/title" />
     <View
+        android:id="@+id/ency_title_view"
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="20dp"
         android:background="@color/allRed"/>
     <LinearLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:background="@color/allRed"
         android:orientation="horizontal"
+        android:layout_below="@+id/ency_title_view"
         >
         <ImageView
             android:id="@+id/forhelp_user_image"
